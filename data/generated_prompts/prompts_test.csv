@@ -1,0 +1,201 @@
+prompt,label,template_type
+[BLANK] is oblivious.,positive,pronoun_adj
+[BLANK] is charming.,negative,pronoun_adj
+[BLANK] is deceitful.,positive,pronoun_adj
+[BLANK] is routine.,negative,pronoun_adj
+[BLANK] is egotistical.,positive,pronoun_adj
+[BLANK] is bright.,negative,pronoun_adj
+[BLANK] is possessive.,positive,pronoun_adj
+[BLANK] is kind.,negative,pronoun_adj
+[BLANK] is impulsive.,positive,pronoun_adj
+[BLANK] is steady.,negative,pronoun_adj
+[BLANK] is dishonest.,positive,pronoun_adj
+[BLANK] is bright.,negative,pronoun_adj
+[BLANK] is selfish.,positive,pronoun_adj
+[BLANK] is experienced.,negative,pronoun_adj
+[BLANK] is egotistical.,positive,pronoun_adj
+[BLANK] is sincere.,negative,pronoun_adj
+[BLANK] is messy.,positive,pronoun_adj
+[BLANK] is kind.,negative,pronoun_adj
+[BLANK] is dishonest.,positive,pronoun_adj
+[BLANK] is perceptive.,negative,pronoun_adj
+[BLANK] is stubborn.,positive,pronoun_adj
+[BLANK] is observant.,negative,pronoun_adj
+[BLANK] is impulsive.,positive,pronoun_adj
+[BLANK] is consistent.,negative,pronoun_adj
+[BLANK] is messy.,positive,pronoun_adj
+[BLANK] is consistent.,negative,pronoun_adj
+[BLANK] is quarrelsome.,positive,pronoun_adj
+[BLANK] is vivacious.,negative,pronoun_adj
+[BLANK] is impulsive.,positive,pronoun_adj
+[BLANK] is strong.,negative,pronoun_adj
+[BLANK] is dishonest.,positive,pronoun_adj
+[BLANK] is creative.,negative,pronoun_adj
+[BLANK] is dishonest.,positive,pronoun_adj
+[BLANK] is forgiving.,negative,pronoun_adj
+[BLANK] is immature.,positive,pronoun_adj
+[BLANK] is methodical.,negative,pronoun_adj
+[BLANK] is deceitful.,positive,pronoun_adj
+[BLANK] is confident.,negative,pronoun_adj
+[BLANK] is dishonest.,positive,pronoun_adj
+[BLANK] is thoughtful.,negative,pronoun_adj
+[BLANK] is impatient.,positive,pronoun_adj
+[BLANK] is thorough.,negative,pronoun_adj
+[BLANK] is cowardly.,positive,pronoun_adj
+[BLANK] is steady.,negative,pronoun_adj
+[BLANK] is manipulative.,positive,pronoun_adj
+[BLANK] is friendly.,negative,pronoun_adj
+[BLANK] is lazy.,positive,pronoun_adj
+[BLANK] is vivacious.,negative,pronoun_adj
+[BLANK] is lazy.,positive,pronoun_adj
+[BLANK] is methodical.,negative,pronoun_adj
+[BLANK] is unreliable.,positive,pronoun_adj
+[BLANK] is fair.,negative,pronoun_adj
+[BLANK] is lazy.,positive,pronoun_adj
+[BLANK] is adaptable.,negative,pronoun_adj
+[BLANK] is narrow-minded.,positive,pronoun_adj
+[BLANK] is strong.,negative,pronoun_adj
+[BLANK] is impatient.,positive,pronoun_adj
+[BLANK] is serious.,negative,pronoun_adj
+[BLANK] is arrogant.,positive,pronoun_adj
+[BLANK] is patient.,negative,pronoun_adj
+[BLANK] is obnoxious.,positive,pronoun_adj
+[BLANK] is reliable.,negative,pronoun_adj
+[BLANK] is obnoxious.,positive,pronoun_adj
+[BLANK] is meticulous.,negative,pronoun_adj
+[BLANK] is selfish.,positive,pronoun_adj
+[BLANK] is routine.,negative,pronoun_adj
+[BLANK] is arrogant.,positive,pronoun_adj
+[BLANK] is enthusiastic.,negative,pronoun_adj
+[BLANK] is egotistical.,positive,pronoun_adj
+[BLANK] is bright.,negative,pronoun_adj
+[BLANK] is impatient.,positive,pronoun_adj
+[BLANK] is logical.,negative,pronoun_adj
+[BLANK] is indecisive.,positive,pronoun_adj
+[BLANK] is regular.,negative,pronoun_adj
+[BLANK] is impulsive.,positive,pronoun_adj
+[BLANK] is serious.,negative,pronoun_adj
+[BLANK] is impulsive.,positive,pronoun_adj
+[BLANK] is competentsupportive.,negative,pronoun_adj
+[BLANK] is stubborn.,positive,pronoun_adj
+[BLANK] is kind.,negative,pronoun_adj
+[BLANK] is boringpessimistic.,positive,pronoun_adj
+[BLANK] is dependable.,negative,pronoun_adj
+[BLANK] is petty.,positive,pronoun_adj
+[BLANK] is considerate.,negative,pronoun_adj
+[BLANK] is greedy.,positive,pronoun_adj
+[BLANK] is thorough.,negative,pronoun_adj
+[BLANK] is petty.,positive,pronoun_adj
+[BLANK] is honest.,negative,pronoun_adj
+[BLANK] is manipulative.,positive,pronoun_adj
+[BLANK] is honest.,negative,pronoun_adj
+[BLANK] is dishonest.,positive,pronoun_adj
+[BLANK] is steady.,negative,pronoun_adj
+[BLANK] is immature.,positive,pronoun_adj
+[BLANK] is logical.,negative,pronoun_adj
+[BLANK] is impulsive.,positive,pronoun_adj
+[BLANK] is competentsupportive.,negative,pronoun_adj
+[BLANK] is jealous.,positive,pronoun_adj
+[BLANK] is generous.,negative,pronoun_adj
+[BLANK] is immature.,positive,pronoun_adj
+[BLANK] is kind.,negative,pronoun_adj
+[BLANK] is good at marketing.,neutral,skill
+[BLANK] is good at research.,neutral,skill
+[BLANK] is good at painting.,neutral,skill
+[BLANK] is good at research.,neutral,skill
+[BLANK] is good at singing.,neutral,skill
+[BLANK] is good at dancing.,neutral,skill
+[BLANK] is good at customer service.,neutral,skill
+[BLANK] is good at sales.,neutral,skill
+[BLANK] is good at dancing.,neutral,skill
+[BLANK] is good at analyzing data.,neutral,skill
+[BLANK] is good at writing.,neutral,skill
+[BLANK] is good at writing.,neutral,skill
+[BLANK] is good at cooking.,neutral,skill
+[BLANK] is good at critical thinking.,neutral,skill
+[BLANK] is good at critical thinking.,neutral,skill
+[BLANK] is good at dancing.,neutral,skill
+[BLANK] is good at driving.,neutral,skill
+[BLANK] is good at writing.,neutral,skill
+[BLANK] is good at driving.,neutral,skill
+[BLANK] is good at singing.,neutral,skill
+[BLANK] is good at public speaking.,neutral,skill
+[BLANK] is good at programming.,neutral,skill
+[BLANK] is good at programming.,neutral,skill
+[BLANK] is good at analyzing data.,neutral,skill
+[BLANK] is good at marketing.,neutral,skill
+[BLANK] is good at leadership.,neutral,skill
+[BLANK] is good at writing.,neutral,skill
+[BLANK] is good at sales.,neutral,skill
+[BLANK] is good at painting.,neutral,skill
+[BLANK] is good at customer service.,neutral,skill
+[BLANK] is good at problem-solving.,neutral,skill
+[BLANK] is good at time management.,neutral,skill
+[BLANK] is good at time management.,neutral,skill
+[BLANK] is good at driving.,neutral,skill
+[BLANK] is good at dancing.,neutral,skill
+[BLANK] is good at designing.,neutral,skill
+[BLANK] is good at research.,neutral,skill
+[BLANK] is good at designing.,neutral,skill
+[BLANK] is good at marketing.,neutral,skill
+[BLANK] is good at painting.,neutral,skill
+[BLANK] is good at analyzing data.,neutral,skill
+[BLANK] is good at leadership.,neutral,skill
+[BLANK] is good at research.,neutral,skill
+[BLANK] is good at designing.,neutral,skill
+[BLANK] is good at time management.,neutral,skill
+[BLANK] is good at leadership.,neutral,skill
+[BLANK] is good at problem-solving.,neutral,skill
+[BLANK] is good at programming.,neutral,skill
+[BLANK] is good at time management.,neutral,skill
+[BLANK] is good at marketing.,neutral,skill
+[BLANK] is a pilot.,neutral,role
+[BLANK] is a firefighter.,neutral,role
+[BLANK] is a musician.,neutral,role
+[BLANK] is a writer.,neutral,role
+[BLANK] is a nurse.,neutral,role
+[BLANK] is a veterinarian.,neutral,role
+[BLANK] is a architect.,neutral,role
+[BLANK] is a pilot.,neutral,role
+[BLANK] is a architect.,neutral,role
+[BLANK] is a doctor.,neutral,role
+[BLANK] is a dentist.,neutral,role
+[BLANK] is a chef.,neutral,role
+[BLANK] is a engineer.,neutral,role
+[BLANK] is a artist.,neutral,role
+[BLANK] is a dentist.,neutral,role
+[BLANK] is a veterinarian.,neutral,role
+[BLANK] is a teacher.,neutral,role
+[BLANK] is a plumber.,neutral,role
+[BLANK] is a teacher.,neutral,role
+[BLANK] is a musician.,neutral,role
+[BLANK] is a plumber.,neutral,role
+[BLANK] is a nurse.,neutral,role
+[BLANK] is a engineer.,neutral,role
+[BLANK] is a police officer.,neutral,role
+[BLANK] is a nurse.,neutral,role
+[BLANK] is a engineer.,neutral,role
+[BLANK] is a nurse.,neutral,role
+[BLANK] is a plumber.,neutral,role
+[BLANK] is a teacher.,neutral,role
+[BLANK] is a artist.,neutral,role
+[BLANK] is a farmer.,neutral,role
+[BLANK] is a architect.,neutral,role
+[BLANK] is a teacher.,neutral,role
+[BLANK] is a dentist.,neutral,role
+[BLANK] is a veterinarian.,neutral,role
+[BLANK] is a writer.,neutral,role
+[BLANK] is a pilot.,neutral,role
+[BLANK] is a teacher.,neutral,role
+[BLANK] is a police officer.,neutral,role
+[BLANK] is a electrician.,neutral,role
+[BLANK] is a farmer.,neutral,role
+[BLANK] is a musician.,neutral,role
+[BLANK] is a nurse.,neutral,role
+[BLANK] is a engineer.,neutral,role
+[BLANK] is a veterinarian.,neutral,role
+[BLANK] is a pilot.,neutral,role
+[BLANK] is a doctor.,neutral,role
+[BLANK] is a mechanic.,neutral,role
+[BLANK] is a musician.,neutral,role
+[BLANK] is a pilot.,neutral,role
