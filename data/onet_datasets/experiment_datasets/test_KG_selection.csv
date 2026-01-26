@@ -1,0 +1,541 @@
+Job_Code,Job_Title,Attribute_Name,Importance_Score,Trait_Type,Major_Group,Selection_Seed,Selection_Strategy,Experiment_ID
+11-9033.00,"Education Administrators, Postsecondary",Oral Comprehension,4.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Written Comprehension,4.12,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Oral Expression,4.12,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Written Expression,4.12,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Fluency of Ideas,3.75,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Originality,3.88,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Problem Sensitivity,4.12,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Deductive Reasoning,3.88,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Inductive Reasoning,4.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Information Ordering,3.75,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Category Flexibility,3.62,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Mathematical Reasoning,2.88,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Number Facility,2.88,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Memorization,2.75,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Speed of Closure,2.88,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Flexibility of Closure,3.12,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Perceptual Speed,2.62,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Spatial Orientation,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Visualization,2.62,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Selective Attention,3.38,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Time Sharing,2.75,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Arm-Hand Steadiness,1.12,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Manual Dexterity,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Finger Dexterity,1.62,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Control Precision,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Multilimb Coordination,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Response Orientation,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Rate Control,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Reaction Time,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Wrist-Finger Speed,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Speed of Limb Movement,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Static Strength,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Explosive Strength,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Dynamic Strength,1.25,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Trunk Strength,1.5,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Stamina,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Extent Flexibility,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Dynamic Flexibility,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Gross Body Coordination,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Gross Body Equilibrium,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Near Vision,3.75,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Far Vision,2.75,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Visual Color Discrimination,2.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Night Vision,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Peripheral Vision,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Depth Perception,1.12,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Glare Sensitivity,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Hearing Sensitivity,2.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Auditory Attention,2.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Sound Localization,1.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Speech Recognition,4.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Speech Clarity,4.0,Abilities,11,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Oral Comprehension,4.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Written Comprehension,4.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Oral Expression,4.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Written Expression,3.88,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Fluency of Ideas,3.12,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Originality,3.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Problem Sensitivity,3.88,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Deductive Reasoning,4.12,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Inductive Reasoning,3.88,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Information Ordering,4.12,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Category Flexibility,3.25,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Mathematical Reasoning,3.38,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Number Facility,3.12,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Memorization,2.62,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Speed of Closure,2.62,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Flexibility of Closure,3.12,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Perceptual Speed,2.88,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Spatial Orientation,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Visualization,2.25,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Selective Attention,3.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Time Sharing,2.25,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Arm-Hand Steadiness,1.38,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Manual Dexterity,1.38,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Finger Dexterity,1.88,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Control Precision,1.25,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Multilimb Coordination,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Response Orientation,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Rate Control,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Reaction Time,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Wrist-Finger Speed,1.75,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Speed of Limb Movement,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Static Strength,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Explosive Strength,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Dynamic Strength,1.38,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Trunk Strength,1.62,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Stamina,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Extent Flexibility,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Dynamic Flexibility,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Gross Body Coordination,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Gross Body Equilibrium,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Near Vision,3.88,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Far Vision,2.38,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Visual Color Discrimination,1.75,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Night Vision,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Peripheral Vision,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Depth Perception,1.38,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Glare Sensitivity,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Hearing Sensitivity,1.75,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Auditory Attention,1.88,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Sound Localization,1.0,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Speech Recognition,3.75,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Speech Clarity,3.75,Abilities,15,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Oral Comprehension,4.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Written Comprehension,3.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Oral Expression,4.62,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Written Expression,3.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Fluency of Ideas,3.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Originality,3.75,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Problem Sensitivity,4.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Deductive Reasoning,3.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Inductive Reasoning,4.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Information Ordering,3.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Category Flexibility,3.38,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Mathematical Reasoning,3.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Number Facility,2.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Memorization,2.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Speed of Closure,2.62,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Flexibility of Closure,3.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Perceptual Speed,2.62,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Spatial Orientation,1.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Visualization,2.62,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Selective Attention,3.12,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Time Sharing,3.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Arm-Hand Steadiness,1.62,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Manual Dexterity,1.5,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Finger Dexterity,1.75,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Control Precision,1.12,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Multilimb Coordination,1.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Response Orientation,1.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Rate Control,1.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Reaction Time,1.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Wrist-Finger Speed,1.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Speed of Limb Movement,1.38,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Static Strength,2.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Explosive Strength,1.38,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Dynamic Strength,1.38,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Trunk Strength,2.12,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Stamina,2.12,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Extent Flexibility,1.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Dynamic Flexibility,1.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Gross Body Coordination,1.88,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Gross Body Equilibrium,1.5,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Near Vision,3.75,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Far Vision,3.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Visual Color Discrimination,2.62,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Night Vision,1.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Peripheral Vision,1.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Depth Perception,1.5,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Glare Sensitivity,1.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Hearing Sensitivity,2.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Auditory Attention,2.75,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Sound Localization,1.12,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Speech Recognition,4.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Speech Clarity,4.0,Abilities,25,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Oral Comprehension,3.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Written Comprehension,3.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Oral Expression,3.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Written Expression,3.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Fluency of Ideas,2.75,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Originality,2.38,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Problem Sensitivity,3.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Deductive Reasoning,3.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Inductive Reasoning,3.12,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Information Ordering,3.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Category Flexibility,2.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Mathematical Reasoning,2.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Number Facility,2.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Memorization,2.12,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Speed of Closure,2.75,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Flexibility of Closure,3.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Perceptual Speed,3.38,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Spatial Orientation,2.62,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Visualization,3.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Selective Attention,3.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Time Sharing,2.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Arm-Hand Steadiness,3.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Manual Dexterity,3.75,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Finger Dexterity,3.12,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Control Precision,4.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Multilimb Coordination,3.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Response Orientation,2.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Rate Control,3.5,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Reaction Time,3.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Wrist-Finger Speed,2.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Speed of Limb Movement,1.75,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Static Strength,2.38,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Explosive Strength,1.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Dynamic Strength,1.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Trunk Strength,2.62,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Stamina,2.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Extent Flexibility,2.38,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Dynamic Flexibility,1.12,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Gross Body Coordination,1.75,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Gross Body Equilibrium,2.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Near Vision,3.5,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Far Vision,3.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Visual Color Discrimination,3.12,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Night Vision,2.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Peripheral Vision,2.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Depth Perception,3.62,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Glare Sensitivity,2.38,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Hearing Sensitivity,3.25,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Auditory Attention,3.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Sound Localization,2.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Speech Recognition,2.88,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Speech Clarity,3.0,Abilities,47,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Oral Comprehension,2.62,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Written Comprehension,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Oral Expression,2.5,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Written Expression,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Fluency of Ideas,2.5,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Originality,2.38,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Problem Sensitivity,2.88,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Deductive Reasoning,2.75,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Inductive Reasoning,2.38,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Information Ordering,3.12,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Category Flexibility,3.12,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Mathematical Reasoning,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Number Facility,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Memorization,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Speed of Closure,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Flexibility of Closure,2.5,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Perceptual Speed,2.62,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Spatial Orientation,1.25,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Visualization,3.12,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Selective Attention,2.75,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Time Sharing,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Arm-Hand Steadiness,4.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Manual Dexterity,4.12,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Finger Dexterity,4.12,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Control Precision,3.25,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Multilimb Coordination,3.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Response Orientation,1.88,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Rate Control,2.25,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Reaction Time,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Wrist-Finger Speed,2.5,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Speed of Limb Movement,1.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Static Strength,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Explosive Strength,1.12,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Dynamic Strength,1.5,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Trunk Strength,1.88,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Stamina,1.12,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Extent Flexibility,1.5,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Dynamic Flexibility,1.25,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Gross Body Coordination,1.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Gross Body Equilibrium,1.25,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Near Vision,3.75,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Far Vision,2.75,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Visual Color Discrimination,3.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Night Vision,1.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Peripheral Vision,1.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Depth Perception,2.62,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Glare Sensitivity,1.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Hearing Sensitivity,1.88,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Auditory Attention,2.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Sound Localization,1.0,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Speech Recognition,2.5,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Speech Clarity,2.38,Abilities,51,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Reading Comprehension,4.12,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Active Listening,4.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Writing,4.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Speaking,4.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Mathematics,2.88,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Science,1.5,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Critical Thinking,4.12,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Active Learning,3.88,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Learning Strategies,3.75,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Monitoring,4.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Social Perceptiveness,3.75,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Coordination,3.62,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Persuasion,3.62,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Negotiation,3.62,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Instructing,4.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Service Orientation,3.5,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Complex Problem Solving,3.88,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Operations Analysis,1.62,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Technology Design,1.62,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Equipment Selection,1.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Installation,1.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Programming,1.38,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Operations Monitoring,2.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Operation and Control,1.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Equipment Maintenance,1.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Troubleshooting,1.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Repairing,1.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Quality Control Analysis,1.38,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Judgment and Decision Making,3.88,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Systems Analysis,3.25,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Systems Evaluation,3.25,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Time Management,4.0,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Management of Financial Resources,3.12,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Management of Material Resources,2.88,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Management of Personnel Resources,3.75,Skills,11,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Reading Comprehension,3.88,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Active Listening,3.88,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Writing,3.75,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Speaking,3.88,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Mathematics,3.5,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Science,2.38,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Critical Thinking,4.0,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Active Learning,3.62,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Learning Strategies,2.88,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Monitoring,3.62,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Social Perceptiveness,3.12,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Coordination,3.38,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Persuasion,2.75,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Negotiation,2.5,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Instructing,3.0,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Service Orientation,2.75,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Complex Problem Solving,3.5,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Operations Analysis,2.75,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Technology Design,1.75,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Equipment Selection,1.88,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Installation,1.0,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Programming,3.25,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Operations Monitoring,2.12,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Operation and Control,1.75,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Equipment Maintenance,1.0,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Troubleshooting,1.62,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Repairing,1.0,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Quality Control Analysis,2.5,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Judgment and Decision Making,3.25,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Systems Analysis,3.25,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Systems Evaluation,3.12,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Time Management,3.38,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Management of Financial Resources,1.88,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Management of Material Resources,1.88,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Management of Personnel Resources,3.0,Skills,15,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Reading Comprehension,3.88,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Active Listening,4.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Writing,3.88,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Speaking,4.12,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Mathematics,2.75,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Science,2.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Critical Thinking,4.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Active Learning,3.75,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Learning Strategies,4.25,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Monitoring,4.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Social Perceptiveness,4.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Coordination,3.88,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Persuasion,3.12,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Negotiation,3.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Instructing,4.25,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Service Orientation,3.88,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Complex Problem Solving,3.12,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Operations Analysis,2.12,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Technology Design,1.88,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Equipment Selection,1.5,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Installation,1.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Programming,1.75,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Operations Monitoring,1.88,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Operation and Control,1.12,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Equipment Maintenance,1.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Troubleshooting,1.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Repairing,1.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Quality Control Analysis,1.75,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Judgment and Decision Making,3.75,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Systems Analysis,3.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Systems Evaluation,3.0,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Time Management,3.75,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Management of Financial Resources,1.12,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Management of Material Resources,1.75,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Management of Personnel Resources,2.62,Skills,25,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Reading Comprehension,2.75,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Active Listening,3.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Writing,2.38,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Speaking,3.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Mathematics,2.25,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Science,1.62,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Critical Thinking,3.25,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Active Learning,2.75,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Learning Strategies,2.25,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Monitoring,3.12,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Social Perceptiveness,2.62,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Coordination,3.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Persuasion,2.38,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Negotiation,2.25,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Instructing,2.75,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Service Orientation,2.38,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Complex Problem Solving,3.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Operations Analysis,1.88,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Technology Design,1.88,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Equipment Selection,3.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Installation,1.88,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Programming,1.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Operations Monitoring,4.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Operation and Control,3.88,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Equipment Maintenance,3.25,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Troubleshooting,3.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Repairing,2.88,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Quality Control Analysis,3.0,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Judgment and Decision Making,2.88,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Systems Analysis,2.25,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Systems Evaluation,2.12,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Time Management,2.88,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Management of Financial Resources,1.75,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Management of Material Resources,1.88,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Management of Personnel Resources,2.38,Skills,47,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Reading Comprehension,2.5,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Active Listening,2.62,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Writing,1.88,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Speaking,2.62,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Mathematics,2.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Science,1.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Critical Thinking,2.5,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Active Learning,2.38,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Learning Strategies,2.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Monitoring,2.62,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Social Perceptiveness,2.12,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Coordination,2.12,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Persuasion,1.88,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Negotiation,1.88,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Instructing,2.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Service Orientation,2.12,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Complex Problem Solving,2.62,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Operations Analysis,1.88,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Technology Design,1.38,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Equipment Selection,1.38,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Installation,1.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Programming,1.12,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Operations Monitoring,2.25,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Operation and Control,2.25,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Equipment Maintenance,1.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Troubleshooting,2.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Repairing,1.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Quality Control Analysis,2.25,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Judgment and Decision Making,2.88,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Systems Analysis,2.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Systems Evaluation,1.75,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Time Management,2.75,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Management of Financial Resources,1.5,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Management of Material Resources,1.88,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Management of Personnel Resources,2.0,Skills,51,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Innovation,1.58,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Achievement Orientation,2.28,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Intellectual Curiosity,2.2,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Tolerance for Ambiguity,1.6,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Initiative,2.03,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Adaptability,1.79,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Self-Confidence,2.05,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Perseverance,1.77,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Leadership Orientation,2.87,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Humility,0.5,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Sincerity,1.52,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Empathy,2.01,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Cooperation,2.3,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Optimism,1.56,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Social Orientation,2.33,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Cautiousness,1.38,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Attention to Detail,1.92,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Dependability,2.65,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Integrity,2.43,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Stress Tolerance,1.8,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+11-9033.00,"Education Administrators, Postsecondary",Self-Control,1.98,Work_Styles,11,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Innovation,1.2,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Achievement Orientation,1.92,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Intellectual Curiosity,2.12,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Tolerance for Ambiguity,1.2,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Initiative,1.35,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Adaptability,1.44,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Self-Confidence,1.18,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Perseverance,1.64,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Leadership Orientation,1.26,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Humility,0.58,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Sincerity,0.78,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Empathy,0.25,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Cooperation,1.57,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Optimism,0.22,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Social Orientation,0.68,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Cautiousness,2.39,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Attention to Detail,3.0,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Dependability,2.65,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Integrity,2.47,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Stress Tolerance,1.43,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+15-2051.02,Clinical Data Managers,Self-Control,1.19,Work_Styles,15,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Innovation,1.36,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Achievement Orientation,1.98,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Intellectual Curiosity,1.48,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Tolerance for Ambiguity,1.37,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Initiative,1.53,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Adaptability,2.05,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Self-Confidence,1.76,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Perseverance,2.12,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Leadership Orientation,1.67,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Humility,1.49,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Sincerity,2.31,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Empathy,2.54,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Cooperation,2.55,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Optimism,2.53,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Social Orientation,2.49,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Cautiousness,1.26,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Attention to Detail,1.81,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Dependability,2.65,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Integrity,2.51,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Stress Tolerance,2.06,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+25-2021.00,"Elementary School Teachers, Except Special Education",Self-Control,2.14,Work_Styles,25,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Innovation,-0.02,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Achievement Orientation,1.01,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Intellectual Curiosity,0.45,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Tolerance for Ambiguity,0.16,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Initiative,0.53,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Adaptability,0.89,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Self-Confidence,1.13,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Perseverance,1.7,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Leadership Orientation,-0.11,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Humility,-0.16,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Sincerity,0.06,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Empathy,-0.16,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Cooperation,0.51,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Optimism,0.3,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Social Orientation,-0.34,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Cautiousness,2.24,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Attention to Detail,2.05,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Dependability,2.36,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Integrity,1.29,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Stress Tolerance,1.52,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+47-5023.00,"Earth Drillers, Except Oil and Gas",Self-Control,1.25,Work_Styles,47,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Innovation,-0.08,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Achievement Orientation,0.66,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Intellectual Curiosity,-0.23,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Tolerance for Ambiguity,-0.84,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Initiative,-0.04,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Adaptability,-0.04,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Self-Confidence,0.37,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Perseverance,0.86,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Leadership Orientation,-0.63,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Humility,-0.28,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Sincerity,0.04,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Empathy,-0.13,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Cooperation,0.12,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Optimism,-0.07,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Social Orientation,-0.39,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Cautiousness,1.41,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Attention to Detail,2.67,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Dependability,2.11,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Integrity,0.49,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Stress Tolerance,0.33,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
+51-6051.00,"Sewers, Hand",Self-Control,0.41,Work_Styles,51,42,random_sample_per_major_group,EXP_20260126_202242
