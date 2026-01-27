@@ -13,9 +13,10 @@ print(f"Project root found at: {PROJECT_ROOT}")
 
 #--- LOAD CSV UTILITY FUNCTION ---
 import pandas as pd
-def load_csv(filepath):
+def load_csv(filepath,separator):
     return pd.read_csv(
         filepath,
+        sep=separator,
         encoding="utf-8",
         low_memory=False
     )
