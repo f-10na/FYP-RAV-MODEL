@@ -19,14 +19,10 @@ No files are modified prior to processing.
 
 ## Files Used  
 - Datafiles used :  
-    1. Occupation Data.txt: Occupation titles and codes  
-    2. Knowledge.txt  
-    3. Skills.txt: Skill elements with importance ratings  
-    4. Abilities.txt: Ability elements with importance ratings  
-    5. Work Activities.txt  
-    6. Work Styles.txt: Work Style elements with importance ratings
-    7. Skills to Work Activities.txt
-    8. Abilities to Work Activities.txt
+    1. Occupation Data.txt: Occupation titles and codes   
+    2. Skills.txt: Skill elements with importance ratings  
+    3. Abilities.txt: Ability elements with importance ratings  
+    4. Work Styles.txt: Work Style elements with importance ratings
 
 ## Identifier and Join Keys  
 Primary join key:
