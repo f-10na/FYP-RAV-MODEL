@@ -32,19 +32,17 @@ class KnowledgeGraph:
         Args:
             kg_file (str): Optional path to a file containing the KG data. If None, initializes an empty KG.
         """
-        pass  # Implementation goes here
+        self.G = None  # Will hold the NetworkX graph
+        self.kg_file = kg_file
 
-    #-- FUNCTION TO BUILD ONET KNOWLEDGE GRAPH --#
-    '''
-    forms the basis for building the knowledge graph from the O*NET dataset to be 
-    used as static authoritative source of information about jobs and their associated skills/abilities
-    '''
-
-    def build_KG(df):
+    def build_KG(self, df):
+        """
+        Forms the basis for building the knowledge graph from the O*NET dataset to be 
+        used as static authoritative source of information about jobs and their associated skills/abilities
+        """
         G = nx.Graph()
 
         # 1. ADD JOB NODES (Unique job metadata)
-        # Drop duplicates to ensure only process each job's metadata once
         job_metadata = df[['Job_Code', 'Job_Title', 'Major_Group']].drop_duplicates()
         for _, row in job_metadata.iterrows():
             G.add_node(row['Job_Code'], 
@@ -53,7 +51,6 @@ class KnowledgeGraph:
                     major_group=row['Major_Group'])
 
         # 2. ADD SKILL/ATTRIBUTE NODES
-        # get unique trait names
         skill_metadata = df[['Attribute_Name', 'Trait_Type']].drop_duplicates()
         for _, row in skill_metadata.iterrows():
             G.add_node(row['Attribute_Name'], 
@@ -61,29 +58,70 @@ class KnowledgeGraph:
                     category=row['Trait_Type'])
 
         # 3. ADD EDGES (Connecting Jobs to Skills with Weight)
-        # do this in one batch for performance
         for _, row in df.iterrows():
             G.add_edge(row['Job_Code'], 
                     row['Attribute_Name'], 
                     weight=float(row['Importance_Score']),
                     experiment_id=row['Experiment_ID'])
+        
+        self.G = G  # Store the graph in the instance
         return G
-    
 
-    def visualize_interactive_graph(G, filename="job_graph.html"):
+    def get_kg_traits_for_job(self, job_code):
+        """
+        Extract traits for a job in embedding-ready format.
+        
+        Returns list of dicts: [{'trait': str, 'importance': float, 'category': str}, ...]
+        """
+        if self.G is None:
+            raise ValueError("KG not built yet. Call build_KG() first.")
+        
+        kg_traits = []
+        
+        for neighbor in self.G.neighbors(job_code):
+            node_data = self.G.nodes[neighbor]
+            
+            if node_data.get('type') == 'attribute':
+                edge_data = self.G.edges[job_code, neighbor]
+                
+                kg_traits.append({
+                    'trait': neighbor,  # Attribute_Name
+                    'importance': edge_data['weight'],  # Importance_Score
+                    'category': node_data.get('category')  # Trait_Type
+                })
+        
+        return kg_traits
+
+    def get_all_kg_traits(self, job_codes):
+        """
+        Get traits for multiple jobs at once.
+        Returns dict: {job_code: [trait_dicts]}
+        """
+        all_traits = {}
+        for job_code in job_codes:
+            all_traits[job_code] = self.get_kg_traits_for_job(job_code)
+        return all_traits
+    
+    def visualize_interactive_graph(self, filename="job_graph.html"):
+        """
+        Create an interactive visualization of the graph.
+        """
+        if self.G is None:
+            raise ValueError("KG not built yet. Call build_KG() first.")
+        
         # Create a pyvis network
         net = Network(height="750px", width="100%", notebook=True, bgcolor="#222222", font_color="white")
         
         # Load the NetworkX graph into pyvis
-        net.from_nx(G)
+        net.from_nx(self.G)
         
         # Customizing the look based on your attributes
         for node in net.nodes:
-            if node['type'] == 'job':
-                node['color'] = '#3da4ff' # Blue for Jobs
+            if node.get('type') == 'job':
+                node['color'] = '#3da4ff'  # Blue for Jobs
                 node['size'] = 25
             else:
-                node['color'] = '#ffa500' # Orange for Skills/Abilities
+                node['color'] = '#ffa500'  # Orange for Skills/Abilities
                 node['size'] = 15
                 
         # Use physics so the nodes don't overlap
