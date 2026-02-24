@@ -202,12 +202,19 @@ class EmbeddingModel:
         best_score = similarities[best_idx]
         best_kg_trait = kg_metadata[best_idx]
         
+        # Get top 5 matches
+        top_5_indices = np.argsort(similarities)[-5:][::-1]  # Top 5, descending
+        
         return {
             'llm_trait': llm_trait,
             'best_kg_match': best_kg_trait['trait'],
             'similarity_score': round(best_score, 4),
             'kg_importance': best_kg_trait['importance'],
             'above_threshold': best_score >= self.similarity_threshold,
+            'top_5_scores': [round(similarities[i], 4) for i in top_5_indices],
+            'top_5_traits': [kg_metadata[i]['trait'] for i in top_5_indices],
+            #include all scores if 10 or fewer KG traits for transparency
+            #good way to see if kg had adequate information on job to fairly evaluate llm trait alignment
             'all_scores': [round(s, 4) for s in similarities] if len(similarities) <= 10 else None
         }
     
@@ -310,4 +317,3 @@ class EmbeddingModel:
             print(f"Cache file not found: {filepath}")
         except Exception as e:
             print(f"Error loading cache: {e}")
-
