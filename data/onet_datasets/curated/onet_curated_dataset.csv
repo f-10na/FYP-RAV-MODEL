@@ -1,4 +1,4 @@
-Job_Code,Job_Title,Attribute_Name,Importance_Score,Trait_Type
+job_code,job_title,attribute_name,importance_score,trait_type
 11-1011.00,Chief Executives,Oral Comprehension,4.62,Abilities
 11-1011.00,Chief Executives,Written Comprehension,4.25,Abilities
 11-1011.00,Chief Executives,Oral Expression,4.5,Abilities
