@@ -246,10 +246,8 @@ class EmbeddingModel:
     def get_alignment_summary(self, alignment_results: List[Dict]) -> Dict[str, any]:
         """
         Generate summary statistics from alignment results.
-        
         Args:
-            alignment_results: Output from align_all_traits()
-            
+            alignment_results: Output from align_all_traits() 
         Returns:
             Summary statistics
         """

@@ -38,34 +38,92 @@ class KnowledgeGraph:
     def build_KG(self, df):
         """
         Forms the basis for building the knowledge graph from the O*NET dataset to be 
-        used as static authoritative source of information about jobs and their associated skills/abilities
+        used as static authoritative source of information about jobs and their associated 
+        skills/abilities. Normalises weights before construction.
         """
+        # STANDARDISE COLUMN CASING
+        df = df.copy()
+        df.columns = df.columns.str.lower()
+
+        # NORMALISE BEFORE CONSTRUCTION
+        df = self.normalise_weights(df)
+
         G = nx.Graph()
 
-        # 1. ADD JOB NODES (Unique job metadata)
-        job_metadata = df[['Job_Code', 'Job_Title', 'Major_Group']].drop_duplicates()
+        # 1. ADD JOB NODES
+        job_metadata = df[['job_code', 'job_title', 'major_group']].drop_duplicates()
         for _, row in job_metadata.iterrows():
-            G.add_node(row['Job_Code'], 
-                    name=row['Job_Title'], 
+            G.add_node(row['job_code'], 
+                    name=row['job_title'], 
                     type='job', 
-                    major_group=row['Major_Group'])
+                    major_group=row['major_group'])
 
-        # 2. ADD SKILL/ATTRIBUTE NODES
-        skill_metadata = df[['Attribute_Name', 'Trait_Type']].drop_duplicates()
-        for _, row in skill_metadata.iterrows():
-            G.add_node(row['Attribute_Name'], 
+        # 2. ADD TRAIT NODES
+        trait_metadata = df[['attribute_name', 'trait_type']].drop_duplicates()
+        for _, row in trait_metadata.iterrows():
+            G.add_node(row['attribute_name'], 
                     type='attribute', 
-                    category=row['Trait_Type'])
+                    category=row['trait_type'])
 
-        # 3. ADD EDGES (Connecting Jobs to Skills with Weight)
+        # 3. ADD EDGES WITH NORMALISED WEIGHTS
         for _, row in df.iterrows():
-            G.add_edge(row['Job_Code'], 
-                    row['Attribute_Name'], 
-                    weight=float(row['Importance_Score']),
-                    experiment_id=row['Experiment_ID'])
-        
-        self.G = G  # Store the graph in the instance
+            G.add_edge(row['job_code'], 
+                    row['attribute_name'], 
+                    weight=float(row['importance_score']),
+                    experiment_id=row['experiment_id'])
+
+        self.G = G
         return G
+    
+    #----- normalise importnace scores for traits -----
+    def normalise_weights(self, df):
+        """
+        Normalises importance scores before KG construction:
+        1. Validates trait types
+        2. Drops negative WI (Work Styles Impact) scores
+        3. Rescales each scale type to 0-1
+        4. Per-occupation min-max normalisation across all traits
+        """
+        VALID_trait_typeS = {'Skills', 'Abilities', 'Work_Styles'}
+
+        df = df.copy()
+
+        # 1. VALIDATE TRAIT TYPES
+        unknown = df[~df['trait_type'].isin(VALID_trait_typeS)]
+        if not unknown.empty:
+            raise ValueError(f"Unknown trait_types found: {unknown['trait_type'].unique()}")
+
+        # 2. DROP NEGATIVE WORK STYLES IMPACT SCORES
+        negative_mask = (df['trait_type'] == 'Work_Styles') & (df['importance_score'] < 0)
+        dropped = negative_mask.sum()
+        df = df[~negative_mask].copy()
+        if dropped > 0:
+            print(f"[normalise_weights] Dropped {dropped} negative Work_Styles edges")
+
+        # 3. RESCALE TO 0-1 PER SCALE TYPE
+        def rescale(row):
+            if row['trait_type'] == 'Work_Styles':  # WI: -3 to 3
+                return (row['importance_score'] + 3) / 6
+            else:  # IM: 1-5 (Skills, Abilities)
+                return (row['importance_score'] - 1) / 4
+
+        df['importance_score'] = df.apply(rescale, axis=1)
+
+        # 4. PER-OCCUPATION MIN-MAX NORMALISATION
+        def minmax_per_job(group):
+            min_score = group['importance_score'].min()
+            max_score = group['importance_score'].max()
+            if max_score - min_score == 0:  # flat scores edge case
+                group['importance_score'] = 1.0
+            else:
+                group['importance_score'] = (
+                    (group['importance_score'] - min_score) / (max_score - min_score)
+                )
+            return group
+
+        df = df.groupby('job_code', group_keys=False).apply(minmax_per_job)
+
+        return df
 
     def get_kg_traits_for_job(self, job_code):
         """
@@ -87,7 +145,7 @@ class KnowledgeGraph:
                 kg_traits.append({
                     'trait': neighbor,  # Attribute_Name
                     'importance': edge_data['weight'],  # Importance_Score
-                    'category': node_data.get('category')  # Trait_Type
+                    'category': node_data.get('category')  # trait_type
                 })
         
         return kg_traits
