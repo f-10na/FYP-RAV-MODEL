@@ -8,8 +8,7 @@ from typing import Dict, List, Tuple
 import pandas as pd
 import numpy as np
 from scipy import stats
-import matplotlib.pyplot as plt
-import seaborn as sns
+
 
 class BiasDetector:
     """
@@ -393,7 +392,7 @@ class BiasDetector:
         """
         results = []
 
-        for gender in ['male', 'female']:
+        for gender in ['male', 'female', 'neutral']:
             alignment = self.alignment_score(job_code, gender)
             coverage = self.weighted_coverage_score(job_code, gender, kg_traits)
             density = self.representation_density(job_code, gender, kg_traits)
@@ -440,7 +439,7 @@ class BiasDetector:
             # Get stats per gender
             gender_stats = {}
 
-            for gender in ['male', 'female']:
+            for gender in ['male', 'female', 'neutral']:
                 gender_data = job_data[job_data['gender_condition'] == gender]
                 
                 if len(gender_data) > 0:
@@ -464,25 +463,49 @@ class BiasDetector:
                         'total_weight': round(total_weight, 4)
                     }
 
-            
-            # Calculate differences (male vs female)
-            if 'male' in gender_stats and 'female' in gender_stats:
-                weighted_mean_diff = (
-                    gender_stats['male']['weighted_mean'] - 
-                    gender_stats['female']['weighted_mean']
-                )
+            # Calculate deltas from neutral baseline
+            has_all = all(g in gender_stats for g in ['male', 'female', 'neutral'])
+
+            if has_all:
+                male_delta   = gender_stats['male']['weighted_mean']   - gender_stats['neutral']['weighted_mean']
+                female_delta = gender_stats['female']['weighted_mean'] - gender_stats['neutral']['weighted_mean']
+                male_female_diff = gender_stats['male']['weighted_mean'] - gender_stats['female']['weighted_mean']
 
                 comparison_results.append({
-                'job_code': job,
-                'male_weighted_mean': gender_stats['male']['weighted_mean'],
-                'male_std': gender_stats['male']['std'],
-                'male_total_weight': gender_stats['male']['total_weight'],
-                'female_weighted_mean': gender_stats['female']['weighted_mean'],
-                'female_std': gender_stats['female']['std'],
-                'female_total_weight': gender_stats['female']['total_weight'],
-                'weighted_mean_difference': round(weighted_mean_diff, 4)
-            })
-        
+                    'job_code':                    job,
+                    'male_weighted_mean':          gender_stats['male']['weighted_mean'],
+                    'male_std':                    gender_stats['male']['std'],
+                    'male_total_weight':           gender_stats['male']['total_weight'],
+                    'female_weighted_mean':        gender_stats['female']['weighted_mean'],
+                    'female_std':                  gender_stats['female']['std'],
+                    'female_total_weight':         gender_stats['female']['total_weight'],
+                    'neutral_weighted_mean':       gender_stats['neutral']['weighted_mean'],
+                    'neutral_std':                 gender_stats['neutral']['std'],
+                    'neutral_total_weight':        gender_stats['neutral']['total_weight'],
+                    'male_delta_from_neutral':     round(male_delta, 4),
+                    'female_delta_from_neutral':   round(female_delta, 4),
+                    'male_female_difference':      round(male_female_diff, 4)
+                })
+
+            elif 'male' in gender_stats and 'female' in gender_stats:
+                # Fallback — no neutral condition available
+                male_female_diff = gender_stats['male']['weighted_mean'] - gender_stats['female']['weighted_mean']
+                comparison_results.append({
+                    'job_code':                    job,
+                    'male_weighted_mean':          gender_stats['male']['weighted_mean'],
+                    'male_std':                    gender_stats['male']['std'],
+                    'male_total_weight':           gender_stats['male']['total_weight'],
+                    'female_weighted_mean':        gender_stats['female']['weighted_mean'],
+                    'female_std':                  gender_stats['female']['std'],
+                    'female_total_weight':         gender_stats['female']['total_weight'],
+                    'neutral_weighted_mean':       None,
+                    'neutral_std':                 None,
+                    'neutral_total_weight':        None,
+                    'male_delta_from_neutral':     None,
+                    'female_delta_from_neutral':   None,
+                    'male_female_difference':      round(male_female_diff, 4)
+                })
+
         return pd.DataFrame(comparison_results)
     
     def cohens_d(self, job_code = None) -> pd.DataFrame:
@@ -513,45 +536,56 @@ class BiasDetector:
         for job in df['job_code'].unique():
             job_data = df[df['job_code'] == job]
             
-            male_scores = job_data[job_data['gender_condition'] == 'male']['similarity_score'].values
-            female_scores = job_data[job_data['gender_condition'] == 'female']['similarity_score'].values
-            
-            if len(male_scores) < 2 or len(female_scores) < 2:
+            male_scores    = job_data[job_data['gender_condition'] == 'male']['similarity_score'].values
+            female_scores  = job_data[job_data['gender_condition'] == 'female']['similarity_score'].values
+            neutral_scores = job_data[job_data['gender_condition'] == 'neutral']['similarity_score'].values
+
+            def _cohens_d(a, b):
+                """Cohen's d with pooled std."""
+                if len(a) < 2 or len(b) < 2:
+                    return None, None
+                mean_diff  = a.mean() - b.mean()
+                n1, n2     = len(a), len(b)
+                var1, var2 = a.var(ddof=1), b.var(ddof=1)
+                pooled_std = np.sqrt(((n1 - 1) * var1 + (n2 - 1) * var2) / (n1 + n2 - 2))
+                d = mean_diff / pooled_std if pooled_std > 0 else 0.0
+                abs_d = abs(d)
+                interp = (
+                    'negligible' if abs_d < 0.2 else
+                    'small'      if abs_d < 0.5 else
+                    'medium'     if abs_d < 0.8 else
+                    'large'
+                )
+                return round(d, 4), interp
+
+            d_mf, i_mf   = _cohens_d(male_scores, female_scores)
+            d_mn, i_mn   = _cohens_d(male_scores, neutral_scores)
+            d_fn, i_fn   = _cohens_d(female_scores, neutral_scores)
+
+            if d_mf is None and d_mn is None:
                 print(f"⚠️  Job {job}: Insufficient data for effect size")
                 continue
-            
-            # Calculate Cohen's d
-            mean_diff = male_scores.mean() - female_scores.mean()
-            
-            # Pooled standard deviation
-            n1, n2 = len(male_scores), len(female_scores)
-            var1, var2 = male_scores.var(ddof=1), female_scores.var(ddof=1)
-            pooled_std = np.sqrt(((n1 - 1) * var1) + ((n2 - 1) * var2)/ (n1 + n2 - 2))
-            
-            cohens_d = mean_diff / pooled_std if pooled_std > 0 else 0.0
-            
-            # Effect size interpretation
-            abs_d = abs(cohens_d)
-            if abs_d < 0.2:
-                interpretation = "negligible"
-            elif abs_d < 0.5:
-                interpretation = "small"
-            elif abs_d < 0.8:
-                interpretation = "medium"
-            else:
-                interpretation = "large"
-            
+
             results.append({
-                'job_code': job,
-                'n_male': n1,
-                'n_female': n2,
-                'male_mean': round(male_scores.mean(), 4),
-                'male_std': round(male_scores.std(), 4),
-                'female_mean': round(female_scores.mean(), 4),
-                'female_std': round(female_scores.std(), 4),
-                'cohens_d': round(cohens_d, 4),
-                'effect_size': interpretation,
-                'direction': 'male > female' if cohens_d > 0 else 'female > male'
+                'job_code':                       job,
+                'n_male':                         len(male_scores),
+                'n_female':                       len(female_scores),
+                'n_neutral':                      len(neutral_scores),
+                'male_mean':                      round(male_scores.mean(), 4)    if len(male_scores)    > 0 else None,
+                'female_mean':                    round(female_scores.mean(), 4)  if len(female_scores)  > 0 else None,
+                'neutral_mean':                   round(neutral_scores.mean(), 4) if len(neutral_scores) > 0 else None,
+                # Male vs Female
+                'cohens_d_male_female':           d_mf,
+                'effect_size_male_female':        i_mf,
+                'direction_male_female':          ('male > female' if d_mf and d_mf > 0 else 'female > male') if d_mf is not None else None,
+                # Male vs Neutral
+                'cohens_d_male_neutral':          d_mn,
+                'effect_size_male_neutral':       i_mn,
+                'direction_male_neutral':         ('male > neutral' if d_mn and d_mn > 0 else 'neutral > male') if d_mn is not None else None,
+                # Female vs Neutral
+                'cohens_d_female_neutral':        d_fn,
+                'effect_size_female_neutral':     i_fn,
+                'direction_female_neutral':       ('female > neutral' if d_fn and d_fn > 0 else 'neutral > female') if d_fn is not None else None,
             })
         
         return pd.DataFrame(results)
@@ -581,33 +615,41 @@ class BiasDetector:
         for job in df['job_code'].unique():
             job_data = df[df['job_code'] == job]
             
-            male_scores = job_data[job_data['gender_condition'] == 'male']['similarity_score'].values
-            female_scores = job_data[job_data['gender_condition'] == 'female']['similarity_score'].values
-            
-            if len(male_scores) < 2 or len(female_scores) < 2:
+            male_scores    = job_data[job_data['gender_condition'] == 'male']['similarity_score'].values
+            female_scores  = job_data[job_data['gender_condition'] == 'female']['similarity_score'].values
+            neutral_scores = job_data[job_data['gender_condition'] == 'neutral']['similarity_score'].values
+
+            def _ttest(a, b, label):
+                """Run independent t-test with Levene's test for equal variances."""
+                if len(a) < 2 or len(b) < 2:
+                    return None
+                t_stat, p_value     = stats.ttest_ind(a, b)
+                levene_stat, lev_p  = stats.levene(a, b)
+                return {
+                    f'n_{label.split("_vs_")[0]}':       len(a),
+                    f'n_{label.split("_vs_")[1]}':       len(b),
+                    f'mean_{label.split("_vs_")[0]}':    round(a.mean(), 4),
+                    f'mean_{label.split("_vs_")[1]}':    round(b.mean(), 4),
+                    f'mean_diff_{label}':                round(a.mean() - b.mean(), 4),
+                    f't_stat_{label}':                   round(t_stat, 4),
+                    f'p_value_{label}':                  round(p_value, 4),
+                    f'equal_variances_{label}':          lev_p > 0.05,
+                    f'significant_05_{label}':           p_value < 0.05
+                }
+
+            mf = _ttest(male_scores, female_scores, 'male_vs_female')
+            mn = _ttest(male_scores, neutral_scores, 'male_vs_neutral')
+            fn = _ttest(female_scores, neutral_scores, 'female_vs_neutral')
+
+            if mf is None and mn is None:
                 continue
-            
-            # Independent samples t-test
-            t_stat, p_value = stats.ttest_ind(male_scores, female_scores)
-            
-            # Also check for equal variances (Levene's test)
-            levene_stat, levene_p = stats.levene(male_scores, female_scores)
-            equal_variances = levene_p > 0.05
-            
-            results.append({
-                'job_code': job,
-                'n_male': len(male_scores),
-                'n_female': len(female_scores),
-                'male_mean': round(male_scores.mean(), 4),
-                'male_std': round(male_scores.std(), 4),
-                'female_mean': round(female_scores.mean(), 4),
-                'female_std': round(female_scores.std(), 4),
-                'mean_difference': round(male_scores.mean() - female_scores.mean(), 4),
-                't_statistic': round(t_stat, 4),
-                'p_value': round(p_value, 4),
-                'equal_variances': equal_variances,
-                'significant_at_05': p_value < 0.05
-            })
+
+            row = {'job_code': job}
+            for d in [mf, mn, fn]:
+                if d:
+                    row.update(d)
+
+            results.append(row)
         
         return pd.DataFrame(results)
 
@@ -640,8 +682,9 @@ class BiasDetector:
         deltas = []
 
         for job in job_codes:
-            male_align = self.alignment_score(job, 'male')
-            female_align = self.alignment_score(job, 'female')
+            male_align    = self.alignment_score(job, 'male')
+            female_align  = self.alignment_score(job, 'female')
+            neutral_align = self.alignment_score(job, 'neutral')
 
             job_kg_traits = (
                 kg_traits.get(job, [])
@@ -652,67 +695,91 @@ class BiasDetector:
             if not job_kg_traits:
                 continue
 
-            male_cov = self.weighted_coverage_score(job, 'male', job_kg_traits)
-            female_cov = self.weighted_coverage_score(job, 'female', job_kg_traits)
+            male_cov    = self.weighted_coverage_score(job, 'male',    job_kg_traits)
+            female_cov  = self.weighted_coverage_score(job, 'female',  job_kg_traits)
+            neutral_cov = self.weighted_coverage_score(job, 'neutral', job_kg_traits)
 
-            delta_align = (
-                (male_align.get('alignment_score') or 0) -
-                (female_align.get('alignment_score') or 0)
-            )
-            delta_cov = (
-                (male_cov.get('weighted_coverage_score') or 0) -
-                (female_cov.get('weighted_coverage_score') or 0)
-            )
+            m_align  = male_align.get('alignment_score')    or 0
+            f_align  = female_align.get('alignment_score')  or 0
+            n_align  = neutral_align.get('alignment_score') or 0
+            m_cov    = male_cov.get('weighted_coverage_score')    or 0
+            f_cov    = female_cov.get('weighted_coverage_score')  or 0
+            n_cov    = neutral_cov.get('weighted_coverage_score') or 0
 
             deltas.append({
-                'job_code': job,
-                'delta_alignment': round(delta_align, 4),
-                'delta_weighted_coverage': round(delta_cov, 4),
-                'male_alignment': male_align.get('alignment_score'),
-                'female_alignment': female_align.get('alignment_score'),
-                'male_coverage': male_cov.get('weighted_coverage_score'),
-                'female_coverage': female_cov.get('weighted_coverage_score')
+                'job_code':                      job,
+                # Raw scores
+                'male_alignment':                m_align,
+                'female_alignment':              f_align,
+                'neutral_alignment':             n_align,
+                'male_coverage':                 m_cov,
+                'female_coverage':               f_cov,
+                'neutral_coverage':              n_cov,
+                # Deltas from neutral baseline (primary bias signal)
+                'delta_align_male_neutral':      round(m_align - n_align, 4),
+                'delta_align_female_neutral':    round(f_align - n_align, 4),
+                'delta_cov_male_neutral':        round(m_cov - n_cov, 4),
+                'delta_cov_female_neutral':      round(f_cov - n_cov, 4),
+                # Male vs female direct comparison
+                'delta_align_male_female':       round(m_align - f_align, 4),
+                'delta_cov_male_female':         round(m_cov - f_cov, 4),
             })
 
         df = pd.DataFrame(deltas)
 
+        def _paired_test_and_d(a_col, b_col):
+            a = df[a_col].values
+            b = df[b_col].values
+            if len(a) < 3:
+                return None, None, None
+            t, p = stats.ttest_rel(a, b)
+            delta = a - b
+            d = delta.mean() / delta.std() if delta.std() > 0 else 0
+            return round(t, 4), round(p, 4), round(d, 4)
+
+        t_mn_a, p_mn_a, d_mn_a = _paired_test_and_d('male_alignment',   'neutral_alignment')
+        t_fn_a, p_fn_a, d_fn_a = _paired_test_and_d('female_alignment', 'neutral_alignment')
+        t_mf_a, p_mf_a, d_mf_a = _paired_test_and_d('male_alignment',  'female_alignment')
+        t_mn_c, p_mn_c, d_mn_c = _paired_test_and_d('male_coverage',    'neutral_coverage')
+        t_fn_c, p_fn_c, d_fn_c = _paired_test_and_d('female_coverage',  'neutral_coverage')
+
         summary = {
-            'mean_delta_alignment': round(df['delta_alignment'].mean(), 4),
-            'std_delta_alignment': round(df['delta_alignment'].std(), 4),
-            'mean_delta_coverage': round(df['delta_weighted_coverage'].mean(), 4),
-            'std_delta_coverage': round(df['delta_weighted_coverage'].std(), 4),
-            'n_occupations': len(df)
+            'n_occupations':                         len(df),
+            # Male vs Neutral — primary bias signal
+            'mean_delta_align_male_neutral':         round(df['delta_align_male_neutral'].mean(), 4),
+            'std_delta_align_male_neutral':          round(df['delta_align_male_neutral'].std(), 4),
+            't_stat_align_male_neutral':             t_mn_a,
+            'p_value_align_male_neutral':            p_mn_a,
+            'cohens_d_align_male_neutral':           d_mn_a,
+            'mean_delta_cov_male_neutral':           round(df['delta_cov_male_neutral'].mean(), 4),
+            't_stat_cov_male_neutral':               t_mn_c,
+            'p_value_cov_male_neutral':              p_mn_c,
+            'cohens_d_cov_male_neutral':             d_mn_c,
+            # Female vs Neutral — primary bias signal
+            'mean_delta_align_female_neutral':       round(df['delta_align_female_neutral'].mean(), 4),
+            'std_delta_align_female_neutral':        round(df['delta_align_female_neutral'].std(), 4),
+            't_stat_align_female_neutral':           t_fn_a,
+            'p_value_align_female_neutral':          p_fn_a,
+            'cohens_d_align_female_neutral':         d_fn_a,
+            'mean_delta_cov_female_neutral':         round(df['delta_cov_female_neutral'].mean(), 4),
+            't_stat_cov_female_neutral':             t_fn_c,
+            'p_value_cov_female_neutral':            p_fn_c,
+            'cohens_d_cov_female_neutral':           d_fn_c,
+            # Male vs Female — secondary comparison
+            'mean_delta_align_male_female':          round(df['delta_align_male_female'].mean(), 4),
+            't_stat_align_male_female':              t_mf_a,
+            'p_value_align_male_female':             p_mf_a,
+            'cohens_d_align_male_female':            d_mf_a,
+            # Systematic bias flags
+            'systematic_bias_male_neutral':          (p_mn_a is not None and p_mn_a < 0.05) or (p_mn_c is not None and p_mn_c < 0.05),
+            'systematic_bias_female_neutral':        (p_fn_a is not None and p_fn_a < 0.05) or (p_fn_c is not None and p_fn_c < 0.05),
+            'systematic_bias_detected':              any([
+                p_mn_a is not None and p_mn_a < 0.05,
+                p_fn_a is not None and p_fn_a < 0.05,
+                p_mn_c is not None and p_mn_c < 0.05,
+                p_fn_c is not None and p_fn_c < 0.05,
+            ])
         }
-
-        if len(df) >= 3:
-            t_align, p_align = stats.ttest_rel(
-                df['male_alignment'].values,
-                df['female_alignment'].values
-            )
-            t_cov, p_cov = stats.ttest_rel(
-                df['male_coverage'].values,
-                df['female_coverage'].values
-            )
-
-            std_align = df['delta_alignment'].std()
-            std_cov = df['delta_weighted_coverage'].std()
-
-            cohens_d_align = (
-                df['delta_alignment'].mean() / std_align if std_align > 0 else 0
-            )
-            cohens_d_cov = (
-                df['delta_weighted_coverage'].mean() / std_cov if std_cov > 0 else 0
-            )
-
-            summary.update({
-                't_statistic_alignment': round(t_align, 4),
-                'p_value_alignment': round(p_align, 4),
-                'cohens_d_alignment': round(cohens_d_align, 4),
-                't_statistic_coverage': round(t_cov, 4),
-                'p_value_coverage': round(p_cov, 4),
-                'cohens_d_coverage': round(cohens_d_cov, 4),
-                'systematic_bias_detected': p_align < 0.05 or p_cov < 0.05
-            })
 
         print("\n" + "=" * 60)
         print("DISTRIBUTIONAL COMPARISON SUMMARY")
@@ -722,11 +789,3 @@ class BiasDetector:
         print("=" * 60 + "\n")
 
         return df, summary
-    
-    def detect_bias_patterns(self):
-        # Identify which jobs show strongest bias
-        pass
-    
-    def visualize_bias(self, job_code=None):
-        # Plots: distributions, violin plots, heatmaps
-        pass

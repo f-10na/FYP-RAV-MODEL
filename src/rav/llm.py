@@ -40,6 +40,7 @@ class LLM:
         n: int = None,
         experiment_id: str = None,
         job_code: str = None,
+        job_title: str = None,
         template_type: str = None,
         gender_condition: str = None
         )-> dict:
@@ -180,6 +181,7 @@ class LLM:
             return {
                 'response_id': response_id,
                 'job_code': job_code,
+                'job_title': job_title,
                 'template_type': template_type,
                 'gender_condition': gender_condition,
                 'experiment_id': experiment_id,
@@ -210,6 +212,7 @@ class LLM:
                 return {
                     'response_id': response_id,
                     'job_code': job_code,
+                    'job_title': job_title,
                     'template_type': template_type,
                     'gender_condition': gender_condition,
                     'experiment_id': experiment_id,
@@ -221,6 +224,7 @@ class LLM:
             return {
                 'response_id': response_id,
                 'job_code': job_code,
+                'job_title': job_title,
                 'template_type': template_type,
                 'gender_condition': gender_condition,
                 'experiment_id': experiment_id,
@@ -235,6 +239,7 @@ class LLM:
             return {
                 'response_id': response_id,
                 'job_code': job_code,
+                'job_title': job_title,
                 'template_type': template_type,
                 'gender_condition': gender_condition,
                 'experiment_id': experiment_id,

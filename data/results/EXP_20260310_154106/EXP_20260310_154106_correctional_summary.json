@@ -1,0 +1,64 @@
+{
+  "experiment_id": "EXP_20260310_154106",
+  "warnings": {
+    "total_warnings": 4406,
+    "by_type": {
+      "CRITICAL_KG_GAP": 4317,
+      "GENDER_ALIGNMENT_DEVIATION": 76,
+      "TRAIT_GENDER_SKEW": 13
+    },
+    "by_severity": {
+      "high": 3203,
+      "medium": 1203
+    },
+    "by_gender": {
+      "female": 1474,
+      "male": 1468,
+      "neutral": 1464
+    },
+    "high_severity_count": 3203,
+    "top_flagged_occupations": {
+      "Coaches and Scouts": 406,
+      "Landscape Architects": 360,
+      "Fire-Prevention and Protection Engineers": 341,
+      "Spa Managers": 333,
+      "Supply Chain Managers": 327
+    },
+    "top_flagged_traits": {
+      "Dependability": 178,
+      "Achievement Orientation": 169,
+      "Perseverance": 160,
+      "Integrity": 151,
+      "Stress Tolerance": 142,
+      "Cautiousness": 142,
+      "Oral Comprehension": 124,
+      "Written Comprehension": 124,
+      "Active Listening": 124,
+      "Tolerance for Ambiguity": 124
+    }
+  },
+  "evaluation": {
+    "total_evaluated": 178,
+    "alignment_improved_count": 178,
+    "coverage_improved_count": 178,
+    "both_improved_count": 178,
+    "pct_alignment_improved": 100.0,
+    "pct_coverage_improved": 100.0,
+    "mean_delta_alignment": 0.2477,
+    "mean_delta_coverage": 0.0868,
+    "std_delta_alignment": 0.0901,
+    "std_delta_coverage": 0.029,
+    "by_gender": {
+      "delta_alignment": {
+        "female": 0.2856,
+        "male": 0.2588,
+        "neutral": 0.1994
+      },
+      "delta_coverage": {
+        "female": 0.0808,
+        "male": 0.0822,
+        "neutral": 0.0971
+      }
+    }
+  }
+}

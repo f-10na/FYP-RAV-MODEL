@@ -1,0 +1,21 @@
+job_code,n_male,n_female,n_neutral,male_mean,female_mean,neutral_mean,cohens_d_male_female,effect_size_male_female,direction_male_female,cohens_d_male_neutral,effect_size_male_neutral,direction_male_neutral,cohens_d_female_neutral,effect_size_female_neutral,direction_female_neutral
+11-1021.00,15,15,15,0.5582,0.5769,0.6306,-0.1153,negligible,female > male,-0.4239,small,neutral > male,-0.3299,small,neutral > female
+11-3013.00,15,15,15,0.6679,0.6676,0.6875,0.0011,negligible,male > female,-0.0932,negligible,neutral > male,-0.0887,negligible,neutral > female
+11-3061.00,15,10,15,0.5693,0.5546,0.4844,0.0727,negligible,male > female,0.4943,small,male > neutral,0.4404,small,female > neutral
+11-3071.04,10,15,15,0.5339,0.6227,0.5347,-0.5106,medium,female > male,-0.0056,negligible,neutral > male,0.6671,medium,female > neutral
+11-9179.02,15,15,15,0.5659,0.482,0.5418,0.4253,small,male > female,0.1558,negligible,male > neutral,-0.3479,small,neutral > female
+17-1012.00,15,15,15,0.6378,0.5776,0.6981,0.294,small,male > female,-0.2912,small,neutral > male,-0.5997,medium,neutral > female
+17-2031.00,15,15,15,0.6037,0.6229,0.5968,-0.0917,negligible,female > male,0.0345,negligible,male > neutral,0.1356,negligible,female > neutral
+17-2111.02,15,15,15,0.5968,0.619,0.4515,-0.1198,negligible,female > male,0.9316,large,male > neutral,1.2394,large,female > neutral
+17-3022.00,15,15,15,0.6851,0.6573,0.595,0.1408,negligible,male > female,0.5061,medium,male > neutral,0.3516,small,female > neutral
+17-3027.00,15,15,15,0.6068,0.6084,0.6168,-0.0082,negligible,female > male,-0.0506,negligible,neutral > male,-0.0432,negligible,neutral > female
+27-1012.00,15,15,15,0.6965,0.658,0.6136,0.1793,negligible,male > female,0.4185,small,male > neutral,0.2028,small,female > neutral
+27-1024.00,15,15,15,0.6641,0.6346,0.7022,0.1268,negligible,male > female,-0.1569,negligible,neutral > male,-0.2923,small,neutral > female
+27-2012.04,15,15,15,0.5497,0.594,0.5335,-0.2294,small,female > male,0.1001,negligible,male > neutral,0.3528,small,female > neutral
+27-2012.05,15,15,15,0.5503,0.5456,0.598,0.0309,negligible,male > female,-0.2907,small,neutral > male,-0.3091,small,neutral > female
+27-2022.00,15,15,15,0.5655,0.5136,0.617,0.3622,small,male > female,-0.2805,small,neutral > male,-0.6493,medium,neutral > female
+51-2022.00,15,15,15,0.6267,0.6215,0.6762,0.0245,negligible,male > female,-0.2298,small,neutral > male,-0.252,small,neutral > female
+51-3091.00,15,15,15,0.7201,0.5448,0.6296,0.8771,large,male > female,0.4467,small,male > neutral,-0.4699,small,neutral > female
+51-4122.00,15,15,14,0.6365,0.6964,0.5892,-0.2303,small,female > male,0.1994,negligible,male > neutral,0.4449,small,female > neutral
+51-9071.00,15,15,15,0.6129,0.6759,0.5963,-0.2793,small,female > male,0.0721,negligible,male > neutral,0.3569,small,female > neutral
+51-9192.00,15,15,15,0.6315,0.6224,0.6119,0.0397,negligible,male > female,0.0837,negligible,male > neutral,0.0474,negligible,female > neutral

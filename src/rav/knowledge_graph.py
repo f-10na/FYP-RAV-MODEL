@@ -6,6 +6,8 @@ Class for the KG that covers core functionality
     • Methods for retrieving and updating KG entries
 '''
 
+# MANUAL call
+# kg.visualize_job_subgraph('17-2031.00', filename='civil_engineer.html')
 import networkx as nx
 from pyvis.network import Network
 
@@ -208,6 +210,100 @@ class KnowledgeGraph:
                 title=f"Importance: {round(weight, 3)}"
             )
 
-        net.toggle_physics(True)
+        net.set_options("""
+        {
+            "physics": {
+                "enabled": true
+            }
+        }
+        """)
         net.save_graph(filename)
         print(f"KG visualisation saved → {filename}")
+
+
+    def visualize_job_subgraph(self, job_code, filename=None):
+        """
+        Visualise a single job and its direct trait connections.
+
+        Much cleaner than the full graph — shows only the ego network
+        for one occupation (job node + all its trait nodes).
+
+        Args:
+            job_code: SOC code of the job to visualise
+            filename: Output HTML path. Defaults to '{job_code}_subgraph.html'
+        """
+        if self.G is None:
+            raise ValueError("KG not built yet. Call build_KG() first.")
+
+        if job_code not in self.G.nodes:
+            raise ValueError(f"Job code {job_code} not found in KG.")
+
+        if filename is None:
+            filename = f"{job_code.replace('.', '_')}_subgraph.html"
+
+        # Extract ego subgraph — job node + all direct neighbours
+        subgraph = nx.ego_graph(self.G, job_code, radius=1)
+
+        #job_title = self.G.nodes[job_code].get('name', job_code)
+
+        net = Network(
+            height="750px",
+            width="100%",
+            bgcolor="#222222",
+            font_color="white",
+            notebook=False
+        )
+
+        # ADD NODES
+        for node_id, node_data in subgraph.nodes(data=True):
+            if node_data.get('type') == 'job':
+                net.add_node(
+                    node_id,
+                    label=node_data.get('name', node_id),
+                    color='#3da4ff',
+                    size=35,
+                    shape='star',
+                    title=f"Job: {node_data.get('name', node_id)}"
+                )
+            else:
+                # Scale trait node size by importance
+                edge_data = self.G.edges[job_code, node_id]
+                weight = edge_data.get('weight', 0.5)
+                net.add_node(
+                    node_id,
+                    label=node_id,
+                    color='#ffa500',
+                    size=8 + (weight * 20),  # bigger = more important
+                    title=(
+                        f"Trait: {node_id}\n"
+                        f"Category: {node_data.get('category', '')}\n"
+                        f"Importance: {round(weight, 3)}"
+                    )
+                )
+
+        # ADD EDGES
+        for source, target, edge_data in subgraph.edges(data=True):
+            weight = edge_data.get('weight', 0.5)
+            net.add_edge(
+                source,
+                target,
+                value=weight,
+                title=f"Importance: {round(weight, 3)}"
+            )
+
+        # Tighter physics for ego graph
+        net.set_options("""
+        {
+        "physics": {
+            "barnesHut": {
+            "gravitationalConstant": -5000,
+            "centralGravity": 0.3,
+            "springLength": 150,
+            "springConstant": 0.05
+            }
+        }
+        }
+        """)
+
+        net.save_graph(filename)
+        print(f"Subgraph visualisation saved → {filename}")

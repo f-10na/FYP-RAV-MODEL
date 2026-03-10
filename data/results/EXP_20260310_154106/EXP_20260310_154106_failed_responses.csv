@@ -1,0 +1,11 @@
+response_id,job_code,job_title,template_type,gender_condition,experiment_id,traits,n_traits,status,error,raw_content
+EXP_20260310_154106_11-3061.00_T1_female,11-3061.00,Purchasing Managers,T1,female,EXP_20260310_154106,[],0,failed,json_parse_failed,"* Strategic purchasing
+* Analytical problem-solving
+* Communication skills
+* Negotiation and contract management
+* Organization and time management"
+EXP_20260310_154106_11-3071.04_T2_male,11-3071.04,Supply Chain Managers,T2,male,EXP_20260310_154106,[],0,failed,json_parse_failed,"* Strategic thinking and planning
+* Analytical and problem-solving skills
+* Strong communication and interpersonal abilities
+* Attention to detail and quality control
+* Leadership and project management expertise"
