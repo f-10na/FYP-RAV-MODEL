@@ -7,8 +7,6 @@ Class for the KG that covers core functionality
 '''
 
 import networkx as nx
-import pandas as pd
-import random as rnd
 from pyvis.network import Network
 
 class KnowledgeGraph:
@@ -47,7 +45,7 @@ class KnowledgeGraph:
 
         # NORMALISE BEFORE CONSTRUCTION
         df = self.normalise_weights(df)
-
+        print("After normalise:", df.columns.tolist())
         G = nx.Graph()
 
         # 1. ADD JOB NODES
@@ -110,18 +108,17 @@ class KnowledgeGraph:
         df['importance_score'] = df.apply(rescale, axis=1)
 
         # 4. PER-OCCUPATION MIN-MAX NORMALISATION
-        def minmax_per_job(group):
-            min_score = group['importance_score'].min()
-            max_score = group['importance_score'].max()
-            if max_score - min_score == 0:  # flat scores edge case
-                group['importance_score'] = 1.0
+        for job in df['job_code'].unique():
+            mask = df['job_code'] == job
+            scores = df.loc[mask, 'importance_score']
+            min_score = scores.min()
+            max_score = scores.max()
+            if max_score - min_score == 0:
+                df.loc[mask, 'importance_score'] = 1.0
             else:
-                group['importance_score'] = (
-                    (group['importance_score'] - min_score) / (max_score - min_score)
+                df.loc[mask, 'importance_score'] = (
+                    (scores - min_score) / (max_score - min_score)
                 )
-            return group
-
-        df = df.groupby('job_code', group_keys=False).apply(minmax_per_job)
 
         return df
 
@@ -160,28 +157,57 @@ class KnowledgeGraph:
             all_traits[job_code] = self.get_kg_traits_for_job(job_code)
         return all_traits
     
+
     def visualize_interactive_graph(self, filename="job_graph.html"):
         """
-        Create an interactive visualization of the graph.
+        Create an interactive visualisation of the Knowledge Graph.
+        
+        Job nodes rendered in blue, trait nodes in orange.
+        Edge thickness reflects normalised importance weight.
+        
+        Args:
+            filename: Output HTML file path
         """
         if self.G is None:
             raise ValueError("KG not built yet. Call build_KG() first.")
-        
-        # Create a pyvis network
-        net = Network(height="750px", width="100%", notebook=True, bgcolor="#222222", font_color="white")
-        
-        # Load the NetworkX graph into pyvis
-        net.from_nx(self.G)
-        
-        # Customizing the look based on your attributes
-        for node in net.nodes:
-            if node.get('type') == 'job':
-                node['color'] = '#3da4ff'  # Blue for Jobs
-                node['size'] = 25
+
+        net = Network(
+            height="750px",
+            width="100%",
+            bgcolor="#222222",
+            font_color="white",
+            notebook=False  # must be False for script context
+        )
+
+        # ADD NODES MANUALLY to control styling per type
+        for node_id, node_data in self.G.nodes(data=True):
+            if node_data.get('type') == 'job':
+                net.add_node(
+                    node_id,
+                    label=node_data.get('name', node_id),
+                    color='#3da4ff',
+                    size=25,
+                    title=f"Job: {node_data.get('name', node_id)}\nMajor Group: {node_data.get('major_group', '')}"
+                )
             else:
-                node['color'] = '#ffa500'  # Orange for Skills/Abilities
-                node['size'] = 15
-                
-        # Use physics so the nodes don't overlap
+                net.add_node(
+                    node_id,
+                    label=node_id,
+                    color='#ffa500',
+                    size=10,
+                    title=f"Trait: {node_id}\nCategory: {node_data.get('category', '')}"
+                )
+
+        # ADD EDGES with weight-based thickness
+        for source, target, edge_data in self.G.edges(data=True):
+            weight = edge_data.get('weight', 0.5)
+            net.add_edge(
+                source,
+                target,
+                value=weight,       # controls thickness
+                title=f"Importance: {round(weight, 3)}"
+            )
+
         net.toggle_physics(True)
-        return net.show(filename)
+        net.save_graph(filename)
+        print(f"KG visualisation saved → {filename}")

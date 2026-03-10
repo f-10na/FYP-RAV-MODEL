@@ -1,7 +1,7 @@
 '''
 LLM class to handle interactions with the language model:
     • generating responses
-    • loading and saving conversation history
+    • extracting traits from responses
 '''
 import requests
 import json
@@ -36,14 +36,40 @@ class LLM:
     }
     '''
 
-    def ask_llm(self, prompt):
-        """Query LLM with structured JSON output constraint - BULLETPROOF VERSION."""
+    def ask_llm(self, prompt,
+        n: int = None,
+        experiment_id: str = None,
+        job_code: str = None,
+        template_type: str = None,
+        gender_condition: str = None
+        )-> dict:
+        """Query LLM and return extracted traits with response metadata.
+
+            Args:
+                prompt:           Prompt text to send to the LLM
+                n:                Number of traits expected in response
+                experiment_id:    Experiment identifier for response ID
+                job_code:         O*NET-SOC code for response ID
+                template_type:    Prompt template type (T1/T2) for response ID
+                gender_condition: Gender condition for response ID
+
+            Returns:
+                Dict with response_id, traits, and metadata
+            """
         
+        # GENERATE RESPONSE ID
+        response_id = (
+            f"{experiment_id}_{job_code}_{template_type}_{gender_condition}"
+            if all([experiment_id, job_code, template_type, gender_condition])
+            else None
+        )
+
         structured_prompt = f"""{prompt}
 
-    CRITICAL: Return ONLY valid JSON with NO extra text.
-    Format:
-    {{"traits": ["trait 1", "trait 2", "trait 3", "trait 4", "trait 5"]}}"""
+        CRITICAL: Return ONLY valid JSON with NO extra text.
+        Format:
+        {{"traits": ["trait 1", "trait 2", ..., "trait {n}"]}}
+        """
 
         payload = {
             "model": self.model_name,
@@ -66,7 +92,6 @@ class LLM:
                 raise ValueError("No JSON object found")
             
             json_part = content[start_idx:]
-            
             # Remove markdown code blocks
             json_part = json_part.replace('```json', '').replace('```', '').strip()
             
@@ -94,8 +119,7 @@ class LLM:
                 trait = match.group(1)
                 # Remove any control characters or weird unicode
                 cleaned = ''.join(char for char in trait if char.isprintable() or char.isspace())
-                cleaned = cleaned.strip()
-                return f'"{cleaned}"'
+                return f'"{cleaned.strip()}"'
             
             json_part = re.sub(r'"([^"]*)"', clean_trait_in_json, json_part)
             
@@ -132,29 +156,37 @@ class LLM:
                     raise first_error
             
             # ============ STEP 5: VALIDATE & CLEAN ============
-            
+        
             if not isinstance(traits, list):
                 raise ValueError("Traits must be a list")
-            
             if len(traits) == 0:
                 raise ValueError("Traits list is empty")
             
             # Clean each trait
+            excluded = {'traits', 'trait', 'skills', 'skill'}
             cleaned_traits = []
             for t in traits:
                 if isinstance(t, str):
                     # Remove any non-printable characters
-                    cleaned = ''.join(char for char in t if char.isprintable() or char.isspace())
-                    cleaned = cleaned.strip()
+                    cleaned = ''.join(char for char in t if char.isprintable() or char.isspace()).strip()
                     
                     # Skip JSON keys
-                    if cleaned and cleaned.lower() not in ['traits', 'trait']:
+                    if cleaned and cleaned.lower() not in excluded:
                         cleaned_traits.append(cleaned)
             
             if len(cleaned_traits) == 0:
                 raise ValueError("No valid traits after cleaning")
             
-            return cleaned_traits[:5]
+            return {
+                'response_id': response_id,
+                'job_code': job_code,
+                'template_type': template_type,
+                'gender_condition': gender_condition,
+                'experiment_id': experiment_id,
+                'traits': cleaned_traits[:n],
+                'n_traits': len(cleaned_traits[:n]),
+                'status': 'success'
+            }
             
         except (json.JSONDecodeError, ValueError) as e:
             # ============ FINAL FALLBACK: REGEX ============
@@ -175,40 +207,40 @@ class LLM:
             
             if len(cleaned) >= 3:
                 print(f"✓ Recovered {len(cleaned)} traits via regex")
-                return cleaned[:5]
+                return {
+                    'response_id': response_id,
+                    'job_code': job_code,
+                    'template_type': template_type,
+                    'gender_condition': gender_condition,
+                    'experiment_id': experiment_id,
+                    'traits': cleaned[:n],
+                    'n_traits': len(cleaned[:n]),
+                    'status': 'recovered'
+                }
             
-            return {"error": "json_parse_failed", "raw_content": content[:500]}
+            return {
+                'response_id': response_id,
+                'job_code': job_code,
+                'template_type': template_type,
+                'gender_condition': gender_condition,
+                'experiment_id': experiment_id,
+                'traits': [],
+                'n_traits': 0,
+                'status': 'failed',
+                'error': 'json_parse_failed',
+                'raw_content': content[:500]
+            }
         
         except requests.exceptions.RequestException as e:
-            return {"error": "api_request_failed", "message": str(e)}
-        
-        
-    """
-    Extracts trait phrases from LLM output, removing obvious noise.
-    """  
-    def parse_llm_traits(raw_text):
-    
-        # Step 1: Split by lines
-        lines = raw_text.split('\n')
-        
-        traits = []
-        
-        for line in lines:
-            line = line.strip()
-            if not line:
-                continue
-            
-            # Step 2: Remove leading numbers, bullets, or hyphens
-            line = re.sub(r'^\s*(\d+\.|\-|\*)\s*', '', line)
-            
-            # Step 3: Keep only text before colon (if colon exists)
-            if ':' in line:
-                line = line.split(':', 1)[0]
-            
-            # Step 4: Clean extra whitespace
-            line = line.strip()
-            
-            if line:
-                traits.append(line)
-        
-        return traits
+            return {
+                'response_id': response_id,
+                'job_code': job_code,
+                'template_type': template_type,
+                'gender_condition': gender_condition,
+                'experiment_id': experiment_id,
+                'traits': [],
+                'n_traits': 0,
+                'status': 'failed',
+                'error': 'api_request_failed',
+                'message': str(e)
+            }

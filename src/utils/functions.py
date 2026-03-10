@@ -21,9 +21,14 @@ def load_csv(filepath,separator):
         low_memory=False
     )
 
+from datetime import datetime
+#Generate a unique experiment ID based on current timestamp
+def generate_experiment_id() -> str:
+    """Generate a unique experiment ID based on current timestamp."""
+    return f"EXP_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
 #----save trait results utility functions---
 import json
-from datetime import datetime
 
 def save_trait_results(results_list, filepath):
     """

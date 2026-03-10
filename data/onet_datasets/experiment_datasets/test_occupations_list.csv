@@ -1,6 +1,0 @@
-ONET_SOC_Code,Title,Major_Group,Selection_Strategy,Selection_Seed,Experiment_ID
-11-9033.00,"Education Administrators, Postsecondary",11,random_sample_per_major_group,42,rav_test_001
-15-2051.02,Clinical Data Managers,15,random_sample_per_major_group,42,rav_test_001
-25-2021.00,"Elementary School Teachers, Except Special Education",25,random_sample_per_major_group,42,rav_test_001
-47-5023.00,"Earth Drillers, Except Oil and Gas",47,random_sample_per_major_group,42,rav_test_001
-51-6051.00,"Sewers, Hand",51,random_sample_per_major_group,42,rav_test_001
