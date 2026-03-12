@@ -29,7 +29,7 @@ from src.rav.bias_detector import BiasDetector
 from src.rav.llm import LLM
 from src.pipeline.select_jobs import (run_job_selection)
 from src.pipeline.generate_prompts import (build_prompts_for_experiment)
-from src.rav.correctional_layer import run_correctional_layer
+from src.rav.auditor import Auditor
 
 # =============================================================================
 # CONFIG
@@ -361,16 +361,12 @@ def step_7_visualisations(
 
 
 # STEP 8 — CORRECTIONAL LAYER
-def step_8_correctional_layer(
-    alignment_df, delta_df, kg, embedder, experiment_id, exp_results_dir
-):
+def step_8_audit(alignment_df, kg, embedder, experiment_id, exp_results_dir):
     print("\n" + "="*60)
-    print("STEP 8: CORRECTIONAL LAYER")
+    print("STEP 8: REPRESENTATION AUDIT")
     print("="*60)
-    return run_correctional_layer(
-        alignment_df, delta_df, kg, embedder, experiment_id, exp_results_dir
-    )
-
+    auditor = Auditor(alignment_df, kg, embedder)
+    return auditor.run(experiment_id, exp_results_dir)
 
 # =============================================================================
 # MAIN
@@ -401,8 +397,9 @@ def run_pipeline(experiment_id: str = None):
     alignment_df                        = step_5_build_alignment_df(llm_results, kg, embedder, experiment_id, exp_results_dir)
     bias_results                        = step_6_bias_detection(alignment_df, kg, embedder, experiment_id, exp_results_dir)
     step_7_visualisations(alignment_df, llm_results, experiment_id, exp_graphs_dir)
-    warnings_df, corrections_df, eval_df, warnings_summary, eval_summary = step_8_correctional_layer(
-    alignment_df, bias_results['delta_df'], kg, embedder, experiment_id, exp_results_dir)
+    audit_df, gap_df, audit_summary, gap_summary = step_8_audit(
+    alignment_df, kg, embedder, experiment_id, exp_results_dir
+)
 
 if __name__ == "__main__":
     run_pipeline()
