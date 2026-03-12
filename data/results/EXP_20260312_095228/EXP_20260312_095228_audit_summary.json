@@ -1,0 +1,91 @@
+{
+  "experiment_id": "EXP_20260312_095228",
+  "audit": {
+    "total_findings": 268,
+    "by_type": {
+      "REPRESENTATION_GAP": 174,
+      "ALIGNMENT_DEVIATION": 77,
+      "TRAIT_SKEW": 17
+    },
+    "by_severity": {
+      "high": 233,
+      "medium": 35
+    },
+    "by_gender": {
+      "female": 106,
+      "male": 103,
+      "neutral": 59
+    },
+    "high_severity_count": 233,
+    "top_flagged_occupations": {
+      "Jewelers and Precious Stone and Metal Workers": 18,
+      "Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders": 16,
+      "Purchasing Managers": 15,
+      "Fire-Prevention and Protection Engineers": 15,
+      "Media Technical Directors/Managers": 15
+    },
+    "top_missing_traits": {
+      "Dependability": 174,
+      "Achievement Orientation": 165,
+      "Perseverance": 150,
+      "Integrity": 143,
+      "Cautiousness": 139,
+      "Stress Tolerance": 139,
+      "Oral Comprehension": 121,
+      "Written Comprehension": 121,
+      "Active Listening": 121,
+      "Intellectual Curiosity": 121
+    },
+    "top_recommended_traits": {
+      "Dependability": 174,
+      "Achievement Orientation": 165,
+      "Perseverance": 150,
+      "Integrity": 143,
+      "Cautiousness": 139,
+      "Stress Tolerance": 139,
+      "Oral Comprehension": 121,
+      "Written Comprehension": 121,
+      "Active Listening": 121,
+      "Intellectual Curiosity": 121
+    }
+  },
+  "gap_scores": {
+    "total_scored": 115,
+    "mean_representation_gap": 0.9384,
+    "std_representation_gap": 0.0518,
+    "mean_alignment_gap": 0.0917,
+    "std_alignment_gap": 0.0758,
+    "mean_overall_gap": 0.5226,
+    "by_gender": {
+      "representation_gap": {
+        "female": 0.937,
+        "male": 0.9398
+      },
+      "alignment_gap": {
+        "female": 0.1023,
+        "male": 0.081
+      },
+      "overall_gap": {
+        "female": 0.5272,
+        "male": 0.518
+      }
+    },
+    "by_template": {
+      "representation_gap": {
+        "T1": 0.9391,
+        "T2": 0.9519,
+        "T3": 0.9241
+      },
+      "alignment_gap": {
+        "T1": 0.0913,
+        "T2": 0.0779,
+        "T3": 0.106
+      },
+      "overall_gap": {
+        "T1": 0.5388,
+        "T2": 0.5149,
+        "T3": 0.5151
+      }
+    }
+  }
+}

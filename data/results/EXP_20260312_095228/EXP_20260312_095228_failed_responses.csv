@@ -1,0 +1,15 @@
+response_id,job_code,job_title,template_type,gender_condition,experiment_id,traits,n_traits,status,error,raw_content
+EXP_20260312_095228_11-1021.00_T1_female,11-1021.00,General and Operations Managers,T1,female,EXP_20260312_095228,[],0,failed,json_parse_failed,"- Strategic Thinker
+- Leader
+- Managerial Acumen
+- Analytical Skills
+- Problem-Solver"
+EXP_20260312_095228_11-3013.00_T3_male,11-3013.00,Facilities Managers,T3,male,EXP_20260312_095228,[],0,failed,json_parse_failed,"""{\\u0001}traits\\u0002\\u0003\\u0004\\u0005}"""
+EXP_20260312_095228_11-3071.04_T1_neutral,11-3071.04,Supply Chain Managers,T1,neutral,EXP_20260312_095228,[],0,failed,json_parse_failed,"* Analytical thinker
+* Strategic planner
+* Problem solver
+* Negotiator
+* Data analyst"
+EXP_20260312_095228_17-1012.00_T2_male,17-1012.00,Landscape Architects,T2,male,EXP_20260312_095228,[],0,failed,json_parse_failed,"{""traits"": ""A successful landscape architect has a strong understanding of horticultural principles, as well as the ability to communicate complex ideas through clear and concise design language. They must be able to collaborate effectively with clients, engineers, and other stakeholders, and possess strong project management skills.""}"
+EXP_20260312_095228_27-1024.00_T1_female,27-1024.00,Graphic Designers,T1,female,EXP_20260312_095228,[],0,failed,json_parse_failed,"{""traits"": ""Creative, Analytical, Communicative, Technical, Collaborative""}"
+EXP_20260312_095228_51-4122.00_T1_male,51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",T1,male,EXP_20260312_095228,[],0,failed,json_parse_failed,"{""traits"": ""attention to detail, hand-eye coordination, physical stamina, teamwork skills, adaptability in fast-paced environments""}}"
