@@ -1,0 +1,41 @@
+job_code,job_title,major_group,selection_seed,selection_strategy,experiment_id
+11-1021.00,General and Operations Managers,11,42,two_level_random_sample,EXP_20260412_234714
+11-3012.00,Administrative Services Managers,11,42,two_level_random_sample,EXP_20260412_234714
+11-3013.00,Facilities Managers,11,42,two_level_random_sample,EXP_20260412_234714
+11-3013.01,Security Managers,11,42,two_level_random_sample,EXP_20260412_234714
+11-3051.01,Quality Control Systems Managers,11,42,two_level_random_sample,EXP_20260412_234714
+11-3061.00,Purchasing Managers,11,42,two_level_random_sample,EXP_20260412_234714
+11-3071.04,Supply Chain Managers,11,42,two_level_random_sample,EXP_20260412_234714
+11-9179.02,Spa Managers,11,42,two_level_random_sample,EXP_20260412_234714
+17-1012.00,Landscape Architects,17,42,two_level_random_sample,EXP_20260412_234714
+17-2031.00,Bioengineers and Biomedical Engineers,17,42,two_level_random_sample,EXP_20260412_234714
+17-2041.00,Chemical Engineers,17,42,two_level_random_sample,EXP_20260412_234714
+17-2072.01,Radio Frequency Identification Device Specialists,17,42,two_level_random_sample,EXP_20260412_234714
+17-2081.00,Environmental Engineers,17,42,two_level_random_sample,EXP_20260412_234714
+17-2111.02,Fire-Prevention and Protection Engineers,17,42,two_level_random_sample,EXP_20260412_234714
+17-3022.00,Civil Engineering Technologists and Technicians,17,42,two_level_random_sample,EXP_20260412_234714
+17-3027.00,Mechanical Engineering Technologists and Technicians,17,42,two_level_random_sample,EXP_20260412_234714
+25-1021.00,"Computer Science Teachers, Postsecondary",25,42,two_level_random_sample,EXP_20260412_234714
+25-1043.00,"Forestry and Conservation Science Teachers, Postsecondary",25,42,two_level_random_sample,EXP_20260412_234714
+25-1051.00,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",25,42,two_level_random_sample,EXP_20260412_234714
+25-1063.00,"Economics Teachers, Postsecondary",25,42,two_level_random_sample,EXP_20260412_234714
+25-1064.00,"Geography Teachers, Postsecondary",25,42,two_level_random_sample,EXP_20260412_234714
+25-1066.00,"Psychology Teachers, Postsecondary",25,42,two_level_random_sample,EXP_20260412_234714
+25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education",25,42,two_level_random_sample,EXP_20260412_234714
+25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",25,42,two_level_random_sample,EXP_20260412_234714
+27-1012.00,Craft Artists,27,42,two_level_random_sample,EXP_20260412_234714
+27-1023.00,Floral Designers,27,42,two_level_random_sample,EXP_20260412_234714
+27-1024.00,Graphic Designers,27,42,two_level_random_sample,EXP_20260412_234714
+27-1025.00,Interior Designers,27,42,two_level_random_sample,EXP_20260412_234714
+27-2012.04,Talent Directors,27,42,two_level_random_sample,EXP_20260412_234714
+27-2012.05,Media Technical Directors/Managers,27,42,two_level_random_sample,EXP_20260412_234714
+27-2022.00,Coaches and Scouts,27,42,two_level_random_sample,EXP_20260412_234714
+27-2041.00,Music Directors and Composers,27,42,two_level_random_sample,EXP_20260412_234714
+51-2022.00,Electrical and Electronic Equipment Assemblers,51,42,two_level_random_sample,EXP_20260412_234714
+51-3091.00,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",51,42,two_level_random_sample,EXP_20260412_234714
+51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",51,42,two_level_random_sample,EXP_20260412_234714
+51-4061.00,"Model Makers, Metal and Plastic",51,42,two_level_random_sample,EXP_20260412_234714
+51-4072.00,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",51,42,two_level_random_sample,EXP_20260412_234714
+51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",51,42,two_level_random_sample,EXP_20260412_234714
+51-9071.00,Jewelers and Precious Stone and Metal Workers,51,42,two_level_random_sample,EXP_20260412_234714
+51-9192.00,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",51,42,two_level_random_sample,EXP_20260412_234714

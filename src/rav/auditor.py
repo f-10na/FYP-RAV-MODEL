@@ -60,7 +60,6 @@ class AuditFinding(TypedDict):
     missing_traits:       list
     recommended_traits:   list
 
-
 # =============================================================================
 # AUDITOR CLASS
 # =============================================================================
@@ -85,6 +84,8 @@ class Auditor:
     SKEW_THRESHOLD         = 0.15
     COVERAGE_THRESHOLD     = 0.6
     IMPORTANCE_THRESHOLD   = 0.7
+    ALPHA = 0.5  # weight for representation gap in overall_gap
+    BETA  = 0.5  # weight for alignment gap in overall_gap
 
     def __init__(self, alignment_df: pd.DataFrame, kg, embedder):
         """
@@ -162,60 +163,62 @@ class Auditor:
 
             job_title = df[df['job_code'] == job_code]['job_title'].iloc[0]
 
-            for gender in ['male', 'female', 'neutral']:
-                gender_data = df[
-                    (df['job_code']         == job_code) &
-                    (df['gender_condition'] == gender)
-                ]
-                if len(gender_data) == 0:
-                    continue
+            for template in df['prompt_type'].unique():
+                for gender in ['male', 'female', 'neutral']:
+                    gender_data = df[
+                        (df['job_code']         == job_code) &
+                        (df['prompt_type']      == template) &
+                        (df['gender_condition'] == gender)
+                    ]
+                    if len(gender_data) == 0:
+                        continue
 
-                response_ids = gender_data['response_id'].unique().tolist()
+                    response_ids = gender_data['response_id'].unique().tolist()
 
-                # Collect all missing critical traits for this gender/job
-                missing     = []
-                recommended = []
+                    # Collect all missing critical traits for this gender/job/template
+                    missing     = []
+                    recommended = []
 
-                for kt in critical_traits:
-                    match      = gender_data[gender_data['best_kg_match'] == kt['trait']]['similarity_score']
-                    best_match = float(match.max()) if len(match) > 0 else 0.0
+                    for kt in critical_traits:
+                        match      = gender_data[gender_data['best_kg_match'] == kt['trait']]['similarity_score']
+                        best_match = float(match.max()) if len(match) > 0 else 0.0
 
-                    if pd.isna(best_match) or best_match < self.COVERAGE_THRESHOLD:
-                        missing.append({
-                            'trait':       kt['trait'],
-                            'importance':  round(kt['importance'], 3),
-                            'best_coverage': round(best_match, 3)
+                        if pd.isna(best_match) or best_match < self.COVERAGE_THRESHOLD:
+                            missing.append({
+                                'trait':         kt['trait'],
+                                'importance':    round(kt['importance'], 3),
+                                'best_coverage': round(best_match, 3)
+                            })
+                            recommended.append(kt['trait'])
+
+                    if not missing:
+                        continue
+
+                    # Severity based on highest importance missing trait
+                    max_importance = max(m['importance'] for m in missing)
+                    severity       = self._severity_from_importance(max_importance)
+
+                    missing_names = [m['trait'] for m in missing]
+                    detail = (
+                        f"{len(missing)} high-importance KG trait(s) poorly covered "
+                        f"in {gender} [{template}] responses for {job_title}: "
+                        f"{', '.join(missing_names[:3])}"
+                        f"{'...' if len(missing_names) > 3 else ''}."
+                    )
+
+                    for rid in response_ids:
+                        findings.append({
+                            'response_id':        rid,
+                            'job_code':           job_code,
+                            'job_title':          job_title,
+                            'template_type':      template,
+                            'gender_condition':   gender,
+                            'audit_type':         'REPRESENTATION_GAP',
+                            'severity':           severity,
+                            'detail':             detail,
+                            'missing_traits':     missing_names,
+                            'recommended_traits': recommended
                         })
-                        recommended.append(kt['trait'])
-
-                if not missing:
-                    continue
-
-                # Severity based on highest importance missing trait
-                max_importance = max(m['importance'] for m in missing)
-                severity       = self._severity_from_importance(max_importance)
-
-                missing_names = [m['trait'] for m in missing]
-                detail = (
-                    f"{len(missing)} high-importance KG trait(s) poorly covered "
-                    f"in {gender} responses for {job_title}: "
-                    f"{', '.join(missing_names[:3])}"
-                    f"{'...' if len(missing_names) > 3 else ''}."
-                )
-
-                for rid in response_ids:
-                    findings.append({
-                        'response_id':        rid,
-                        'job_code':           job_code,
-                        'job_title':          job_title,
-                        'template_type':      'ALL',
-                        'gender_condition':   gender,
-                        'audit_type':         'REPRESENTATION_GAP',
-                        'severity':           severity,
-                        'detail':             detail,
-                        'missing_traits':     missing_names,
-                        'recommended_traits': recommended
-                    })
 
         return findings
 
@@ -450,7 +453,7 @@ class Auditor:
             alignment_gap:      absolute deviation of alignment score from
                                  neutral baseline for same job/template
 
-            overall_gap:        mean of representation_gap and alignment_gap
+            overall_gap:        weighted mean of representation_gap and alignment_gap
 
         Returns:
             DataFrame with gap scores per response
@@ -458,13 +461,18 @@ class Auditor:
         df     = self.alignment_df
         scores = []
 
-        # Pre-compute neutral alignment per job/template
-        neutral_align = (
-            df[df['gender_condition'] == 'neutral']
-            .groupby(['job_code', 'prompt_type'])['similarity_score']
-            .mean()
-            .to_dict()
-        )
+        # Pre-compute neutral weighted alignment per job/template
+        def _weighted_align(data: pd.DataFrame) -> float:
+            """Weighted average similarity, matching the A_g formula."""
+            weights = data['kg_importance'].values
+            sims    = data['similarity_score'].values
+            total_w = weights.sum()
+            return float(np.average(sims, weights=weights) if total_w > 0 else sims.mean())
+
+        neutral_align = {
+            key: _weighted_align(grp)
+            for key, grp in df[df['gender_condition'] == 'neutral'].groupby(['job_code', 'prompt_type'])
+        }
 
         for rid in df['response_id'].unique():
             rid_data = df[df['response_id'] == rid]
@@ -502,19 +510,16 @@ class Auditor:
             else:
                 representation_gap = 0.0
 
-            # Alignment gap — deviation from neutral baseline
-            neutral_score   = neutral_align.get((job_code, template_type), None)
-            response_align  = rid_data['similarity_score'].mean()
+            # Alignment gap — weighted deviation from neutral baseline (consistent with A_g)
+            neutral_score  = neutral_align.get((job_code, template_type), None)
+            response_align = _weighted_align(rid_data)
 
             alignment_gap = (
                 round(abs(response_align - neutral_score), 4)
                 if neutral_score is not None else None
             )
 
-            overall_gap = (
-                round((representation_gap + alignment_gap) / 2, 4)
-                if alignment_gap is not None else representation_gap
-            )
+            overall_gap = round(self.ALPHA * representation_gap + self.BETA * alignment_gap, 4)
 
             scores.append({
                 'response_id':        rid,
@@ -574,6 +579,7 @@ class Auditor:
             'mean_alignment_gap':         round(gap_df['alignment_gap'].dropna().mean(), 4),
             'std_alignment_gap':          round(gap_df['alignment_gap'].dropna().std(), 4),
             'mean_overall_gap':           round(gap_df['overall_gap'].mean(), 4),
+            'overall_gap_weights':        {'alpha': self.ALPHA, 'beta': self.BETA},
             'by_gender': (
                 gap_df.groupby('gender_condition')[
                     ['representation_gap', 'alignment_gap', 'overall_gap']

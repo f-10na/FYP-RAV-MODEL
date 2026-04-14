@@ -8,9 +8,6 @@ def find_project_root(marker="README.md"):
             return parent
     raise RuntimeError("Project root not found")
 
-PROJECT_ROOT = find_project_root()
-print(f"Project root found at: {PROJECT_ROOT}")
-
 #--- LOAD CSV UTILITY FUNCTION ---
 import pandas as pd
 def load_csv(filepath,separator):
@@ -21,15 +18,14 @@ def load_csv(filepath,separator):
         low_memory=False
     )
 
-from datetime import datetime
 #Generate a unique experiment ID based on current timestamp
+from datetime import datetime
 def generate_experiment_id() -> str:
     """Generate a unique experiment ID based on current timestamp."""
     return f"EXP_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
 #----save trait results utility functions---
 import json
-
 def save_trait_results(results_list, filepath):
     """
     Save LLM trait extraction results to CSV.

@@ -11,7 +11,7 @@ class LLM:
 
     def __init__(
         self,
-        model_name: str = "llama3.2:1b",
+        model_name: str = 'llama3.1:8b',
         api_url: str = "http://localhost:11434/api/chat"
     ):
         self.model_name = model_name

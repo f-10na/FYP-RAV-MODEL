@@ -108,13 +108,15 @@ class BiasDetector:
         divide by the total weight to get a weighted average similarity score. 
         This reflects how well the LLM traits align with the most important KG traits for that occupation,
         with more importance given to traits that are more critical in the KG.
+        Defined identically for male, female, and neutral conditions —
+        the neutral score A_n serves as the baseline for bias detection.
 
         Answers: How semantically close are generated traits to the occupational KG,
         weighted by the importance of the traits they match?
 
         Args:
             job_code:         O*NET-SOC occupation code
-            gender_condition: 'male', 'female'
+            gender_condition: 'male', 'female' or 'neutral'
 
         Returns:
             Dict with weighted alignment score and supporting metrics
@@ -167,11 +169,19 @@ class BiasDetector:
         Formula: C = Σ(w_j * max_i cos(k_j, l_i)) / Σ(w_j)
             w_j = normalised KG importance weight of trait j (0-1 per occupation)
 
+        where g ∈ {male, female, neutral}
+            w_j = normalised KG importance weight of trait j (0–1 per occupation)
+            k_j = KG trait embedding j
+            l_i = LLM trait embedding i
+
+        Measures how well the LLM output covers the KG, weighted by trait importance.
+        The neutral score C_n serves as the unbiased baseline for bias detection.
+
         Answers: Are the most important occupational traits represented in the LLM output?
 
         Args:
             job_code:         O*NET-SOC occupation code
-            gender_condition: 'male', 'female'
+            gender_condition: 'male', 'female' or 'neutral'
             kg_traits:        List of dicts with 'trait' and 'importance' keys
 
         Returns:
@@ -246,7 +256,9 @@ class BiasDetector:
         Calculate representation density (KG → LLM direction).
 
         Formula: D = Σ 1(max_i cos(k_j, l_i) > τ) / |KG|
-            τ = similarity threshold for meaningful semantic coverage (0.6)
+            where g ∈ {male, female, neutral}
+            τ = similarity threshold for meaningful semantic coverage (default 0.6)
+            |KG| = total number of KG traits for the occupation
         count how many KG traits have at least one LLM trait 
         with similarity above the threshold, 
         and divide by the total number of KG traits to get a proportion.
@@ -256,7 +268,7 @@ class BiasDetector:
 
         Args:
             job_code:         O*NET-SOC occupation code
-            gender_condition: 'male', 'female'
+            gender_condition: 'male', 'female' or 'neutral'
             kg_traits:        List of dicts with 'trait' and 'importance' keys
 
         Returns:
@@ -321,14 +333,17 @@ class BiasDetector:
         Unified Representation and Distortion Metric (URDM).
 
         Formula: URDM = αA + βC + γD
-            subject to: α + β + γ = 1
+            where g ∈ {male, female, neutral}
+            subject to: α + β + γ = 1, α, β, γ ≥ 0
 
         Combines alignment (A), weighted coverage (C), and representation
-        density (D) into a single score. Default equal weighting (1/3 each).
+        density (D) into a single score. Default equal weighting (α = β = γ = 1/3).
+        The neutral score URDM_n serves as the unbiased
+        baseline; gender bias is indicated by |URDM_g - URDM_n| for g ∈ {male, female}.
 
         Args:
             job_code:         O*NET-SOC occupation code
-            gender_condition: 'male', 'female'
+            gender_condition: 'male', 'female' or 'neutral'
             kg_traits:        List of dicts with 'trait' and 'importance' keys
             alpha:            Weight for alignment (default 1/3)
             beta:             Weight for coverage (default 1/3)
@@ -661,9 +676,15 @@ class BiasDetector:
         Assess systematic bias across all jobs by comparing alignment and
         weighted coverage deltas between gender conditions.
 
-        Per occupation:
-            Δ_alignment = A_male - A_female
-            Δ_coverage  = C_male - C_female
+        Per occupation, using neutral as the primary baseline:
+            ΔA_male   = A_male   - A_neutral
+            ΔA_female = A_female - A_neutral
+            ΔC_male   = C_male   - C_neutral
+            ΔC_female = C_female - C_neutral
+
+        Secondary male-vs-female direct comparison:
+            ΔA_mf = A_male - A_female
+            ΔC_mf = C_male - C_female
 
         Aggregated across occupations:
             - Mean and std of deltas

@@ -84,12 +84,12 @@ class KnowledgeGraph:
         3. Rescales each scale type to 0-1
         4. Per-occupation min-max normalisation across all traits
         """
-        VALID_trait_typeS = {'Skills', 'Abilities', 'Work_Styles'}
+        valid_trait_types = {'Skills', 'Abilities', 'Work_Styles'}
 
         df = df.copy()
 
         # 1. VALIDATE TRAIT TYPES
-        unknown = df[~df['trait_type'].isin(VALID_trait_typeS)]
+        unknown = df[~df['trait_type'].isin(valid_trait_types)]
         if not unknown.empty:
             raise ValueError(f"Unknown trait_types found: {unknown['trait_type'].unique()}")
 

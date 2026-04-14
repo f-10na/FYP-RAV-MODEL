@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 750px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#3da4ff", "font": {"color": "white"}, "id": "13-1023.00", "label": "Purchasing Agents, Except Wholesale, Retail, and Farm Products", "shape": "star", "size": 35, "title": "Job: Purchasing Agents, Except Wholesale, Retail, and Farm Products"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Oral Comprehension", "label": "Oral Comprehension", "shape": "dot", "size": 24.100178890876567, "title": "Trait: Oral Comprehension\nCategory: Abilities\nImportance: 0.805"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Written Comprehension", "label": "Written Comprehension", "shape": "dot", "size": 24.74418604651163, "title": "Trait: Written Comprehension\nCategory: Abilities\nImportance: 0.837"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Oral Expression", "label": "Oral Expression", "shape": "dot", "size": 24.100178890876567, "title": "Trait: Oral Expression\nCategory: Abilities\nImportance: 0.805"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Written Expression", "label": "Written Expression", "shape": "dot", "size": 24.100178890876567, "title": "Trait: Written Expression\nCategory: Abilities\nImportance: 0.805"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Fluency of Ideas", "label": "Fluency of Ideas", "shape": "dot", "size": 19.377459749552774, "title": "Trait: Fluency of Ideas\nCategory: Abilities\nImportance: 0.569"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Originality", "label": "Originality", "shape": "dot", "size": 18.73345259391771, "title": "Trait: Originality\nCategory: Abilities\nImportance: 0.537"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Problem Sensitivity", "label": "Problem Sensitivity", "shape": "dot", "size": 21.41681574239714, "title": "Trait: Problem Sensitivity\nCategory: Abilities\nImportance: 0.671"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Deductive Reasoning", "label": "Deductive Reasoning", "shape": "dot", "size": 23.4561717352415, "title": "Trait: Deductive Reasoning\nCategory: Abilities\nImportance: 0.773"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Inductive Reasoning", "label": "Inductive Reasoning", "shape": "dot", "size": 24.100178890876567, "title": "Trait: Inductive Reasoning\nCategory: Abilities\nImportance: 0.805"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Information Ordering", "label": "Information Ordering", "shape": "dot", "size": 22.0608228980322, "title": "Trait: Information Ordering\nCategory: Abilities\nImportance: 0.703"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Category Flexibility", "label": "Category Flexibility", "shape": "dot", "size": 20.772808586762075, "title": "Trait: Category Flexibility\nCategory: Abilities\nImportance: 0.639"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Mathematical Reasoning", "label": "Mathematical Reasoning", "shape": "dot", "size": 18.73345259391771, "title": "Trait: Mathematical Reasoning\nCategory: Abilities\nImportance: 0.537"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Number Facility", "label": "Number Facility", "shape": "dot", "size": 20.075134168157426, "title": "Trait: Number Facility\nCategory: Abilities\nImportance: 0.604"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Memorization", "label": "Memorization", "shape": "dot", "size": 16.694096601073348, "title": "Trait: Memorization\nCategory: Abilities\nImportance: 0.435"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Speed of Closure", "label": "Speed of Closure", "shape": "dot", "size": 16.05008944543828, "title": "Trait: Speed of Closure\nCategory: Abilities\nImportance: 0.403"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Flexibility of Closure", "label": "Flexibility of Closure", "shape": "dot", "size": 16.694096601073348, "title": "Trait: Flexibility of Closure\nCategory: Abilities\nImportance: 0.435"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Perceptual Speed", "label": "Perceptual Speed", "shape": "dot", "size": 14.70840787119857, "title": "Trait: Perceptual Speed\nCategory: Abilities\nImportance: 0.335"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Spatial Orientation", "label": "Spatial Orientation", "shape": "dot", "size": 8.0, "title": "Trait: Spatial Orientation\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Visualization", "label": "Visualization", "shape": "dot", "size": 14.010733452593918, "title": "Trait: Visualization\nCategory: Abilities\nImportance: 0.301"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Selective Attention", "label": "Selective Attention", "shape": "dot", "size": 18.089445438282645, "title": "Trait: Selective Attention\nCategory: Abilities\nImportance: 0.504"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Time Sharing", "label": "Time Sharing", "shape": "dot", "size": 16.694096601073348, "title": "Trait: Time Sharing\nCategory: Abilities\nImportance: 0.435"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Arm-Hand Steadiness", "label": "Arm-Hand Steadiness", "shape": "dot", "size": 8.644007155635062, "title": "Trait: Arm-Hand Steadiness\nCategory: Abilities\nImportance: 0.032"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Manual Dexterity", "label": "Manual Dexterity", "shape": "dot", "size": 8.0, "title": "Trait: Manual Dexterity\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Finger Dexterity", "label": "Finger Dexterity", "shape": "dot", "size": 10.039355992844364, "title": "Trait: Finger Dexterity\nCategory: Abilities\nImportance: 0.102"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Control Precision", "label": "Control Precision", "shape": "dot", "size": 8.0, "title": "Trait: Control Precision\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Multilimb Coordination", "label": "Multilimb Coordination", "shape": "dot", "size": 8.0, "title": "Trait: Multilimb Coordination\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Response Orientation", "label": "Response Orientation", "shape": "dot", "size": 8.0, "title": "Trait: Response Orientation\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Rate Control", "label": "Rate Control", "shape": "dot", "size": 8.0, "title": "Trait: Rate Control\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Reaction Time", "label": "Reaction Time", "shape": "dot", "size": 8.0, "title": "Trait: Reaction Time\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Wrist-Finger Speed", "label": "Wrist-Finger Speed", "shape": "dot", "size": 10.683363148479428, "title": "Trait: Wrist-Finger Speed\nCategory: Abilities\nImportance: 0.134"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Speed of Limb Movement", "label": "Speed of Limb Movement", "shape": "dot", "size": 8.0, "title": "Trait: Speed of Limb Movement\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Static Strength", "label": "Static Strength", "shape": "dot", "size": 8.0, "title": "Trait: Static Strength\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Explosive Strength", "label": "Explosive Strength", "shape": "dot", "size": 8.0, "title": "Trait: Explosive Strength\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Dynamic Strength", "label": "Dynamic Strength", "shape": "dot", "size": 9.341681574239713, "title": "Trait: Dynamic Strength\nCategory: Abilities\nImportance: 0.067"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Trunk Strength", "label": "Trunk Strength", "shape": "dot", "size": 12.722719141323791, "title": "Trait: Trunk Strength\nCategory: Abilities\nImportance: 0.236"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Stamina", "label": "Stamina", "shape": "dot", "size": 8.0, "title": "Trait: Stamina\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Extent Flexibility", "label": "Extent Flexibility", "shape": "dot", "size": 8.0, "title": "Trait: Extent Flexibility\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Dynamic Flexibility", "label": "Dynamic Flexibility", "shape": "dot", "size": 8.0, "title": "Trait: Dynamic Flexibility\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Gross Body Coordination", "label": "Gross Body Coordination", "shape": "dot", "size": 8.0, "title": "Trait: Gross Body Coordination\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Gross Body Equilibrium", "label": "Gross Body Equilibrium", "shape": "dot", "size": 8.0, "title": "Trait: Gross Body Equilibrium\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Near Vision", "label": "Near Vision", "shape": "dot", "size": 23.4561717352415, "title": "Trait: Near Vision\nCategory: Abilities\nImportance: 0.773"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Far Vision", "label": "Far Vision", "shape": "dot", "size": 14.70840787119857, "title": "Trait: Far Vision\nCategory: Abilities\nImportance: 0.335"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Visual Color Discrimination", "label": "Visual Color Discrimination", "shape": "dot", "size": 14.010733452593918, "title": "Trait: Visual Color Discrimination\nCategory: Abilities\nImportance: 0.301"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Night Vision", "label": "Night Vision", "shape": "dot", "size": 8.0, "title": "Trait: Night Vision\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Peripheral Vision", "label": "Peripheral Vision", "shape": "dot", "size": 8.0, "title": "Trait: Peripheral Vision\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Depth Perception", "label": "Depth Perception", "shape": "dot", "size": 10.039355992844364, "title": "Trait: Depth Perception\nCategory: Abilities\nImportance: 0.102"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Glare Sensitivity", "label": "Glare Sensitivity", "shape": "dot", "size": 8.0, "title": "Trait: Glare Sensitivity\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Hearing Sensitivity", "label": "Hearing Sensitivity", "shape": "dot", "size": 12.02504472271914, "title": "Trait: Hearing Sensitivity\nCategory: Abilities\nImportance: 0.201"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Auditory Attention", "label": "Auditory Attention", "shape": "dot", "size": 12.02504472271914, "title": "Trait: Auditory Attention\nCategory: Abilities\nImportance: 0.201"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Sound Localization", "label": "Sound Localization", "shape": "dot", "size": 8.0, "title": "Trait: Sound Localization\nCategory: Abilities\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Speech Recognition", "label": "Speech Recognition", "shape": "dot", "size": 22.758497316636852, "title": "Trait: Speech Recognition\nCategory: Abilities\nImportance: 0.738"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Speech Clarity", "label": "Speech Clarity", "shape": "dot", "size": 22.0608228980322, "title": "Trait: Speech Clarity\nCategory: Abilities\nImportance: 0.703"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Reading Comprehension", "label": "Reading Comprehension", "shape": "dot", "size": 24.74418604651163, "title": "Trait: Reading Comprehension\nCategory: Skills\nImportance: 0.837"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Active Listening", "label": "Active Listening", "shape": "dot", "size": 24.100178890876567, "title": "Trait: Active Listening\nCategory: Skills\nImportance: 0.805"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Writing", "label": "Writing", "shape": "dot", "size": 24.100178890876567, "title": "Trait: Writing\nCategory: Skills\nImportance: 0.805"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Speaking", "label": "Speaking", "shape": "dot", "size": 24.100178890876567, "title": "Trait: Speaking\nCategory: Skills\nImportance: 0.805"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Mathematics", "label": "Mathematics", "shape": "dot", "size": 18.73345259391771, "title": "Trait: Mathematics\nCategory: Skills\nImportance: 0.537"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Science", "label": "Science", "shape": "dot", "size": 8.644007155635062, "title": "Trait: Science\nCategory: Skills\nImportance: 0.032"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Critical Thinking", "label": "Critical Thinking", "shape": "dot", "size": 23.4561717352415, "title": "Trait: Critical Thinking\nCategory: Skills\nImportance: 0.773"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Active Learning", "label": "Active Learning", "shape": "dot", "size": 23.4561717352415, "title": "Trait: Active Learning\nCategory: Skills\nImportance: 0.773"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Learning Strategies", "label": "Learning Strategies", "shape": "dot", "size": 18.73345259391771, "title": "Trait: Learning Strategies\nCategory: Skills\nImportance: 0.537"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Monitoring", "label": "Monitoring", "shape": "dot", "size": 22.758497316636852, "title": "Trait: Monitoring\nCategory: Skills\nImportance: 0.738"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Social Perceptiveness", "label": "Social Perceptiveness", "shape": "dot", "size": 20.075134168157426, "title": "Trait: Social Perceptiveness\nCategory: Skills\nImportance: 0.604"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Coordination", "label": "Coordination", "shape": "dot", "size": 18.73345259391771, "title": "Trait: Coordination\nCategory: Skills\nImportance: 0.537"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Persuasion", "label": "Persuasion", "shape": "dot", "size": 22.758497316636852, "title": "Trait: Persuasion\nCategory: Skills\nImportance: 0.738"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Negotiation", "label": "Negotiation", "shape": "dot", "size": 25.441860465116278, "title": "Trait: Negotiation\nCategory: Skills\nImportance: 0.872"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Instructing", "label": "Instructing", "shape": "dot", "size": 20.075134168157426, "title": "Trait: Instructing\nCategory: Skills\nImportance: 0.604"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Service Orientation", "label": "Service Orientation", "shape": "dot", "size": 19.377459749552774, "title": "Trait: Service Orientation\nCategory: Skills\nImportance: 0.569"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Complex Problem Solving", "label": "Complex Problem Solving", "shape": "dot", "size": 24.100178890876567, "title": "Trait: Complex Problem Solving\nCategory: Skills\nImportance: 0.805"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Operations Analysis", "label": "Operations Analysis", "shape": "dot", "size": 16.05008944543828, "title": "Trait: Operations Analysis\nCategory: Skills\nImportance: 0.403"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Technology Design", "label": "Technology Design", "shape": "dot", "size": 12.02504472271914, "title": "Trait: Technology Design\nCategory: Skills\nImportance: 0.201"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Equipment Selection", "label": "Equipment Selection", "shape": "dot", "size": 8.0, "title": "Trait: Equipment Selection\nCategory: Skills\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Installation", "label": "Installation", "shape": "dot", "size": 8.0, "title": "Trait: Installation\nCategory: Skills\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Programming", "label": "Programming", "shape": "dot", "size": 10.683363148479428, "title": "Trait: Programming\nCategory: Skills\nImportance: 0.134"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Operations Monitoring", "label": "Operations Monitoring", "shape": "dot", "size": 13.366726296958856, "title": "Trait: Operations Monitoring\nCategory: Skills\nImportance: 0.268"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Operation and Control", "label": "Operation and Control", "shape": "dot", "size": 8.0, "title": "Trait: Operation and Control\nCategory: Skills\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Equipment Maintenance", "label": "Equipment Maintenance", "shape": "dot", "size": 8.0, "title": "Trait: Equipment Maintenance\nCategory: Skills\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Troubleshooting", "label": "Troubleshooting", "shape": "dot", "size": 11.327370304114492, "title": "Trait: Troubleshooting\nCategory: Skills\nImportance: 0.166"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Repairing", "label": "Repairing", "shape": "dot", "size": 8.0, "title": "Trait: Repairing\nCategory: Skills\nImportance: 0.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Quality Control Analysis", "label": "Quality Control Analysis", "shape": "dot", "size": 15.40608228980322, "title": "Trait: Quality Control Analysis\nCategory: Skills\nImportance: 0.37"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Judgment and Decision Making", "label": "Judgment and Decision Making", "shape": "dot", "size": 23.4561717352415, "title": "Trait: Judgment and Decision Making\nCategory: Skills\nImportance: 0.773"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Systems Analysis", "label": "Systems Analysis", "shape": "dot", "size": 18.089445438282645, "title": "Trait: Systems Analysis\nCategory: Skills\nImportance: 0.504"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Systems Evaluation", "label": "Systems Evaluation", "shape": "dot", "size": 18.73345259391771, "title": "Trait: Systems Evaluation\nCategory: Skills\nImportance: 0.537"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Time Management", "label": "Time Management", "shape": "dot", "size": 20.075134168157426, "title": "Trait: Time Management\nCategory: Skills\nImportance: 0.604"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Management of Financial Resources", "label": "Management of Financial Resources", "shape": "dot", "size": 22.758497316636852, "title": "Trait: Management of Financial Resources\nCategory: Skills\nImportance: 0.738"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Management of Material Resources", "label": "Management of Material Resources", "shape": "dot", "size": 20.075134168157426, "title": "Trait: Management of Material Resources\nCategory: Skills\nImportance: 0.604"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Management of Personnel Resources", "label": "Management of Personnel Resources", "shape": "dot", "size": 19.377459749552774, "title": "Trait: Management of Personnel Resources\nCategory: Skills\nImportance: 0.569"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Innovation", "label": "Innovation", "shape": "dot", "size": 21.66726296958855, "title": "Trait: Innovation\nCategory: Work_Styles\nImportance: 0.683"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Achievement Orientation", "label": "Achievement Orientation", "shape": "dot", "size": 25.06618962432916, "title": "Trait: Achievement Orientation\nCategory: Work_Styles\nImportance: 0.853"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Intellectual Curiosity", "label": "Intellectual Curiosity", "shape": "dot", "size": 23.778175313059037, "title": "Trait: Intellectual Curiosity\nCategory: Work_Styles\nImportance: 0.789"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Tolerance for Ambiguity", "label": "Tolerance for Ambiguity", "shape": "dot", "size": 22.669051878354203, "title": "Trait: Tolerance for Ambiguity\nCategory: Work_Styles\nImportance: 0.733"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Initiative", "label": "Initiative", "shape": "dot", "size": 24.422182468694096, "title": "Trait: Initiative\nCategory: Work_Styles\nImportance: 0.821"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Adaptability", "label": "Adaptability", "shape": "dot", "size": 23.563506261180677, "title": "Trait: Adaptability\nCategory: Work_Styles\nImportance: 0.778"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Self-Confidence", "label": "Self-Confidence", "shape": "dot", "size": 25.924865831842574, "title": "Trait: Self-Confidence\nCategory: Work_Styles\nImportance: 0.896"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Perseverance", "label": "Perseverance", "shape": "dot", "size": 24.958855098389986, "title": "Trait: Perseverance\nCategory: Work_Styles\nImportance: 0.848"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Leadership Orientation", "label": "Leadership Orientation", "shape": "dot", "size": 23.241502683363148, "title": "Trait: Leadership Orientation\nCategory: Work_Styles\nImportance: 0.762"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Humility", "label": "Humility", "shape": "dot", "size": 20.522361359570663, "title": "Trait: Humility\nCategory: Work_Styles\nImportance: 0.626"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Sincerity", "label": "Sincerity", "shape": "dot", "size": 21.810375670840784, "title": "Trait: Sincerity\nCategory: Work_Styles\nImportance: 0.691"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Empathy", "label": "Empathy", "shape": "dot", "size": 20.951699463327373, "title": "Trait: Empathy\nCategory: Work_Styles\nImportance: 0.648"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Cooperation", "label": "Cooperation", "shape": "dot", "size": 24.56529516994633, "title": "Trait: Cooperation\nCategory: Work_Styles\nImportance: 0.828"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Optimism", "label": "Optimism", "shape": "dot", "size": 20.59391771019678, "title": "Trait: Optimism\nCategory: Work_Styles\nImportance: 0.63"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Social Orientation", "label": "Social Orientation", "shape": "dot", "size": 23.742397137745975, "title": "Trait: Social Orientation\nCategory: Work_Styles\nImportance: 0.787"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Cautiousness", "label": "Cautiousness", "shape": "dot", "size": 24.314847942754923, "title": "Trait: Cautiousness\nCategory: Work_Styles\nImportance: 0.816"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Attention to Detail", "label": "Attention to Detail", "shape": "dot", "size": 27.212880143112702, "title": "Trait: Attention to Detail\nCategory: Work_Styles\nImportance: 0.961"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Dependability", "label": "Dependability", "shape": "dot", "size": 28.0, "title": "Trait: Dependability\nCategory: Work_Styles\nImportance: 1.0"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Integrity", "label": "Integrity", "shape": "dot", "size": 26.890876565295166, "title": "Trait: Integrity\nCategory: Work_Styles\nImportance: 0.945"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Stress Tolerance", "label": "Stress Tolerance", "shape": "dot", "size": 23.456171735241504, "title": "Trait: Stress Tolerance\nCategory: Work_Styles\nImportance: 0.773"}, {"color": "#ffa500", "font": {"color": "white"}, "id": "Self-Control", "label": "Self-Control", "shape": "dot", "size": 23.420393559928446, "title": "Trait: Self-Control\nCategory: Work_Styles\nImportance: 0.771"}]);
+                  edges = new vis.DataSet([{"from": "13-1023.00", "title": "Importance: 0.805", "to": "Oral Comprehension", "value": 0.8050089445438283}, {"from": "13-1023.00", "title": "Importance: 0.837", "to": "Written Comprehension", "value": 0.8372093023255814}, {"from": "13-1023.00", "title": "Importance: 0.805", "to": "Oral Expression", "value": 0.8050089445438283}, {"from": "13-1023.00", "title": "Importance: 0.805", "to": "Written Expression", "value": 0.8050089445438283}, {"from": "13-1023.00", "title": "Importance: 0.569", "to": "Fluency of Ideas", "value": 0.5688729874776387}, {"from": "13-1023.00", "title": "Importance: 0.537", "to": "Originality", "value": 0.5366726296958855}, {"from": "13-1023.00", "title": "Importance: 0.671", "to": "Problem Sensitivity", "value": 0.670840787119857}, {"from": "13-1023.00", "title": "Importance: 0.773", "to": "Deductive Reasoning", "value": 0.7728085867620751}, {"from": "13-1023.00", "title": "Importance: 0.805", "to": "Inductive Reasoning", "value": 0.8050089445438283}, {"from": "13-1023.00", "title": "Importance: 0.703", "to": "Information Ordering", "value": 0.7030411449016101}, {"from": "13-1023.00", "title": "Importance: 0.639", "to": "Category Flexibility", "value": 0.6386404293381037}, {"from": "13-1023.00", "title": "Importance: 0.537", "to": "Mathematical Reasoning", "value": 0.5366726296958855}, {"from": "13-1023.00", "title": "Importance: 0.604", "to": "Number Facility", "value": 0.6037567084078712}, {"from": "13-1023.00", "title": "Importance: 0.435", "to": "Memorization", "value": 0.4347048300536673}, {"from": "13-1023.00", "title": "Importance: 0.403", "to": "Speed of Closure", "value": 0.40250447227191416}, {"from": "13-1023.00", "title": "Importance: 0.435", "to": "Flexibility of Closure", "value": 0.4347048300536673}, {"from": "13-1023.00", "title": "Importance: 0.335", "to": "Perceptual Speed", "value": 0.3354203935599285}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Spatial Orientation", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.301", "to": "Visualization", "value": 0.3005366726296959}, {"from": "13-1023.00", "title": "Importance: 0.504", "to": "Selective Attention", "value": 0.5044722719141324}, {"from": "13-1023.00", "title": "Importance: 0.435", "to": "Time Sharing", "value": 0.4347048300536673}, {"from": "13-1023.00", "title": "Importance: 0.032", "to": "Arm-Hand Steadiness", "value": 0.03220035778175316}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Manual Dexterity", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.102", "to": "Finger Dexterity", "value": 0.10196779964221822}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Control Precision", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Multilimb Coordination", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Response Orientation", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Rate Control", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Reaction Time", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.134", "to": "Wrist-Finger Speed", "value": 0.13416815742397137}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Speed of Limb Movement", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Static Strength", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Explosive Strength", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.067", "to": "Dynamic Strength", "value": 0.06708407871198568}, {"from": "13-1023.00", "title": "Importance: 0.236", "to": "Trunk Strength", "value": 0.2361359570661896}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Stamina", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Extent Flexibility", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Dynamic Flexibility", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Gross Body Coordination", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Gross Body Equilibrium", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.773", "to": "Near Vision", "value": 0.7728085867620751}, {"from": "13-1023.00", "title": "Importance: 0.335", "to": "Far Vision", "value": 0.3354203935599285}, {"from": "13-1023.00", "title": "Importance: 0.301", "to": "Visual Color Discrimination", "value": 0.3005366726296959}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Night Vision", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Peripheral Vision", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.102", "to": "Depth Perception", "value": 0.10196779964221822}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Glare Sensitivity", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.201", "to": "Hearing Sensitivity", "value": 0.20125223613595708}, {"from": "13-1023.00", "title": "Importance: 0.201", "to": "Auditory Attention", "value": 0.20125223613595708}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Sound Localization", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.738", "to": "Speech Recognition", "value": 0.7379248658318426}, {"from": "13-1023.00", "title": "Importance: 0.703", "to": "Speech Clarity", "value": 0.7030411449016101}, {"from": "13-1023.00", "title": "Importance: 0.837", "to": "Reading Comprehension", "value": 0.8372093023255814}, {"from": "13-1023.00", "title": "Importance: 0.805", "to": "Active Listening", "value": 0.8050089445438283}, {"from": "13-1023.00", "title": "Importance: 0.805", "to": "Writing", "value": 0.8050089445438283}, {"from": "13-1023.00", "title": "Importance: 0.805", "to": "Speaking", "value": 0.8050089445438283}, {"from": "13-1023.00", "title": "Importance: 0.537", "to": "Mathematics", "value": 0.5366726296958855}, {"from": "13-1023.00", "title": "Importance: 0.032", "to": "Science", "value": 0.03220035778175316}, {"from": "13-1023.00", "title": "Importance: 0.773", "to": "Critical Thinking", "value": 0.7728085867620751}, {"from": "13-1023.00", "title": "Importance: 0.773", "to": "Active Learning", "value": 0.7728085867620751}, {"from": "13-1023.00", "title": "Importance: 0.537", "to": "Learning Strategies", "value": 0.5366726296958855}, {"from": "13-1023.00", "title": "Importance: 0.738", "to": "Monitoring", "value": 0.7379248658318426}, {"from": "13-1023.00", "title": "Importance: 0.604", "to": "Social Perceptiveness", "value": 0.6037567084078712}, {"from": "13-1023.00", "title": "Importance: 0.537", "to": "Coordination", "value": 0.5366726296958855}, {"from": "13-1023.00", "title": "Importance: 0.738", "to": "Persuasion", "value": 0.7379248658318426}, {"from": "13-1023.00", "title": "Importance: 0.872", "to": "Negotiation", "value": 0.872093023255814}, {"from": "13-1023.00", "title": "Importance: 0.604", "to": "Instructing", "value": 0.6037567084078712}, {"from": "13-1023.00", "title": "Importance: 0.569", "to": "Service Orientation", "value": 0.5688729874776387}, {"from": "13-1023.00", "title": "Importance: 0.805", "to": "Complex Problem Solving", "value": 0.8050089445438283}, {"from": "13-1023.00", "title": "Importance: 0.403", "to": "Operations Analysis", "value": 0.40250447227191416}, {"from": "13-1023.00", "title": "Importance: 0.201", "to": "Technology Design", "value": 0.20125223613595708}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Equipment Selection", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Installation", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.134", "to": "Programming", "value": 0.13416815742397137}, {"from": "13-1023.00", "title": "Importance: 0.268", "to": "Operations Monitoring", "value": 0.26833631484794274}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Operation and Control", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Equipment Maintenance", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.166", "to": "Troubleshooting", "value": 0.16636851520572454}, {"from": "13-1023.00", "title": "Importance: 0.0", "to": "Repairing", "value": 0.0}, {"from": "13-1023.00", "title": "Importance: 0.37", "to": "Quality Control Analysis", "value": 0.370304114490161}, {"from": "13-1023.00", "title": "Importance: 0.773", "to": "Judgment and Decision Making", "value": 0.7728085867620751}, {"from": "13-1023.00", "title": "Importance: 0.504", "to": "Systems Analysis", "value": 0.5044722719141324}, {"from": "13-1023.00", "title": "Importance: 0.537", "to": "Systems Evaluation", "value": 0.5366726296958855}, {"from": "13-1023.00", "title": "Importance: 0.604", "to": "Time Management", "value": 0.6037567084078712}, {"from": "13-1023.00", "title": "Importance: 0.738", "to": "Management of Financial Resources", "value": 0.7379248658318426}, {"from": "13-1023.00", "title": "Importance: 0.604", "to": "Management of Material Resources", "value": 0.6037567084078712}, {"from": "13-1023.00", "title": "Importance: 0.569", "to": "Management of Personnel Resources", "value": 0.5688729874776387}, {"from": "13-1023.00", "title": "Importance: 0.683", "to": "Innovation", "value": 0.6833631484794275}, {"from": "13-1023.00", "title": "Importance: 0.853", "to": "Achievement Orientation", "value": 0.8533094812164579}, {"from": "13-1023.00", "title": "Importance: 0.789", "to": "Intellectual Curiosity", "value": 0.7889087656529518}, {"from": "13-1023.00", "title": "Importance: 0.733", "to": "Tolerance for Ambiguity", "value": 0.7334525939177101}, {"from": "13-1023.00", "title": "Importance: 0.821", "to": "Initiative", "value": 0.8211091234347049}, {"from": "13-1023.00", "title": "Importance: 0.778", "to": "Adaptability", "value": 0.778175313059034}, {"from": "13-1023.00", "title": "Importance: 0.896", "to": "Self-Confidence", "value": 0.8962432915921288}, {"from": "13-1023.00", "title": "Importance: 0.848", "to": "Perseverance", "value": 0.8479427549194992}, {"from": "13-1023.00", "title": "Importance: 0.762", "to": "Leadership Orientation", "value": 0.7620751341681574}, {"from": "13-1023.00", "title": "Importance: 0.626", "to": "Humility", "value": 0.6261180679785332}, {"from": "13-1023.00", "title": "Importance: 0.691", "to": "Sincerity", "value": 0.6905187835420393}, {"from": "13-1023.00", "title": "Importance: 0.648", "to": "Empathy", "value": 0.6475849731663685}, {"from": "13-1023.00", "title": "Importance: 0.828", "to": "Cooperation", "value": 0.8282647584973166}, {"from": "13-1023.00", "title": "Importance: 0.63", "to": "Optimism", "value": 0.629695885509839}, {"from": "13-1023.00", "title": "Importance: 0.787", "to": "Social Orientation", "value": 0.7871198568872988}, {"from": "13-1023.00", "title": "Importance: 0.816", "to": "Cautiousness", "value": 0.8157423971377461}, {"from": "13-1023.00", "title": "Importance: 0.961", "to": "Attention to Detail", "value": 0.9606440071556351}, {"from": "13-1023.00", "title": "Importance: 1.0", "to": "Dependability", "value": 1.0}, {"from": "13-1023.00", "title": "Importance: 0.945", "to": "Integrity", "value": 0.9445438282647584}, {"from": "13-1023.00", "title": "Importance: 0.773", "to": "Stress Tolerance", "value": 0.7728085867620752}, {"from": "13-1023.00", "title": "Importance: 0.771", "to": "Self-Control", "value": 0.7710196779964222}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"barnesHut": {"gravitationalConstant": -5000, "centralGravity": 0.3, "springLength": 150, "springConstant": 0.05}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "experiment_id": "EXP_20260413_004847",
+  "audit": {
+    "total_findings": 543,
+    "by_type": {
+      "REPRESENTATION_GAP": 360,
+      "ALIGNMENT_DEVIATION": 143,
+      "TRAIT_SKEW": 40
+    },
+    "by_severity": {
+      "high": 482,
+      "medium": 61
+    },
+    "by_gender": {
+      "female": 213,
+      "male": 210,
+      "neutral": 120
+    },
+    "high_severity_count": 482,
+    "top_flagged_occupations": {
+      "Database Administrators": 18,
+      "Special Effects Artists and Animators": 16,
+      "Fine Artists, Including Painters, Sculptors, and Illustrators": 16,
+      "Cartographers and Photogrammetrists": 16,
+      "Software Developers": 16
+    },
+    "top_missing_traits": {
+      "Dependability": 350,
+      "Perseverance": 345,
+      "Achievement Orientation": 342,
+      "Integrity": 321,
+      "Cautiousness": 297,
+      "Stress Tolerance": 288,
+      "Oral Comprehension": 279,
+      "Intellectual Curiosity": 270,
+      "Self-Confidence": 261,
+      "Initiative": 259
+    },
+    "top_recommended_traits": {
+      "Dependability": 350,
+      "Perseverance": 345,
+      "Achievement Orientation": 342,
+      "Integrity": 321,
+      "Cautiousness": 297,
+      "Stress Tolerance": 288,
+      "Oral Comprehension": 279,
+      "Intellectual Curiosity": 270,
+      "Self-Confidence": 261,
+      "Initiative": 259
+    }
+  },
+  "gap_scores": {
+    "total_scored": 240,
+    "mean_representation_gap": 0.8996,
+    "std_representation_gap": 0.0712,
+    "mean_alignment_gap": 0.086,
+    "std_alignment_gap": 0.0638,
+    "mean_overall_gap": 0.4928,
+    "overall_gap_weights": {
+      "alpha": 0.5,
+      "beta": 0.5
+    },
+    "by_gender": {
+      "representation_gap": {
+        "female": 0.8996,
+        "male": 0.8997
+      },
+      "alignment_gap": {
+        "female": 0.0844,
+        "male": 0.0875
+      },
+      "overall_gap": {
+        "female": 0.492,
+        "male": 0.4936
+      }
+    },
+    "by_template": {
+      "representation_gap": {
+        "T1": 0.905,
+        "T2": 0.9257,
+        "T3": 0.8682
+      },
+      "alignment_gap": {
+        "T1": 0.0895,
+        "T2": 0.0749,
+        "T3": 0.0935
+      },
+      "overall_gap": {
+        "T1": 0.4973,
+        "T2": 0.5003,
+        "T3": 0.4808
+      }
+    }
+  }
+}

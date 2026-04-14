@@ -1,0 +1,41 @@
+job_code,job_title,major_group,selection_seed,selection_strategy,experiment_id
+13-1023.00,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",13,7,two_level_random_sample,EXP_20260413_101441
+13-1031.00,"Claims Adjusters, Examiners, and Investigators",13,7,two_level_random_sample,EXP_20260413_101441
+13-1041.00,Compliance Officers,13,7,two_level_random_sample,EXP_20260413_101441
+13-1041.07,Regulatory Affairs Specialists,13,7,two_level_random_sample,EXP_20260413_101441
+13-1131.00,Fundraisers,13,7,two_level_random_sample,EXP_20260413_101441
+13-1161.00,Market Research Analysts and Marketing Specialists,13,7,two_level_random_sample,EXP_20260413_101441
+13-1199.04,Business Continuity Planners,13,7,two_level_random_sample,EXP_20260413_101441
+13-2053.00,Insurance Underwriters,13,7,two_level_random_sample,EXP_20260413_101441
+19-1021.00,Biochemists and Biophysicists,19,7,two_level_random_sample,EXP_20260413_101441
+19-1022.00,Microbiologists,19,7,two_level_random_sample,EXP_20260413_101441
+19-1029.01,Bioinformatics Scientists,19,7,two_level_random_sample,EXP_20260413_101441
+19-1029.04,Biologists,19,7,two_level_random_sample,EXP_20260413_101441
+19-2032.00,Materials Scientists,19,7,two_level_random_sample,EXP_20260413_101441
+19-3011.00,Economists,19,7,two_level_random_sample,EXP_20260413_101441
+19-3091.00,Anthropologists and Archeologists,19,7,two_level_random_sample,EXP_20260413_101441
+19-4013.00,Food Science Technicians,19,7,two_level_random_sample,EXP_20260413_101441
+31-1122.00,Personal Care Aides,31,7,two_level_random_sample,EXP_20260413_101441
+31-1133.00,Psychiatric Aides,31,7,two_level_random_sample,EXP_20260413_101441
+31-2022.00,Physical Therapist Aides,31,7,two_level_random_sample,EXP_20260413_101441
+31-9091.00,Dental Assistants,31,7,two_level_random_sample,EXP_20260413_101441
+31-9093.00,Medical Equipment Preparers,31,7,two_level_random_sample,EXP_20260413_101441
+31-9094.00,Medical Transcriptionists,31,7,two_level_random_sample,EXP_20260413_101441
+31-9095.00,Pharmacy Aides,31,7,two_level_random_sample,EXP_20260413_101441
+31-9096.00,Veterinary Assistants and Laboratory Animal Caretakers,31,7,two_level_random_sample,EXP_20260413_101441
+35-1011.00,Chefs and Head Cooks,35,7,two_level_random_sample,EXP_20260413_101441
+35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,35,7,two_level_random_sample,EXP_20260413_101441
+35-2011.00,"Cooks, Fast Food",35,7,two_level_random_sample,EXP_20260413_101441
+35-2015.00,"Cooks, Short Order",35,7,two_level_random_sample,EXP_20260413_101441
+35-3011.00,Bartenders,35,7,two_level_random_sample,EXP_20260413_101441
+35-3023.01,Baristas,35,7,two_level_random_sample,EXP_20260413_101441
+35-3041.00,"Food Servers, Nonrestaurant",35,7,two_level_random_sample,EXP_20260413_101441
+35-9031.00,"Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",35,7,two_level_random_sample,EXP_20260413_101441
+51-2041.00,Structural Metal Fabricators and Fitters,51,7,two_level_random_sample,EXP_20260413_101441
+51-2092.00,Team Assemblers,51,7,two_level_random_sample,EXP_20260413_101441
+51-3022.00,"Meat, Poultry, and Fish Cutters and Trimmers",51,7,two_level_random_sample,EXP_20260413_101441
+51-4023.00,"Rolling Machine Setters, Operators, and Tenders, Metal and Plastic",51,7,two_level_random_sample,EXP_20260413_101441
+51-5112.00,Printing Press Operators,51,7,two_level_random_sample,EXP_20260413_101441
+51-6061.00,Textile Bleaching and Dyeing Machine Operators and Tenders,51,7,two_level_random_sample,EXP_20260413_101441
+51-8091.00,Chemical Plant and System Operators,51,7,two_level_random_sample,EXP_20260413_101441
+51-9081.00,Dental Laboratory Technicians,51,7,two_level_random_sample,EXP_20260413_101441
