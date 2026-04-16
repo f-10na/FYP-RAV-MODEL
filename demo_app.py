@@ -32,8 +32,6 @@ if str(project_root) not in sys.path:
 import gradio as gr
 import pandas as pd
 import numpy as np
-import requests
-import json
 import re
 
 import src.utils.functions as utils
@@ -48,7 +46,7 @@ from src.rav.llm import LLM
 
 MODEL_NAME   = "llama3.1:8b"
 API_URL      = "http://localhost:11434/api/chat"
-N_TRAITS     = 10
+N_TRAITS     = 20
 COVERAGE_THRESHOLD   = 0.6
 IMPORTANCE_THRESHOLD = 0.7   # threshold for "high importance" KG traits
 
@@ -107,9 +105,11 @@ def _query_llm(prompt: str, job_code: str, template_type: str, gender: str) -> l
         template_type=template_type,
         gender_condition=gender
     )
+
+    raw = result.get("raw_content", "")
     if result["status"] == "failed":
         return [f"ERROR: {result.get('error', 'unknown')}"]
-    return result["traits"]
+    return result["traits"],raw
 
 
 def _align_traits(traits: list[str], kg_traits: list[dict]) -> pd.DataFrame:
@@ -230,11 +230,12 @@ def run_rav(occupation_option: str, gender_label: str, template_label: str):
     prompt_text, _ = builder(job_title, gender, N_TRAITS)
 
     # ── 2. Query LLM ─────────────────────────────────────────────────────────
-    traits = _query_llm(prompt_text, job_code, template_label, gender)
+    traits, raw_content = _query_llm(prompt_text, job_code, template_label, gender)
     if not traits or traits[0].startswith("ERROR"):
         err = traits[0] if traits else "No response"
         return prompt_text, err, "", "", ""
 
+    # Display parsed traits as clean numbered list — raw_content contains JSON blob so use parsed
     original_md = "\n".join(f"{i+1}. {t}" for i, t in enumerate(traits))
 
     # ── 3. Build KG for this job ──────────────────────────────────────────────
@@ -296,26 +297,62 @@ def run_rav(occupation_option: str, gender_label: str, template_label: str):
         gap_md = "\n".join(gap_lines)
 
         # ── 7. Corrected response ─────────────────────────────────────────────
-        corrected_lines = ["### Original Traits"]
+        top5 = missing[:5]
+        # # Start from the original human-readable LLM output
+        # base = raw_content if raw_content else "\n".join(
+        #     f"{i+1}. {t}" for i, t in enumerate(traits)
+        # )
+
+        # # Count how many items the original response had for numbering continuation
+        # original_count = len(traits)
+
+        # addition_lines = [
+        #     "",
+        #     f"*✨ RAV identified {len(top5)} additional high-importance traits "
+        #     f"not covered in the original response:*",
+        #     "",
+        # ]
+        # for i, m in enumerate(top5):
+        #     addition_lines.append(
+        #         f"{original_count + i + 1}. **{m['trait']}** — "
+        #         f"a key occupational attribute for this role "
+        #         f"(KG importance: {m['importance']} {_severity_label(m['importance'])})."
+        #     )
+
+        corrected_lines = []
         for i, t in enumerate(traits):
             corrected_lines.append(f"{i+1}. {t}")
+ 
+        # # Build natural sentence listing the top 5
+        # trait_mentions = ", ".join(
+        #     f"**{m['trait']}** (importance: {m['importance']} {_severity_label(m['importance'])})"
+        #     for m in top5
+        # )
+        # corrected_lines += [
+        #     "",
+        #     f"*✨ RAV also identified the following high-importance occupational "
+        #     f"attributes not represented in the original response: {trait_mentions}.*",
+        # ]
 
-        corrected_lines += [
-            "",
-            "---",
-            "### ➕ Added by RAV Correction",
-            f"*{len(missing)} high-importance KG trait(s) identified as missing "
-            f"(importance ≥ {IMPORTANCE_THRESHOLD}, coverage < {COVERAGE_THRESHOLD}):*",
-            "",
-        ]
-        for m in missing:
-            corrected_lines.append(
-                f"- **{m['trait']}** "
-                f"— KG importance: {m['importance']} {_severity_label(m['importance'])} "
-                f"| Best coverage in original response: {m['coverage']}"
-            )
+        original_html = "".join(f"<p>{i+1}. {t}</p>" for i, t in enumerate(traits))
 
-        corrected_md = "\n".join(corrected_lines)
+        additions_html = ", ".join(
+            f'<span style="color:#2563eb;font-weight:600">{m["trait"]}</span> '
+            f'(importance: {m["importance"]} {_severity_label(m["importance"])})'
+            for m in top5
+        )
+
+        corrected_md = (
+            original_html +
+            f'<p><em>✨ RAV also identified the following high-importance occupational '
+            f'attributes not represented in the original response: {additions_html}.</em></p>'
+        )
+ 
+        corrected_md = (
+            original_html +
+            f'<p><em>✨ RAV also identified the following high-importance occupational '
+            f'attributes not represented in the original response: {additions_html}.</em></p>'
+        )
 
     return prompt_text, original_md, score_md, corrected_md, gap_md
 
@@ -401,19 +438,19 @@ with gr.Blocks(
 
     gr.Markdown("---")
 
-    # ── Gap analysis ──────────────────────────────────────────────────────────
-    with gr.Accordion("📊 Gap Analysis — Missing KG Traits", open=True):
-        gap_out = gr.Markdown()
-
-    gr.Markdown("---")
-
     # ── Corrected response ────────────────────────────────────────────────────
     gr.Markdown("### ✅ Corrected Response")
     gr.Markdown(
         "*Original traits preserved. Missing high-importance KG traits appended "
         "with importance score and severity.*"
     )
-    corrected_out = gr.Markdown()
+    corrected_out = gr.HTML()
+
+    # ── Gap analysis ──────────────────────────────────────────────────────────
+    with gr.Accordion("📊 Gap Analysis — Missing KG Traits", open=True):
+        gap_out = gr.Markdown()
+
+    gr.Markdown("---")
 
     # ── Footer note ───────────────────────────────────────────────────────────
     gr.Markdown(

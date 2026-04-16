@@ -55,7 +55,7 @@ class LLM:
                 gender_condition: Gender condition for response ID
 
             Returns:
-                Dict with response_id, traits, and metadata
+                Dict with response_id, traits, original response and metadata
             """
         
         # GENERATE RESPONSE ID
@@ -187,7 +187,8 @@ class LLM:
                 'experiment_id': experiment_id,
                 'traits': cleaned_traits[:n],
                 'n_traits': len(cleaned_traits[:n]),
-                'status': 'success'
+                'status': 'success',
+                'raw_content': content
             }
             
         except (json.JSONDecodeError, ValueError) as e:
