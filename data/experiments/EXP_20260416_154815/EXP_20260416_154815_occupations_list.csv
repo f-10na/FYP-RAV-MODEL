@@ -1,0 +1,41 @@
+job_code,job_title,major_group,selection_seed,selection_strategy,experiment_id
+13-1022.00,"Wholesale and Retail Buyers, Except Farm Products",13,123,two_level_random_sample,EXP_20260416_154815
+13-1023.00,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",13,123,two_level_random_sample,EXP_20260416_154815
+13-1032.00,"Insurance Appraisers, Auto Damage",13,123,two_level_random_sample,EXP_20260416_154815
+13-1041.00,Compliance Officers,13,123,two_level_random_sample,EXP_20260416_154815
+13-1081.02,Logistics Analysts,13,123,two_level_random_sample,EXP_20260416_154815
+13-1161.01,Search Marketing Strategists,13,123,two_level_random_sample,EXP_20260416_154815
+13-1199.06,Online Merchants,13,123,two_level_random_sample,EXP_20260416_154815
+13-2099.01,Financial Quantitative Analysts,13,123,two_level_random_sample,EXP_20260416_154815
+15-1211.01,Health Informatics Specialists,15,123,two_level_random_sample,EXP_20260416_154815
+15-1212.00,Information Security Analysts,15,123,two_level_random_sample,EXP_20260416_154815
+15-1221.00,Computer and Information Research Scientists,15,123,two_level_random_sample,EXP_20260416_154815
+15-1242.00,Database Administrators,15,123,two_level_random_sample,EXP_20260416_154815
+15-1252.00,Software Developers,15,123,two_level_random_sample,EXP_20260416_154815
+15-2021.00,Mathematicians,15,123,two_level_random_sample,EXP_20260416_154815
+15-2051.02,Clinical Data Managers,15,123,two_level_random_sample,EXP_20260416_154815
+15-2099.01,Bioinformatics Technicians,15,123,two_level_random_sample,EXP_20260416_154815
+17-1021.00,Cartographers and Photogrammetrists,17,123,two_level_random_sample,EXP_20260416_154815
+17-1022.00,Surveyors,17,123,two_level_random_sample,EXP_20260416_154815
+17-2011.00,Aerospace Engineers,17,123,two_level_random_sample,EXP_20260416_154815
+17-2021.00,Agricultural Engineers,17,123,two_level_random_sample,EXP_20260416_154815
+17-2111.02,Fire-Prevention and Protection Engineers,17,123,two_level_random_sample,EXP_20260416_154815
+17-2141.00,Mechanical Engineers,17,123,two_level_random_sample,EXP_20260416_154815
+17-2141.02,Automotive Engineers,17,123,two_level_random_sample,EXP_20260416_154815
+17-3029.08,Photonics Technicians,17,123,two_level_random_sample,EXP_20260416_154815
+27-1013.00,"Fine Artists, Including Painters, Sculptors, and Illustrators",27,123,two_level_random_sample,EXP_20260416_154815
+27-1014.00,Special Effects Artists and Animators,27,123,two_level_random_sample,EXP_20260416_154815
+27-1022.00,Fashion Designers,27,123,two_level_random_sample,EXP_20260416_154815
+27-1023.00,Floral Designers,27,123,two_level_random_sample,EXP_20260416_154815
+27-2012.00,Producers and Directors,27,123,two_level_random_sample,EXP_20260416_154815
+27-2022.00,Coaches and Scouts,27,123,two_level_random_sample,EXP_20260416_154815
+27-3041.00,Editors,27,123,two_level_random_sample,EXP_20260416_154815
+27-4031.00,"Camera Operators, Television, Video, and Film",27,123,two_level_random_sample,EXP_20260416_154815
+37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,37,123,two_level_random_sample,EXP_20260416_154815
+37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",37,123,two_level_random_sample,EXP_20260416_154815
+37-2011.00,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",37,123,two_level_random_sample,EXP_20260416_154815
+37-2012.00,Maids and Housekeeping Cleaners,37,123,two_level_random_sample,EXP_20260416_154815
+37-2021.00,Pest Control Workers,37,123,two_level_random_sample,EXP_20260416_154815
+37-3011.00,Landscaping and Groundskeeping Workers,37,123,two_level_random_sample,EXP_20260416_154815
+37-3012.00,"Pesticide Handlers, Sprayers, and Applicators, Vegetation",37,123,two_level_random_sample,EXP_20260416_154815
+37-3013.00,Tree Trimmers and Pruners,37,123,two_level_random_sample,EXP_20260416_154815

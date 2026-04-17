@@ -43,12 +43,12 @@ from src.rav.llm import LLM
 # =============================================================================
 # CONFIG
 # =============================================================================
-
-MODEL_NAME   = "llama3.1:8b"
-API_URL      = "http://localhost:11434/api/chat"
-N_TRAITS     = 20
+MODEL_NAME           = "llama3.1:8b"
+API_URL              = "http://localhost:11434/api/chat"
+N_TRAITS             = 10    # matches CONFIG['N']
 COVERAGE_THRESHOLD   = 0.6
-IMPORTANCE_THRESHOLD = 0.7   # threshold for "high importance" KG traits
+IMPORTANCE_THRESHOLD = 0.7
+KG_EVAL_CAP          = 15    # matches CONFIG['KG_EVAL_CAP'] — top 1.5*N KG traits for C and D
 
 PROJECT_ROOT = utils.find_project_root()
 DATA_DIR     = PROJECT_ROOT / "data" / "onet_datasets" / "curated"
@@ -245,16 +245,23 @@ def run_rav(occupation_option: str, gender_label: str, template_label: str):
 
     kg = KnowledgeGraph()
     kg.build_KG(job_rows)
-    kg_traits = kg.get_kg_traits_for_job(job_code)
+    kg_traits_full = kg.get_kg_traits_for_job(job_code)
 
-    if not kg_traits:
+    if not kg_traits_full:
         return prompt_text, original_md, "⚠️ No KG traits found for this occupation.", "", ""
 
+    # Full KG for alignment (LLM → KG direction)
+    # Capped KG for coverage/density scoring (KG → LLM direction)
+    kg_traits_capped = sorted(
+        kg_traits_full,
+        key=lambda x: -x.get('importance', 0)
+    )[:KG_EVAL_CAP]
+
     # ── 4. Align ──────────────────────────────────────────────────────────────
-    alignment_df = _align_traits(traits, kg_traits)
+    alignment_df = _align_traits(traits, kg_traits_full)
 
     # ── 5. Scores ─────────────────────────────────────────────────────────────
-    scores = _compute_scores(alignment_df, kg_traits)
+    scores = _compute_scores(alignment_df, kg_traits_capped)
     A, C, D = scores["A"], scores["C"], scores["D"]
 
     # URDM — downweight D given N=10 structural ceiling
@@ -272,12 +279,12 @@ def run_rav(occupation_option: str, gender_label: str, template_label: str):
         "",
         f"**URDM** (α={alpha}, β={beta}, γ={gamma}): **{URDM:.3f}**" if URDM else "URDM: N/A",
         "",
-        f"*KG traits: {len(kg_traits)} | LLM traits: {len(traits)} | "
+        f"*KG full traits: {len(kg_traits_full)} | KG capped traits: {len(kg_traits_capped)} | LLM traits: {len(traits)} | "
         f"Coverage threshold τ = {COVERAGE_THRESHOLD}*",
     ])
 
     # ── 6. Missing traits ─────────────────────────────────────────────────────
-    missing = _find_missing_traits(alignment_df, kg_traits)
+    missing = _find_missing_traits(alignment_df, kg_traits_capped)
 
     if not missing:
         gap_md = "✅ All high-importance KG traits are adequately covered."

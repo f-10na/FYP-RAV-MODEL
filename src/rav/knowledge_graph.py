@@ -159,7 +159,6 @@ class KnowledgeGraph:
             all_traits[job_code] = self.get_kg_traits_for_job(job_code)
         return all_traits
     
-
     def visualize_interactive_graph(self, filename="job_graph.html"):
         """
         Create an interactive visualisation of the Knowledge Graph.

@@ -1,0 +1,241 @@
+response_id,job_code,job_title,gender_condition,template_type,response_alignment,neutral_alignment,representation_gap,alignment_gap,overall_gap,n_critical_traits,n_missing_traits
+EXP_20260416_145848_11-1021.00_T1_male,11-1021.00,General and Operations Managers,male,T1,0.68,0.6563,0.8,0.0237,0.4119,15,12
+EXP_20260416_145848_11-1021.00_T1_female,11-1021.00,General and Operations Managers,female,T1,0.4986,0.6563,0.9333,0.1577,0.5455,15,14
+EXP_20260416_145848_11-1021.00_T2_male,11-1021.00,General and Operations Managers,male,T2,0.5123,0.6557,0.8667,0.1434,0.505,15,13
+EXP_20260416_145848_11-1021.00_T2_female,11-1021.00,General and Operations Managers,female,T2,0.6206,0.6557,0.7333,0.0351,0.3842,15,11
+EXP_20260416_145848_11-1021.00_T3_male,11-1021.00,General and Operations Managers,male,T3,0.6555,0.5549,0.7333,0.1006,0.4169,15,11
+EXP_20260416_145848_11-1021.00_T3_female,11-1021.00,General and Operations Managers,female,T3,0.74,0.5549,0.6667,0.1851,0.4259,15,10
+EXP_20260416_145848_11-3012.00_T1_male,11-3012.00,Administrative Services Managers,male,T1,0.6284,0.6347,0.8,0.0062,0.4031,15,12
+EXP_20260416_145848_11-3012.00_T1_female,11-3012.00,Administrative Services Managers,female,T1,0.7233,0.6347,0.8,0.0886,0.4443,15,12
+EXP_20260416_145848_11-3012.00_T2_male,11-3012.00,Administrative Services Managers,male,T2,0.6324,0.5291,0.8,0.1033,0.4516,15,12
+EXP_20260416_145848_11-3012.00_T2_female,11-3012.00,Administrative Services Managers,female,T2,0.6078,0.5291,0.9333,0.0787,0.506,15,14
+EXP_20260416_145848_11-3012.00_T3_male,11-3012.00,Administrative Services Managers,male,T3,0.5158,0.6457,1.0,0.1299,0.5649,15,15
+EXP_20260416_145848_11-3012.00_T3_female,11-3012.00,Administrative Services Managers,female,T3,0.6322,0.6457,1.0,0.0135,0.5068,15,15
+EXP_20260416_145848_11-3013.00_T1_male,11-3013.00,Facilities Managers,male,T1,0.6214,0.7168,0.8667,0.0954,0.4811,15,13
+EXP_20260416_145848_11-3013.00_T1_female,11-3013.00,Facilities Managers,female,T1,0.6986,0.7168,0.7333,0.0182,0.3757,15,11
+EXP_20260416_145848_11-3013.00_T2_male,11-3013.00,Facilities Managers,male,T2,0.6954,0.694,0.7333,0.0013,0.3673,15,11
+EXP_20260416_145848_11-3013.00_T2_female,11-3013.00,Facilities Managers,female,T2,0.6758,0.694,0.7333,0.0183,0.3758,15,11
+EXP_20260416_145848_11-3013.00_T3_male,11-3013.00,Facilities Managers,male,T3,0.6534,0.5841,0.8,0.0693,0.4347,15,12
+EXP_20260416_145848_11-3013.00_T3_female,11-3013.00,Facilities Managers,female,T3,0.5546,0.5841,0.8667,0.0295,0.4481,15,13
+EXP_20260416_145848_11-3013.01_T1_male,11-3013.01,Security Managers,male,T1,0.5046,0.6794,0.8,0.1748,0.4874,15,12
+EXP_20260416_145848_11-3013.01_T1_female,11-3013.01,Security Managers,female,T1,0.6411,0.6794,0.7333,0.0383,0.3858,15,11
+EXP_20260416_145848_11-3013.01_T2_male,11-3013.01,Security Managers,male,T2,0.6266,0.4056,0.8667,0.221,0.5439,15,13
+EXP_20260416_145848_11-3013.01_T2_female,11-3013.01,Security Managers,female,T2,0.6061,0.4056,0.7333,0.2005,0.4669,15,11
+EXP_20260416_145848_11-3013.01_T3_male,11-3013.01,Security Managers,male,T3,0.5397,0.7024,0.8667,0.1628,0.5148,15,13
+EXP_20260416_145848_11-3013.01_T3_female,11-3013.01,Security Managers,female,T3,0.6642,0.7024,0.8667,0.0382,0.4525,15,13
+EXP_20260416_145848_11-3051.01_T1_male,11-3051.01,Quality Control Systems Managers,male,T1,0.6402,0.6056,0.8,0.0346,0.4173,15,12
+EXP_20260416_145848_11-3051.01_T1_female,11-3051.01,Quality Control Systems Managers,female,T1,0.6637,0.6056,0.7333,0.0581,0.3957,15,11
+EXP_20260416_145848_11-3051.01_T2_male,11-3051.01,Quality Control Systems Managers,male,T2,0.627,0.6732,0.8,0.0462,0.4231,15,12
+EXP_20260416_145848_11-3051.01_T2_female,11-3051.01,Quality Control Systems Managers,female,T2,0.5294,0.6732,0.9333,0.1437,0.5385,15,14
+EXP_20260416_145848_11-3051.01_T3_male,11-3051.01,Quality Control Systems Managers,male,T3,0.5773,0.6917,0.9333,0.1144,0.5239,15,14
+EXP_20260416_145848_11-3051.01_T3_female,11-3051.01,Quality Control Systems Managers,female,T3,0.7086,0.6917,0.7333,0.0169,0.3751,15,11
+EXP_20260416_145848_11-3061.00_T1_male,11-3061.00,Purchasing Managers,male,T1,0.6233,0.6521,0.9333,0.0288,0.4811,15,14
+EXP_20260416_145848_11-3061.00_T1_female,11-3061.00,Purchasing Managers,female,T1,0.6975,0.6521,0.9333,0.0453,0.4893,15,14
+EXP_20260416_145848_11-3061.00_T2_male,11-3061.00,Purchasing Managers,male,T2,0.671,0.5818,0.9333,0.0892,0.5112,15,14
+EXP_20260416_145848_11-3061.00_T2_female,11-3061.00,Purchasing Managers,female,T2,0.6547,0.5818,0.9333,0.0729,0.5031,15,14
+EXP_20260416_145848_11-3061.00_T3_male,11-3061.00,Purchasing Managers,male,T3,0.7424,0.5444,0.8667,0.198,0.5323,15,13
+EXP_20260416_145848_11-3061.00_T3_female,11-3061.00,Purchasing Managers,female,T3,0.5853,0.5444,0.8667,0.0409,0.4538,15,13
+EXP_20260416_145848_11-3071.04_T1_male,11-3071.04,Supply Chain Managers,male,T1,0.7006,0.6824,0.7333,0.0181,0.3757,15,11
+EXP_20260416_145848_11-3071.04_T1_female,11-3071.04,Supply Chain Managers,female,T1,0.579,0.6824,0.9333,0.1035,0.5184,15,14
+EXP_20260416_145848_11-3071.04_T2_male,11-3071.04,Supply Chain Managers,male,T2,0.5553,0.68,0.9333,0.1247,0.529,15,14
+EXP_20260416_145848_11-3071.04_T2_female,11-3071.04,Supply Chain Managers,female,T2,0.567,0.68,0.8667,0.113,0.4899,15,13
+EXP_20260416_145848_11-3071.04_T3_male,11-3071.04,Supply Chain Managers,male,T3,0.6842,0.6344,0.7333,0.0498,0.3915,15,11
+EXP_20260416_145848_11-3071.04_T3_female,11-3071.04,Supply Chain Managers,female,T3,0.5838,0.6344,0.8667,0.0506,0.4587,15,13
+EXP_20260416_145848_11-9179.02_T1_male,11-9179.02,Spa Managers,male,T1,0.6614,0.6971,0.7333,0.0357,0.3845,15,11
+EXP_20260416_145848_11-9179.02_T1_female,11-9179.02,Spa Managers,female,T1,0.7413,0.6971,0.7333,0.0442,0.3887,15,11
+EXP_20260416_145848_11-9179.02_T2_male,11-9179.02,Spa Managers,male,T2,0.5208,0.6582,0.9333,0.1374,0.5353,15,14
+EXP_20260416_145848_11-9179.02_T2_female,11-9179.02,Spa Managers,female,T2,0.4942,0.6582,0.9333,0.164,0.5486,15,14
+EXP_20260416_145848_11-9179.02_T3_male,11-9179.02,Spa Managers,male,T3,0.7944,0.5445,0.7333,0.2499,0.4916,15,11
+EXP_20260416_145848_11-9179.02_T3_female,11-9179.02,Spa Managers,female,T3,0.508,0.5445,0.8667,0.0365,0.4516,15,13
+EXP_20260416_145848_17-1012.00_T1_male,17-1012.00,Landscape Architects,male,T1,0.5001,0.5555,0.9333,0.0553,0.4943,15,14
+EXP_20260416_145848_17-1012.00_T1_female,17-1012.00,Landscape Architects,female,T1,0.5388,0.5555,0.9333,0.0166,0.4749,15,14
+EXP_20260416_145848_17-1012.00_T2_male,17-1012.00,Landscape Architects,male,T2,0.5554,0.5329,0.8,0.0226,0.4113,15,12
+EXP_20260416_145848_17-1012.00_T2_female,17-1012.00,Landscape Architects,female,T2,0.6525,0.5329,0.7333,0.1196,0.4264,15,11
+EXP_20260416_145848_17-1012.00_T3_male,17-1012.00,Landscape Architects,male,T3,0.5795,0.7791,0.7333,0.1997,0.4665,15,11
+EXP_20260416_145848_17-1012.00_T3_female,17-1012.00,Landscape Architects,female,T3,0.6109,0.7791,0.8667,0.1682,0.5174,15,13
+EXP_20260416_145848_17-2031.00_T1_male,17-2031.00,Bioengineers and Biomedical Engineers,male,T1,0.6242,0.5332,0.8,0.091,0.4455,15,12
+EXP_20260416_145848_17-2031.00_T1_female,17-2031.00,Bioengineers and Biomedical Engineers,female,T1,0.7028,0.5332,0.8,0.1696,0.4848,15,12
+EXP_20260416_145848_17-2031.00_T2_male,17-2031.00,Bioengineers and Biomedical Engineers,male,T2,0.5399,0.5682,1.0,0.0283,0.5141,15,15
+EXP_20260416_145848_17-2031.00_T2_female,17-2031.00,Bioengineers and Biomedical Engineers,female,T2,0.4756,0.5682,1.0,0.0926,0.5463,15,15
+EXP_20260416_145848_17-2031.00_T3_male,17-2031.00,Bioengineers and Biomedical Engineers,male,T3,0.8012,0.6444,0.7333,0.1568,0.445,15,11
+EXP_20260416_145848_17-2031.00_T3_female,17-2031.00,Bioengineers and Biomedical Engineers,female,T3,0.562,0.6444,0.8667,0.0824,0.4746,15,13
+EXP_20260416_145848_17-2041.00_T1_male,17-2041.00,Chemical Engineers,male,T1,0.5514,0.6162,0.9333,0.0647,0.499,15,14
+EXP_20260416_145848_17-2041.00_T1_female,17-2041.00,Chemical Engineers,female,T1,0.4437,0.6162,1.0,0.1725,0.5862,15,15
+EXP_20260416_145848_17-2041.00_T2_male,17-2041.00,Chemical Engineers,male,T2,0.6295,0.5143,0.8667,0.1152,0.4909,15,13
+EXP_20260416_145848_17-2041.00_T2_female,17-2041.00,Chemical Engineers,female,T2,0.5469,0.5143,0.9333,0.0326,0.4829,15,14
+EXP_20260416_145848_17-2041.00_T3_male,17-2041.00,Chemical Engineers,male,T3,0.7668,0.6383,0.8,0.1285,0.4643,15,12
+EXP_20260416_145848_17-2041.00_T3_female,17-2041.00,Chemical Engineers,female,T3,0.7621,0.6383,0.8,0.1238,0.4619,15,12
+EXP_20260416_145848_17-2072.01_T1_male,17-2072.01,Radio Frequency Identification Device Specialists,male,T1,0.5685,0.6174,0.8667,0.0489,0.4578,15,13
+EXP_20260416_145848_17-2072.01_T1_female,17-2072.01,Radio Frequency Identification Device Specialists,female,T1,0.385,0.6174,1.0,0.2324,0.6162,15,15
+EXP_20260416_145848_17-2072.01_T2_male,17-2072.01,Radio Frequency Identification Device Specialists,male,T2,0.4482,0.4092,1.0,0.039,0.5195,15,15
+EXP_20260416_145848_17-2072.01_T2_female,17-2072.01,Radio Frequency Identification Device Specialists,female,T2,0.4628,0.4092,0.9333,0.0536,0.4934,15,14
+EXP_20260416_145848_17-2072.01_T3_male,17-2072.01,Radio Frequency Identification Device Specialists,male,T3,0.5848,0.6816,0.8667,0.0968,0.4818,15,13
+EXP_20260416_145848_17-2072.01_T3_female,17-2072.01,Radio Frequency Identification Device Specialists,female,T3,0.5707,0.6816,0.8667,0.1108,0.4888,15,13
+EXP_20260416_145848_17-2081.00_T1_male,17-2081.00,Environmental Engineers,male,T1,0.5342,0.5976,0.9333,0.0635,0.4984,15,14
+EXP_20260416_145848_17-2081.00_T1_female,17-2081.00,Environmental Engineers,female,T1,0.5572,0.5976,0.9333,0.0404,0.4869,15,14
+EXP_20260416_145848_17-2081.00_T2_male,17-2081.00,Environmental Engineers,male,T2,0.571,0.4946,0.9333,0.0764,0.5049,15,14
+EXP_20260416_145848_17-2081.00_T2_female,17-2081.00,Environmental Engineers,female,T2,0.5052,0.4946,0.9333,0.0106,0.472,15,14
+EXP_20260416_145848_17-2081.00_T3_male,17-2081.00,Environmental Engineers,male,T3,0.6757,0.7044,0.6667,0.0287,0.3477,15,10
+EXP_20260416_145848_17-2081.00_T3_female,17-2081.00,Environmental Engineers,female,T3,0.7189,0.7044,0.6667,0.0145,0.3406,15,10
+EXP_20260416_145848_17-2111.02_T1_male,17-2111.02,Fire-Prevention and Protection Engineers,male,T1,0.5522,0.754,0.9333,0.2018,0.5675,15,14
+EXP_20260416_145848_17-2111.02_T1_female,17-2111.02,Fire-Prevention and Protection Engineers,female,T1,0.565,0.754,0.8667,0.189,0.5279,15,13
+EXP_20260416_145848_17-2111.02_T2_male,17-2111.02,Fire-Prevention and Protection Engineers,male,T2,0.5019,0.5005,0.8667,0.0015,0.4341,15,13
+EXP_20260416_145848_17-2111.02_T2_female,17-2111.02,Fire-Prevention and Protection Engineers,female,T2,0.5094,0.5005,0.8667,0.0089,0.4378,15,13
+EXP_20260416_145848_17-2111.02_T3_male,17-2111.02,Fire-Prevention and Protection Engineers,male,T3,0.5317,0.6679,0.9333,0.1362,0.5348,15,14
+EXP_20260416_145848_17-2111.02_T3_female,17-2111.02,Fire-Prevention and Protection Engineers,female,T3,0.6932,0.6679,0.7333,0.0253,0.3793,15,11
+EXP_20260416_145848_17-3022.00_T1_male,17-3022.00,Civil Engineering Technologists and Technicians,male,T1,0.7424,0.7408,0.8667,0.0016,0.4342,15,13
+EXP_20260416_145848_17-3022.00_T1_female,17-3022.00,Civil Engineering Technologists and Technicians,female,T1,0.5236,0.7408,0.9333,0.2172,0.5753,15,14
+EXP_20260416_145848_17-3022.00_T2_male,17-3022.00,Civil Engineering Technologists and Technicians,male,T2,0.6201,0.6009,0.8667,0.0192,0.443,15,13
+EXP_20260416_145848_17-3022.00_T2_female,17-3022.00,Civil Engineering Technologists and Technicians,female,T2,0.5145,0.6009,0.9333,0.0864,0.5099,15,14
+EXP_20260416_145848_17-3022.00_T3_male,17-3022.00,Civil Engineering Technologists and Technicians,male,T3,0.5607,0.5395,0.8667,0.0212,0.444,15,13
+EXP_20260416_145848_17-3022.00_T3_female,17-3022.00,Civil Engineering Technologists and Technicians,female,T3,0.6367,0.5395,0.9333,0.0972,0.5152,15,14
+EXP_20260416_145848_17-3027.00_T1_male,17-3027.00,Mechanical Engineering Technologists and Technicians,male,T1,0.6418,0.5277,0.9333,0.1141,0.5237,15,14
+EXP_20260416_145848_17-3027.00_T1_female,17-3027.00,Mechanical Engineering Technologists and Technicians,female,T1,0.7124,0.5277,0.7333,0.1847,0.459,15,11
+EXP_20260416_145848_17-3027.00_T2_male,17-3027.00,Mechanical Engineering Technologists and Technicians,male,T2,0.5473,0.6554,1.0,0.1081,0.5541,15,15
+EXP_20260416_145848_17-3027.00_T2_female,17-3027.00,Mechanical Engineering Technologists and Technicians,female,T2,0.5987,0.6554,0.9333,0.0567,0.495,15,14
+EXP_20260416_145848_17-3027.00_T3_male,17-3027.00,Mechanical Engineering Technologists and Technicians,male,T3,0.6914,0.8064,0.8667,0.115,0.4909,15,13
+EXP_20260416_145848_17-3027.00_T3_female,17-3027.00,Mechanical Engineering Technologists and Technicians,female,T3,0.669,0.8064,0.8,0.1374,0.4687,15,12
+EXP_20260416_145848_25-1021.00_T1_male,25-1021.00,"Computer Science Teachers, Postsecondary",male,T1,0.4729,0.4476,1.0,0.0253,0.5127,15,15
+EXP_20260416_145848_25-1021.00_T1_female,25-1021.00,"Computer Science Teachers, Postsecondary",female,T1,0.4279,0.4476,1.0,0.0197,0.5099,15,15
+EXP_20260416_145848_25-1021.00_T2_male,25-1021.00,"Computer Science Teachers, Postsecondary",male,T2,0.4569,0.4529,0.9333,0.0041,0.4687,15,14
+EXP_20260416_145848_25-1021.00_T2_female,25-1021.00,"Computer Science Teachers, Postsecondary",female,T2,0.4601,0.4529,1.0,0.0073,0.5037,15,15
+EXP_20260416_145848_25-1021.00_T3_male,25-1021.00,"Computer Science Teachers, Postsecondary",male,T3,0.539,0.5193,0.9333,0.0197,0.4765,15,14
+EXP_20260416_145848_25-1021.00_T3_female,25-1021.00,"Computer Science Teachers, Postsecondary",female,T3,0.6973,0.5193,0.8667,0.178,0.5223,15,13
+EXP_20260416_145848_25-1043.00_T1_male,25-1043.00,"Forestry and Conservation Science Teachers, Postsecondary",male,T1,0.4247,0.4377,1.0,0.013,0.5065,15,15
+EXP_20260416_145848_25-1043.00_T1_female,25-1043.00,"Forestry and Conservation Science Teachers, Postsecondary",female,T1,0.5763,0.4377,1.0,0.1386,0.5693,15,15
+EXP_20260416_145848_25-1043.00_T2_male,25-1043.00,"Forestry and Conservation Science Teachers, Postsecondary",male,T2,0.535,0.4722,1.0,0.0628,0.5314,15,15
+EXP_20260416_145848_25-1043.00_T2_female,25-1043.00,"Forestry and Conservation Science Teachers, Postsecondary",female,T2,0.3744,0.4722,1.0,0.0978,0.5489,15,15
+EXP_20260416_145848_25-1043.00_T3_male,25-1043.00,"Forestry and Conservation Science Teachers, Postsecondary",male,T3,0.4687,0.5137,0.9333,0.045,0.4892,15,14
+EXP_20260416_145848_25-1043.00_T3_female,25-1043.00,"Forestry and Conservation Science Teachers, Postsecondary",female,T3,0.4759,0.5137,1.0,0.0378,0.5189,15,15
+EXP_20260416_145848_25-1051.00_T1_male,25-1051.00,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",male,T1,0.4835,0.4384,0.9333,0.0451,0.4892,15,14
+EXP_20260416_145848_25-1051.00_T1_female,25-1051.00,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",female,T1,0.4198,0.4384,1.0,0.0185,0.5092,15,15
+EXP_20260416_145848_25-1051.00_T2_male,25-1051.00,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",male,T2,0.4158,0.4313,1.0,0.0155,0.5078,15,15
+EXP_20260416_145848_25-1051.00_T2_female,25-1051.00,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",female,T2,0.4703,0.4313,1.0,0.039,0.5195,15,15
+EXP_20260416_145848_25-1051.00_T3_male,25-1051.00,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",male,T3,0.4888,0.6378,0.8667,0.149,0.5079,15,13
+EXP_20260416_145848_25-1051.00_T3_female,25-1051.00,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",female,T3,0.6358,0.6378,0.8667,0.002,0.4344,15,13
+EXP_20260416_145848_25-1063.00_T1_male,25-1063.00,"Economics Teachers, Postsecondary",male,T1,0.4649,0.4581,1.0,0.0068,0.5034,15,15
+EXP_20260416_145848_25-1063.00_T1_female,25-1063.00,"Economics Teachers, Postsecondary",female,T1,0.4155,0.4581,1.0,0.0426,0.5213,15,15
+EXP_20260416_145848_25-1063.00_T2_male,25-1063.00,"Economics Teachers, Postsecondary",male,T2,0.4573,0.5199,1.0,0.0626,0.5313,15,15
+EXP_20260416_145848_25-1063.00_T2_female,25-1063.00,"Economics Teachers, Postsecondary",female,T2,0.6109,0.5199,1.0,0.0911,0.5455,15,15
+EXP_20260416_145848_25-1063.00_T3_male,25-1063.00,"Economics Teachers, Postsecondary",male,T3,0.4715,0.5125,1.0,0.041,0.5205,15,15
+EXP_20260416_145848_25-1063.00_T3_female,25-1063.00,"Economics Teachers, Postsecondary",female,T3,0.4484,0.5125,1.0,0.0641,0.5321,15,15
+EXP_20260416_145848_25-1064.00_T1_male,25-1064.00,"Geography Teachers, Postsecondary",male,T1,0.4681,0.4777,1.0,0.0095,0.5048,15,15
+EXP_20260416_145848_25-1064.00_T1_female,25-1064.00,"Geography Teachers, Postsecondary",female,T1,0.4966,0.4777,1.0,0.019,0.5095,15,15
+EXP_20260416_145848_25-1064.00_T2_male,25-1064.00,"Geography Teachers, Postsecondary",male,T2,0.4836,0.5082,1.0,0.0246,0.5123,15,15
+EXP_20260416_145848_25-1064.00_T2_female,25-1064.00,"Geography Teachers, Postsecondary",female,T2,0.5355,0.5082,0.9333,0.0273,0.4803,15,14
+EXP_20260416_145848_25-1064.00_T3_male,25-1064.00,"Geography Teachers, Postsecondary",male,T3,0.6282,0.4351,0.9333,0.1931,0.5632,15,14
+EXP_20260416_145848_25-1064.00_T3_female,25-1064.00,"Geography Teachers, Postsecondary",female,T3,0.5145,0.4351,0.9333,0.0794,0.5063,15,14
+EXP_20260416_145848_25-1066.00_T1_male,25-1066.00,"Psychology Teachers, Postsecondary",male,T1,0.573,0.4485,0.9333,0.1245,0.5289,15,14
+EXP_20260416_145848_25-1066.00_T1_female,25-1066.00,"Psychology Teachers, Postsecondary",female,T1,0.5819,0.4485,0.9333,0.1334,0.5333,15,14
+EXP_20260416_145848_25-1066.00_T2_male,25-1066.00,"Psychology Teachers, Postsecondary",male,T2,0.5007,0.4456,0.9333,0.0551,0.4942,15,14
+EXP_20260416_145848_25-1066.00_T2_female,25-1066.00,"Psychology Teachers, Postsecondary",female,T2,0.6275,0.4456,0.8667,0.1819,0.5243,15,13
+EXP_20260416_145848_25-1066.00_T3_male,25-1066.00,"Psychology Teachers, Postsecondary",male,T3,0.65,0.4761,0.8667,0.1739,0.5203,15,13
+EXP_20260416_145848_25-1066.00_T3_female,25-1066.00,"Psychology Teachers, Postsecondary",female,T3,0.5784,0.4761,0.8,0.1022,0.4511,15,12
+EXP_20260416_145848_25-2031.00_T1_male,25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education",male,T1,0.5675,0.4963,0.8667,0.0712,0.469,15,13
+EXP_20260416_145848_25-2031.00_T1_female,25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education",female,T1,0.5937,0.4963,0.8667,0.0974,0.4821,15,13
+EXP_20260416_145848_25-2031.00_T2_male,25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education",male,T2,0.4959,0.517,0.9333,0.0211,0.4772,15,14
+EXP_20260416_145848_25-2031.00_T2_female,25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education",female,T2,0.5043,0.517,0.9333,0.0127,0.473,15,14
+EXP_20260416_145848_25-2031.00_T3_male,25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education",male,T3,0.5456,0.4417,0.9333,0.1039,0.5186,15,14
+EXP_20260416_145848_25-2031.00_T3_female,25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education",female,T3,0.5395,0.4417,0.8,0.0978,0.4489,15,12
+EXP_20260416_145848_25-3011.00_T1_male,25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",male,T1,0.4769,0.4786,0.9333,0.0018,0.4676,15,14
+EXP_20260416_145848_25-3011.00_T1_female,25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",female,T1,0.5709,0.4786,0.8667,0.0923,0.4795,15,13
+EXP_20260416_145848_25-3011.00_T2_male,25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",male,T2,0.4766,0.517,1.0,0.0404,0.5202,15,15
+EXP_20260416_145848_25-3011.00_T2_female,25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",female,T2,0.4905,0.517,0.9333,0.0265,0.4799,15,14
+EXP_20260416_145848_25-3011.00_T3_male,25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",male,T3,0.7344,0.5438,0.8,0.1906,0.4953,15,12
+EXP_20260416_145848_25-3011.00_T3_female,25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",female,T3,0.637,0.5438,0.8667,0.0932,0.4799,15,13
+EXP_20260416_145848_27-1012.00_T1_male,27-1012.00,Craft Artists,male,T1,0.7411,0.7655,0.8667,0.0244,0.4456,15,13
+EXP_20260416_145848_27-1012.00_T1_female,27-1012.00,Craft Artists,female,T1,0.6695,0.7655,0.8667,0.096,0.4814,15,13
+EXP_20260416_145848_27-1012.00_T2_male,27-1012.00,Craft Artists,male,T2,0.6185,0.5062,0.8,0.1123,0.4561,15,12
+EXP_20260416_145848_27-1012.00_T2_female,27-1012.00,Craft Artists,female,T2,0.6572,0.5062,0.8667,0.1511,0.5089,15,13
+EXP_20260416_145848_27-1012.00_T3_male,27-1012.00,Craft Artists,male,T3,0.7005,0.8016,0.8,0.101,0.4505,15,12
+EXP_20260416_145848_27-1012.00_T3_female,27-1012.00,Craft Artists,female,T3,0.6876,0.8016,0.8,0.1139,0.457,15,12
+EXP_20260416_145848_27-1023.00_T1_male,27-1023.00,Floral Designers,male,T1,0.7646,0.5915,0.9333,0.1731,0.5532,15,14
+EXP_20260416_145848_27-1023.00_T1_female,27-1023.00,Floral Designers,female,T1,0.6993,0.5915,0.9333,0.1078,0.5206,15,14
+EXP_20260416_145848_27-1023.00_T2_male,27-1023.00,Floral Designers,male,T2,0.5597,0.6741,0.9333,0.1144,0.5239,15,14
+EXP_20260416_145848_27-1023.00_T2_female,27-1023.00,Floral Designers,female,T2,0.5143,0.6741,1.0,0.1598,0.5799,15,15
+EXP_20260416_145848_27-1023.00_T3_male,27-1023.00,Floral Designers,male,T3,0.7173,0.7635,0.8667,0.0462,0.4565,15,13
+EXP_20260416_145848_27-1023.00_T3_female,27-1023.00,Floral Designers,female,T3,0.7499,0.7635,0.8667,0.0136,0.4401,15,13
+EXP_20260416_145848_27-1024.00_T1_male,27-1024.00,Graphic Designers,male,T1,0.5929,0.7295,0.9333,0.1366,0.535,15,14
+EXP_20260416_145848_27-1024.00_T1_female,27-1024.00,Graphic Designers,female,T1,0.6708,0.7295,0.8,0.0587,0.4294,15,12
+EXP_20260416_145848_27-1024.00_T2_male,27-1024.00,Graphic Designers,male,T2,0.572,0.6873,0.9333,0.1153,0.5243,15,14
+EXP_20260416_145848_27-1024.00_T2_female,27-1024.00,Graphic Designers,female,T2,0.739,0.6873,0.8,0.0517,0.4259,15,12
+EXP_20260416_145848_27-1024.00_T3_male,27-1024.00,Graphic Designers,male,T3,0.7255,0.656,0.8,0.0694,0.4347,15,12
+EXP_20260416_145848_27-1024.00_T3_female,27-1024.00,Graphic Designers,female,T3,0.7934,0.656,0.7333,0.1374,0.4353,15,11
+EXP_20260416_145848_27-1025.00_T1_male,27-1025.00,Interior Designers,male,T1,0.6483,0.4866,0.8667,0.1618,0.5142,15,13
+EXP_20260416_145848_27-1025.00_T1_female,27-1025.00,Interior Designers,female,T1,0.6084,0.4866,0.9333,0.1218,0.5275,15,14
+EXP_20260416_145848_27-1025.00_T2_male,27-1025.00,Interior Designers,male,T2,0.6514,0.5233,0.8667,0.1281,0.4974,15,13
+EXP_20260416_145848_27-1025.00_T2_female,27-1025.00,Interior Designers,female,T2,0.668,0.5233,0.8,0.1447,0.4724,15,12
+EXP_20260416_145848_27-1025.00_T3_male,27-1025.00,Interior Designers,male,T3,0.6475,0.7192,0.8667,0.0717,0.4692,15,13
+EXP_20260416_145848_27-1025.00_T3_female,27-1025.00,Interior Designers,female,T3,0.6463,0.7192,0.8,0.073,0.4365,15,12
+EXP_20260416_145848_27-2012.04_T1_male,27-2012.04,Talent Directors,male,T1,0.5825,0.5748,0.9333,0.0076,0.4705,15,14
+EXP_20260416_145848_27-2012.04_T1_female,27-2012.04,Talent Directors,female,T1,0.4676,0.5748,0.9333,0.1072,0.5202,15,14
+EXP_20260416_145848_27-2012.04_T2_male,27-2012.04,Talent Directors,male,T2,0.5679,0.5571,0.8667,0.0109,0.4388,15,13
+EXP_20260416_145848_27-2012.04_T2_female,27-2012.04,Talent Directors,female,T2,0.6515,0.5571,0.8,0.0944,0.4472,15,12
+EXP_20260416_145848_27-2012.04_T3_male,27-2012.04,Talent Directors,male,T3,0.4574,0.4712,1.0,0.0137,0.5069,15,15
+EXP_20260416_145848_27-2012.04_T3_female,27-2012.04,Talent Directors,female,T3,0.6413,0.4712,0.8,0.1701,0.4851,15,12
+EXP_20260416_145848_27-2012.05_T1_male,27-2012.05,Media Technical Directors/Managers,male,T1,0.4875,0.4245,0.9333,0.063,0.4981,15,14
+EXP_20260416_145848_27-2012.05_T1_female,27-2012.05,Media Technical Directors/Managers,female,T1,0.669,0.4245,0.7333,0.2445,0.4889,15,11
+EXP_20260416_145848_27-2012.05_T2_male,27-2012.05,Media Technical Directors/Managers,male,T2,0.7092,0.5743,0.8,0.1349,0.4675,15,12
+EXP_20260416_145848_27-2012.05_T2_female,27-2012.05,Media Technical Directors/Managers,female,T2,0.5667,0.5743,0.9333,0.0076,0.4705,15,14
+EXP_20260416_145848_27-2012.05_T3_male,27-2012.05,Media Technical Directors/Managers,male,T3,0.5871,0.514,0.8667,0.073,0.4698,15,13
+EXP_20260416_145848_27-2012.05_T3_female,27-2012.05,Media Technical Directors/Managers,female,T3,0.5161,0.514,0.9333,0.002,0.4677,15,14
+EXP_20260416_145848_27-2022.00_T1_male,27-2022.00,Coaches and Scouts,male,T1,0.4819,0.6487,1.0,0.1668,0.5834,15,15
+EXP_20260416_145848_27-2022.00_T1_female,27-2022.00,Coaches and Scouts,female,T1,0.5802,0.6487,0.9333,0.0685,0.5009,15,14
+EXP_20260416_145848_27-2022.00_T2_male,27-2022.00,Coaches and Scouts,male,T2,0.5323,0.6131,0.9333,0.0808,0.5071,15,14
+EXP_20260416_145848_27-2022.00_T2_female,27-2022.00,Coaches and Scouts,female,T2,0.6085,0.6131,0.9333,0.0046,0.469,15,14
+EXP_20260416_145848_27-2022.00_T3_male,27-2022.00,Coaches and Scouts,male,T3,0.511,0.6755,0.9333,0.1645,0.5489,15,14
+EXP_20260416_145848_27-2022.00_T3_female,27-2022.00,Coaches and Scouts,female,T3,0.6412,0.6755,0.9333,0.0342,0.4838,15,14
+EXP_20260416_145848_27-2041.00_T1_male,27-2041.00,Music Directors and Composers,male,T1,0.6307,0.7075,0.8667,0.0768,0.4718,15,13
+EXP_20260416_145848_27-2041.00_T1_female,27-2041.00,Music Directors and Composers,female,T1,0.6525,0.7075,0.8667,0.0551,0.4609,15,13
+EXP_20260416_145848_27-2041.00_T2_male,27-2041.00,Music Directors and Composers,male,T2,0.4868,0.4936,1.0,0.0067,0.5033,15,15
+EXP_20260416_145848_27-2041.00_T2_female,27-2041.00,Music Directors and Composers,female,T2,0.5171,0.4936,1.0,0.0235,0.5118,15,15
+EXP_20260416_145848_27-2041.00_T3_male,27-2041.00,Music Directors and Composers,male,T3,0.557,0.5985,0.8,0.0416,0.4208,15,12
+EXP_20260416_145848_27-2041.00_T3_female,27-2041.00,Music Directors and Composers,female,T3,0.5727,0.5985,0.8667,0.0259,0.4463,15,13
+EXP_20260416_145848_51-2022.00_T1_male,51-2022.00,Electrical and Electronic Equipment Assemblers,male,T1,0.7667,0.6912,0.8333,0.0755,0.4544,6,5
+EXP_20260416_145848_51-2022.00_T1_female,51-2022.00,Electrical and Electronic Equipment Assemblers,female,T1,0.7421,0.6912,0.8333,0.0509,0.4421,6,5
+EXP_20260416_145848_51-2022.00_T2_male,51-2022.00,Electrical and Electronic Equipment Assemblers,male,T2,0.5313,0.6838,0.8333,0.1525,0.4929,6,5
+EXP_20260416_145848_51-2022.00_T2_female,51-2022.00,Electrical and Electronic Equipment Assemblers,female,T2,0.6137,0.6838,0.8333,0.0701,0.4517,6,5
+EXP_20260416_145848_51-2022.00_T3_male,51-2022.00,Electrical and Electronic Equipment Assemblers,male,T3,0.596,0.7886,0.8333,0.1925,0.5129,6,5
+EXP_20260416_145848_51-2022.00_T3_female,51-2022.00,Electrical and Electronic Equipment Assemblers,female,T3,0.726,0.7886,0.8333,0.0625,0.4479,6,5
+EXP_20260416_145848_51-3091.00_T1_male,51-3091.00,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",male,T1,0.7663,0.3984,0.9091,0.368,0.6385,11,10
+EXP_20260416_145848_51-3091.00_T1_female,51-3091.00,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",female,T1,0.7204,0.3984,0.9091,0.3221,0.6156,11,10
+EXP_20260416_145848_51-3091.00_T2_male,51-3091.00,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",male,T2,0.5564,0.5449,1.0,0.0115,0.5058,11,11
+EXP_20260416_145848_51-3091.00_T2_female,51-3091.00,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",female,T2,0.4595,0.5449,1.0,0.0854,0.5427,11,11
+EXP_20260416_145848_51-3091.00_T3_male,51-3091.00,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",male,T3,0.7489,0.6736,0.9091,0.0752,0.4922,11,10
+EXP_20260416_145848_51-3091.00_T3_female,51-3091.00,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",female,T3,0.6299,0.6736,0.9091,0.0437,0.4764,11,10
+EXP_20260416_145848_51-4021.00_T1_male,51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",male,T1,0.5294,0.6722,1.0,0.1428,0.5714,4,4
+EXP_20260416_145848_51-4021.00_T1_female,51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",female,T1,0.7556,0.6722,0.75,0.0834,0.4167,4,3
+EXP_20260416_145848_51-4021.00_T2_male,51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",male,T2,0.6942,0.4994,0.75,0.1948,0.4724,4,3
+EXP_20260416_145848_51-4021.00_T2_female,51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",female,T2,0.5721,0.4994,0.75,0.0727,0.4113,4,3
+EXP_20260416_145848_51-4021.00_T3_male,51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",male,T3,0.7662,0.7239,0.75,0.0423,0.3962,4,3
+EXP_20260416_145848_51-4021.00_T3_female,51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",female,T3,0.7867,0.7239,0.75,0.0628,0.4064,4,3
+EXP_20260416_145848_51-4061.00_T1_male,51-4061.00,"Model Makers, Metal and Plastic",male,T1,0.724,0.5705,0.875,0.1535,0.5142,8,7
+EXP_20260416_145848_51-4061.00_T1_female,51-4061.00,"Model Makers, Metal and Plastic",female,T1,0.7215,0.5705,0.875,0.151,0.513,8,7
+EXP_20260416_145848_51-4061.00_T2_male,51-4061.00,"Model Makers, Metal and Plastic",male,T2,0.6484,0.6683,0.875,0.0199,0.4475,8,7
+EXP_20260416_145848_51-4061.00_T2_female,51-4061.00,"Model Makers, Metal and Plastic",female,T2,0.8038,0.6683,0.875,0.1355,0.5052,8,7
+EXP_20260416_145848_51-4061.00_T3_male,51-4061.00,"Model Makers, Metal and Plastic",male,T3,0.7615,0.7579,0.875,0.0036,0.4393,8,7
+EXP_20260416_145848_51-4061.00_T3_female,51-4061.00,"Model Makers, Metal and Plastic",female,T3,0.736,0.7579,0.875,0.0219,0.4485,8,7
+EXP_20260416_145848_51-4072.00_T1_male,51-4072.00,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",male,T1,0.721,0.7238,0.7143,0.0028,0.3586,7,5
+EXP_20260416_145848_51-4072.00_T1_female,51-4072.00,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",female,T1,0.6704,0.7238,0.7143,0.0534,0.3839,7,5
+EXP_20260416_145848_51-4072.00_T2_male,51-4072.00,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",male,T2,0.5382,0.7232,0.8571,0.1849,0.521,7,6
+EXP_20260416_145848_51-4072.00_T2_female,51-4072.00,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",female,T2,0.5256,0.7232,1.0,0.1976,0.5988,7,7
+EXP_20260416_145848_51-4072.00_T3_male,51-4072.00,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",male,T3,0.4688,0.8354,1.0,0.3667,0.6834,7,7
+EXP_20260416_145848_51-4072.00_T3_female,51-4072.00,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",female,T3,0.7608,0.8354,0.8571,0.0747,0.4659,7,6
+EXP_20260416_145848_51-4122.00_T1_male,51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",male,T1,0.7003,0.6639,0.7778,0.0364,0.4071,9,7
+EXP_20260416_145848_51-4122.00_T1_female,51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",female,T1,0.6738,0.6639,0.8889,0.0099,0.4494,9,8
+EXP_20260416_145848_51-4122.00_T2_male,51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",male,T2,0.5298,0.5203,0.8889,0.0095,0.4492,9,8
+EXP_20260416_145848_51-4122.00_T2_female,51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",female,T2,0.5312,0.5203,1.0,0.0109,0.5054,9,9
+EXP_20260416_145848_51-4122.00_T3_male,51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",male,T3,0.6995,0.6025,0.7778,0.097,0.4374,9,7
+EXP_20260416_145848_51-4122.00_T3_female,51-4122.00,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",female,T3,0.7276,0.6025,0.8889,0.1251,0.507,9,8
+EXP_20260416_145848_51-9071.00_T1_male,51-9071.00,Jewelers and Precious Stone and Metal Workers,male,T1,0.6127,0.686,0.875,0.0734,0.4742,8,7
+EXP_20260416_145848_51-9071.00_T1_female,51-9071.00,Jewelers and Precious Stone and Metal Workers,female,T1,0.6808,0.686,0.875,0.0052,0.4401,8,7
+EXP_20260416_145848_51-9071.00_T2_male,51-9071.00,Jewelers and Precious Stone and Metal Workers,male,T2,0.7119,0.5602,0.875,0.1517,0.5133,8,7
+EXP_20260416_145848_51-9071.00_T2_female,51-9071.00,Jewelers and Precious Stone and Metal Workers,female,T2,0.6638,0.5602,0.75,0.1036,0.4268,8,6
+EXP_20260416_145848_51-9071.00_T3_male,51-9071.00,Jewelers and Precious Stone and Metal Workers,male,T3,0.7073,0.7287,0.75,0.0215,0.3857,8,6
+EXP_20260416_145848_51-9071.00_T3_female,51-9071.00,Jewelers and Precious Stone and Metal Workers,female,T3,0.7023,0.7287,0.875,0.0265,0.4507,8,7
+EXP_20260416_145848_51-9192.00_T1_male,51-9192.00,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",male,T1,0.5635,0.6785,0.8,0.115,0.4575,5,4
+EXP_20260416_145848_51-9192.00_T1_female,51-9192.00,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",female,T1,0.733,0.6785,0.8,0.0544,0.4272,5,4
+EXP_20260416_145848_51-9192.00_T2_male,51-9192.00,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",male,T2,0.669,0.5349,0.8,0.1341,0.4671,5,4
+EXP_20260416_145848_51-9192.00_T2_female,51-9192.00,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",female,T2,0.675,0.5349,0.8,0.1401,0.4701,5,4
+EXP_20260416_145848_51-9192.00_T3_male,51-9192.00,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",male,T3,0.7399,0.5648,0.8,0.1751,0.4876,5,4
+EXP_20260416_145848_51-9192.00_T3_female,51-9192.00,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",female,T3,0.7556,0.5648,0.8,0.1907,0.4954,5,4

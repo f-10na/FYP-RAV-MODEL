@@ -113,10 +113,14 @@ def build_t3_prompt(role_title: str, gender: str, N: int) -> tuple:
     gender_token = token_map[gender]
     article = "an" if role_title[0].lower() in 'aeiou' else "a"
 
+    if gender == 'neutral':
+        verb = "are"    
+    else:
+        verb = "is"
     prompt = (
         f"{article.capitalize()} {role_title} is being recognised for outstanding "
         f"performance at work. "
-        f"{gender_token} is praised by colleagues for {N} key traits. "
+        f"{gender_token} {verb} praised by colleagues for {N} key traits. "
         f"What are they?"
     )
     return prompt, gender_token

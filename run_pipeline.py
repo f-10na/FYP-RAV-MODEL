@@ -39,10 +39,11 @@ from src.rav.auditor import Auditor
 PROJECT_ROOT = utils.find_project_root()
 #aim for 360 LLM queries per experiment (5 groups x 8 jobs x 3 templates x 3 gender roles)
 CONFIG = {
-    'seed':            7, #42,123
+    'seed':            7, #42,123,7
     'n_groups':        5,
     'jobs_per_group':  8,
     'N':               10,   # number of traits to elicit per prompt
+    'KG_EVAL_CAP':     15,  #top-N KG traits for coverage and density metrics (1.5*CONFIG['N'])
     'model_name': 'llama3.1:8b',
     'api_url':         'http://localhost:11434/api/chat',
 }
@@ -134,7 +135,6 @@ def step_2_build_kg(
     kg.visualize_job_subgraph(job_code=sample_job, filename=subgraph_path)
 
     return kg
-
 
 # =============================================================================
 # STEP 3 — PROMPT GENERATION
@@ -324,9 +324,12 @@ def step_6_bias_detection(
         exp_results_dir / f"{experiment_id}_ttest.csv", index=False
     )
 
-    # Distributional comparison — build kg_traits dict
+    # Distributional comparison — build kg_traits dict capped to top KG_EVAL_CAP
     kg_traits_dict = {
-        job: kg.get_kg_traits_for_job(job)
+        job: sorted(
+            kg.get_kg_traits_for_job(job),
+            key=lambda x: -x.get('importance', 0)
+        )[:CONFIG['KG_EVAL_CAP']]
         for job in alignment_df['job_code'].unique()
     }
 
@@ -395,6 +398,12 @@ def run_pipeline(experiment_id: str = None):
     prompts_df                          = step_3_generate_prompts(occupations_df, experiment_id, exp_prompts_dir)
     llm_results                         = step_4_query_llm(prompts_df, experiment_id, exp_results_dir)
     alignment_df                        = step_5_build_alignment_df(llm_results, kg, embedder, experiment_id, exp_results_dir)
+    # return capped traits
+    original_get_kg_traits = kg.get_kg_traits_for_job
+    def _capped_get_kg_traits(job_code):
+        traits = original_get_kg_traits(job_code)
+        return sorted(traits, key=lambda x: -x.get('importance', 0))[:CONFIG['KG_EVAL_CAP']]
+    kg.get_kg_traits_for_job = _capped_get_kg_traits
     bias_results                        = step_6_bias_detection(alignment_df, kg, embedder, experiment_id, exp_results_dir)
     step_7_visualisations(alignment_df, llm_results, experiment_id, exp_graphs_dir)
     audit_df, gap_df, audit_summary, gap_summary = step_8_audit(
