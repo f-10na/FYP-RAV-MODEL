@@ -39,12 +39,12 @@ from src.rav.auditor import Auditor
 PROJECT_ROOT = utils.find_project_root()
 #aim for 360 LLM queries per experiment (5 groups x 8 jobs x 3 templates x 3 gender roles)
 CONFIG = {
-    'seed':            7, #42,123,7
+    'seed':            42, #42,123,7
     'n_groups':        5,
     'jobs_per_group':  8,
     'N':               10,   # number of traits to elicit per prompt
     'KG_EVAL_CAP':     15,  #top-N KG traits for coverage and density metrics (1.5*CONFIG['N'])
-    'model_name': 'llama3.1:8b',
+    'model_name': 'llama3.1:8b',  #llama3.1:8b,mistral:7b
     'api_url':         'http://localhost:11434/api/chat',
 }
 
